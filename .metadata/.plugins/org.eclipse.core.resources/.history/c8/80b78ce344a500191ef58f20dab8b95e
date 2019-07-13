@@ -94,14 +94,6 @@ body{
 
 
 /*  풀어주기   */
-.map-custom{
-	width:700px;
-	height:700px;
-	position:relative;
-	overflow:hidden; 
-	margin-left: 80px; 
-	border-radius:30px;
-}
 
 .carousel-item{
     width: 100%;

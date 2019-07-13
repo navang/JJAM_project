@@ -98,7 +98,7 @@
 <!--             <div class=""> -->
             
              <div class="map_wrap">
-    <div id="map" class="map-custom" ></div>
+    <div id="map" style="width:800px;height:800px;position:relative;overflow:hidden; margin-left: 80px; border-radius:30px;" ></div>
     <div class="hAddr">
      </div><!--  end.hAddr -->
 	</div><!--  end div.map_wrap -->

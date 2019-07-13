@@ -95,8 +95,8 @@ body{
 
 /*  풀어주기   */
 .map-custom{
-	width:700px;
-	height:700px;
+	width:100px;
+	height:100px;
 	position:relative;
 	overflow:hidden; 
 	margin-left: 80px; 
