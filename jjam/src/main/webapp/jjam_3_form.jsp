@@ -78,9 +78,6 @@
          </div>
      </nav>
  
- 
-
-
    
     <!--------------------------------------본문 ------------------------------------------------------>
 
@@ -98,14 +95,18 @@
            
            
       <!---------------------------------- 지도 api 자리-->
-            <div class="">
-             <div class="map_wrap">a
-    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden; margin-left: 80px"></div>
+<!--             <div class=""> -->
+            
+             <div class="map_wrap">
+    <div id="map" class="map-custom" ></div>
     <div class="hAddr">
      </div><!--  end.hAddr -->
 	</div><!--  end div.map_wrap -->
-      <div id="map" style="width:100px;height:350px;"></div>     
-            </div> <!-- 상단 navbar로 인한 공백-->
+     
+<!--      <div id="map" style="width:100px;height:350px;"></div>       -->
+         
+         
+<!--             </div>  그리드 맞춰줌-->
             
             
             <!-- 게시물  -->            
@@ -132,7 +133,7 @@
         <div class=""></div> <!-- 상단 navbar로 인한 공백-->
 
         <div></div><!-- 그리드 왼쪽 공백-->
-        <div>
+        
 
             <!----------------------------------참여 MODAL창----------------------------------------->
 
