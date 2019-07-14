@@ -1,0 +1,256 @@
+---------------------------테이블삭제(제약조건과 함꼐)
+DROP TABLE cate CASCADE CONSTRAINTS;
+DROP TABLE board CASCADE CONSTRAINTS;
+DROP TABLE letter CASCADE CONSTRAINTS;
+DROP TABLE customer CASCADE CONSTRAINTS;
+DROP TABLE cshop CASCADE CONSTRAINTS;
+DROP TABLE jjim CASCADE CONSTRAINTS;
+DROP TABLE payment CASCADE CONSTRAINTS;
+DROP TABLE chat CASCADE CONSTRAINTS;
+
+--------------시퀀스 삭제----------------------
+
+drop sequence seq_l_no;   --쪽지번호
+drop sequence seq_b_no;  --게시판번호
+
+
+--------------시퀀스 생성---------------------
+create sequence seq_l_no;   --쪽지번호
+create sequence seq_b_no;  --게시판번호
+
+-------------테이블 생성-------------------------
+
+-- 상품카테고리
+CREATE TABLE cate (
+	cate_id   CHAR(10)    NOT NULL, -- 상품카테고리ID
+	cate_name VARCHAR(20) NULL      -- 상품카테고리명
+);
+
+-- 상품카테고리
+ALTER TABLE cate
+	ADD
+		CONSTRAINT PK_cate -- 상품카테고리 기본키
+		PRIMARY KEY (
+			cate_id -- 상품카테고리ID
+		);
+
+-- 판매게시글
+CREATE TABLE board (
+	b_no       NUMBER        NOT NULL, -- 게시글번호
+	b_date     DATE          NULL,     -- 게시글등록일
+	b_content  VARCHAR(3999) NULL,     -- 게시글내용
+	b_location VARCHAR(50)   NULL,     -- 게시글판매위치
+	b_price    NUMBER        NULL,     -- 게시글상품가격
+	b_name     VARCHAR(100)  NULL,     -- 게시글상품명
+	b_title    VARCHAR(100)  NULL,     -- 게시글제목
+	b_image    VARCHAR(100)  NULL,     -- 게시글이미지
+	b_view     NUMBER        NULL,     -- 게시글조회수
+	b_heart    NUMBER        NULL,     -- 게시글하트
+	b_ea       NUMBER        NULL,     -- 재료잔여갯수
+	cate_id    CHAR(10)      NULL,     -- 상품카테고리ID
+	c_id       VARCHAR(20)   NULL      -- 회원ID
+);
+
+-- 판매게시글
+ALTER TABLE board
+	ADD
+		CONSTRAINT PK_board -- 판매게시글 기본키
+		PRIMARY KEY (
+			b_no -- 게시글번호
+		);
+
+-- 결제내역
+CREATE TABLE payment (
+	c_id VARCHAR(20) NOT NULL, -- 회원ID
+	b_no NUMBER      NOT NULL  -- 게시글번호
+);
+
+-- 결제내역
+ALTER TABLE payment
+	ADD
+		CONSTRAINT PK_payment -- 결제내역 기본키
+		PRIMARY KEY (
+			c_id, -- 회원ID
+			b_no  -- 게시글번호
+		);
+
+-- 쪽지
+CREATE TABLE letter (
+	l_no      NUMBER        NOT NULL, -- 쪽지번호
+	l_content VARCHAR(3999) NULL,     -- 쪽지내용
+	l_date    DATE          NULL,     -- 쪽지작성일
+	c_id      VARCHAR(20)   NULL      -- 회원ID
+);
+
+-- 쪽지
+ALTER TABLE letter
+	ADD
+		CONSTRAINT PK_letter -- 쪽지 기본키
+		PRIMARY KEY (
+			l_no -- 쪽지번호
+		);
+
+-- 회원상점
+CREATE TABLE cshop (
+	c_id     VARCHAR(20) NOT NULL, -- 회원ID
+	cs_heart NUMBER      NULL,     -- 상점하트
+	cs_view  NUMBER      NULL      -- 상점조회수
+);
+
+-- 회원상점
+ALTER TABLE cshop
+	ADD
+		CONSTRAINT PK_cshop -- 회원상점 기본키
+		PRIMARY KEY (
+			c_id -- 회원ID
+		);
+
+-- 찜목록
+CREATE TABLE jjim (
+	c_id VARCHAR(20) NOT NULL, -- 회원ID
+	b_no NUMBER      NOT NULL  -- 게시글번호
+);
+
+-- 찜목록
+ALTER TABLE jjim
+	ADD
+		CONSTRAINT PK_jjim -- 찜목록 기본키
+		PRIMARY KEY (
+			c_id, -- 회원ID
+			b_no  -- 게시글번호
+		);
+
+-- 회원
+CREATE TABLE customer (
+	c_id   VARCHAR(20) NOT NULL, -- 회원ID
+	c_name VARCHAR(20) NULL,     -- 회원이름
+	c_tel  VARCHAR(14) NULL,     -- 회원전화번호
+	c_pw   VARCHAR(20) NULL      -- 회원비밀번호
+);
+
+-- 회원
+ALTER TABLE customer
+	ADD
+		CONSTRAINT PK_customer -- 회원 기본키
+		PRIMARY KEY (
+			c_id -- 회원ID
+		);
+
+-- 채팅
+CREATE TABLE chat (
+	customerA    VARCHAR(20)   NOT NULL, -- 회원A
+	customerB    VARCHAR(20)   NOT NULL, -- 회원B
+	chat_content VARCHAR(3999) NULL,     -- 채팅내용
+	chat_date    DATE          NULL      -- 채팅일자
+);
+
+-- 채팅
+ALTER TABLE chat
+	ADD
+		CONSTRAINT PK_chat -- 채팅 기본키
+		PRIMARY KEY (
+			customerA, -- 회원A
+			customerB  -- 회원B
+		);
+
+-- 판매게시글
+ALTER TABLE board
+	ADD
+		CONSTRAINT FK_cate_TO_board -- 상품카테고리 -> 판매게시글
+		FOREIGN KEY (
+			cate_id -- 상품카테고리ID
+		)
+		REFERENCES cate ( -- 상품카테고리
+			cate_id -- 상품카테고리ID
+		);
+
+-- 판매게시글
+ALTER TABLE board
+	ADD
+		CONSTRAINT FK_customer_TO_board -- 회원 -> 판매게시글
+		FOREIGN KEY (
+			c_id -- 회원ID
+		)
+		REFERENCES customer ( -- 회원
+			c_id -- 회원ID
+		);
+
+-- 결제내역
+ALTER TABLE payment
+	ADD
+		CONSTRAINT FK_customer_TO_payment -- 회원 -> 결제내역
+		FOREIGN KEY (
+			c_id -- 회원ID
+		)
+		REFERENCES customer ( -- 회원
+			c_id -- 회원ID
+		);
+
+-- 결제내역
+ALTER TABLE payment
+	ADD
+		CONSTRAINT FK_board_TO_payment -- 판매게시글 -> 결제내역
+		FOREIGN KEY (
+			b_no -- 게시글번호
+		)
+		REFERENCES board ( -- 판매게시글
+			b_no -- 게시글번호
+		);
+
+-- 쪽지
+ALTER TABLE letter
+	ADD
+		CONSTRAINT FK_customer_TO_letter -- 회원 -> 쪽지
+		FOREIGN KEY (
+			c_id -- 회원ID
+		)
+		REFERENCES customer ( -- 회원
+			c_id -- 회원ID
+		);
+
+-- 회원상점
+ALTER TABLE cshop
+	ADD
+		CONSTRAINT FK_customer_TO_cshop -- 회원 -> 회원상점
+		FOREIGN KEY (
+			c_id -- 회원ID
+		)
+		REFERENCES customer ( -- 회원
+			c_id -- 회원ID
+		);
+
+-- 찜목록
+ALTER TABLE jjim
+	ADD
+		CONSTRAINT FK_customer_TO_jjim -- 회원 -> 찜목록
+		FOREIGN KEY (
+			c_id -- 회원ID
+		)
+		REFERENCES customer ( -- 회원
+			c_id -- 회원ID
+		);
+
+-- 찜목록
+ALTER TABLE jjim
+	ADD
+		CONSTRAINT FK_board_TO_jjim -- 판매게시글 -> 찜목록
+		FOREIGN KEY (
+			b_no -- 게시글번호
+		)
+		REFERENCES board ( -- 판매게시글
+			b_no -- 게시글번호
+		);
+        
+---------기초값 삽입----------------------------
+
+--카테고리 값--
+insert into cate(cate_id, cate_name) values('c0000', '육류');
+insert into cate(cate_id, cate_name) values('c0001', '채소류');
+insert into cate(cate_id, cate_name) values('c0002', '가공식품류');
+insert into cate(cate_id, cate_name) values('c0003', '어패류');
+insert into cate(cate_id, cate_name) values('c0004', '과일류');
+insert into cate(cate_id, cate_name) values('c0005', '빵류');
+insert into cate(cate_id, cate_name) values('c0006', '소스류');
+insert into cate(cate_id, cate_name) values('c0007', '냉동식품류');
+insert into cate(cate_id, cate_name) values('c0008', '기타등등');
+
