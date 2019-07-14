@@ -50,3 +50,7 @@
 7월 14, 2019 15:28:08.36 [1412:15136:0714/152808.363:ERROR:browser_process_sub_thread.cc(221)] Waited 43 ms for network service
 7월 14, 2019 16:01:20.28 [18964:14968:0714/160120.286:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
 7월 14, 2019 16:01:20.36 [18964:2216:0714/160120.363:ERROR:browser_process_sub_thread.cc(221)] Waited 30 ms for network service
+7월 14, 2019 16:40:16.35 [20476:20456:0714/164016.358:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 14, 2019 16:40:16.46 [20476:18712:0714/164016.460:ERROR:browser_process_sub_thread.cc(221)] Waited 36 ms for network service
+7월 14, 2019 16:43:45.07 [20204:17064:0714/164345.076:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 14, 2019 16:43:45.16 [20204:19936:0714/164345.164:ERROR:browser_process_sub_thread.cc(221)] Waited 34 ms for network service
