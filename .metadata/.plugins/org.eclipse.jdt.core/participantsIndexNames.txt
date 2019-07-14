@@ -1,16 +1,7 @@
 INDEX VERSION 1.131
-<<<<<<< HEAD
-C:\programming\Jjam_project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3561246386.index
+C:\programming\jjam\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3561246386.index
 \jjam\src\main\java
-C:\programming\Jjam_project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\862651493.index
+C:\programming\jjam\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\862651493.index
 \jjam\src\main\java
 C:\programming\jjam\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2736214212.index
 \jjam\src\main\java
-C:\programming\Jjam_project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2736214212.index
-\jjam\src\main\java
-=======
-C:\Users\navan\Documents\Spring\Jjam_teamproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\862651493.index
-\jjam\src\main\resources
-C:\Users\navan\Documents\Spring\Jjam_teamproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2736214212.index
-\jjam\src\main\resources
->>>>>>> cb76f180919230dfb9a1efa54c92103cdcd98824

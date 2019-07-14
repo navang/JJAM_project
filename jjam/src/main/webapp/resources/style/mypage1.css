@@ -198,13 +198,6 @@ ul {
     background-color: darkgray;
 }
 
-/*  작업중   */
-#tab2, #tab3, #tab4, #tab5{
-    display: none;
-}
-@media (max-width:640px) {
-
-}
 
 
 

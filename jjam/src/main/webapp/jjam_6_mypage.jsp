@@ -83,13 +83,29 @@
   $(function(){
       $('.listul a').each(function(){
           $(this).click(function() { 
-          $(".tab").hide();
-          activeTab = $(this).attr("rel");
-          $("#"+activeTab).show();
+        	  $('.listul a').css("background-color", "white");
+        	  $('.listul a').css("color", "black");
+        	  $(this).css("background-color", "#147b6b");
+        	  $(this).css("color", "white");
+        	 activeTab = $(this).attr("rel");
+        	 $("#ddd").empty();
+          $.ajax({
+        	  type:'POST',
+        	  url:'./'+activeTab+'.jsp',
+        	  success:function(data){
+        		  $('#ddd').html(data);
+        	  },
+        	  error:function(){
+        		  alert("통신실패");
+        	  }
+          });
           });
       });
   });
 </script>
+
+
+
 
 
 <!--이메일-->
@@ -154,10 +170,10 @@ $(document).ready(function(){
           <img src="./resources/image/3.jpg" width="150px" alt="My Image">
         <h1 class="my-4">마이페이지</h1>
         <div class="list-group listul">
-          <a class="list-group-item" rel="tab1">개인정보변경</a>
-          <a class="list-group-item" rel="tab2">댓글 및 쪽지</a>
-          <a class="list-group-item" rel="tab4">찜목록</a>
-          <a class="list-group-item" rel="tab5">결제내역</a>
+          <a class="list-group-item" rel="jjam_6_mypage_privacy">개인정보변경</a>
+          <a class="list-group-item" rel="jjam_6_mypage_letter">댓글 및 쪽지</a>
+          <a class="list-group-item" rel="jjam_6_mypage_jjim">찜목록</a>
+          <a class="list-group-item" rel="jjam_6_mypage_payment">결제내역</a>
         </div>
 
       </div>
@@ -194,281 +210,10 @@ $(document).ready(function(){
       
 
   <!--개인정보-->         
-<form action="" class="tab" id="tab1">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-8  justify-content-center">
-             <h3>개인정보 변경</h3>
-              <div class="form-group">
-           <!-- 입력 요소(input,label)를 묶는 그룹-->
-              <label for="user" class="margin_top">아이디</label>
-              <input class="form-control" id="user" type="text" value="godgod" disabled>
-              <div class="form-group">
-                  <!-- 입력 요소(input,label)를 묶는 그룹-->
-                <label for="pw" class="margin_top1">기존 비밀번호</label>
-                 <!--라벨-->
-               <input class="form-control" id="pw" type="password" placeholder="기존 비밀번호를 입력하세요">
-
-              <label for="pw" class="margin_top1">새로운 비밀번호</label>
-                 <!--라벨-->
-               <input class="form-control" id="npw" type="password" placeholder="새로운 비밀번호를 입력하세요">
-                <!--라벨-->
-                <input class="form-control margin_top1" id="npw" type="password" placeholder="새로운 비밀번호를 다시 입력하세요">
-             
-              
-              <!-- 주소-->
-              <label for="pw"class="margin_top1">주소</label><br/>
-              <input type="text" id="sample6_postcode" placeholder="우편번호">
-              <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-              <input type="text" id="sample6_address" placeholder="주소"><br>
-              <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-              <input type="text" id="sample6_extraAddress" placeholder="참고항목">
-              </div>
-              </div>
-       </div>       
-      </div>
-  
-  
-          <button class="btn btn-primary float-right">
-              <!--flate-rigth 오른쪽으로 이동-->
-              <i class="fas fa-paper-plane"> 정보변경</i>
-              <!--fontawesome icon-->
-          </button>
-  </div>
-      </form>
+	<div id="ddd">
+	</div>
 <!-- ----------------------------- 본문_댓글및쪽지 ------------------------------------------------>
-<div class="tab" id="tab2">
-  <h1>댓글 및 쪽지</h1>
-  
-<div class="tab-content">
-    <div class="tab-pane active" id="inbox">
-        <div class="container">
-             <div class="content-container clearfix">
-                 <div class="col-md-12">     
-                     <ul class="mail-list">
-                         <li>
-                             <a href="" data-toggle="modal" data-target="#comment">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">You have ten more subscriptions click her...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-        
-    </div>
-    <div class="tab-pane" id="compose">
-        
-        <div class="container">
-      <div class="content-container clearfix">
-          <h1 class="content-title">Compose</h1>
-          <div class="col-md-12">
-              <div class="form-group">
-                  <input id="tokenfield" type="text" class="form-control" placeholder="To" />
-              </div>
-              <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Cc" />
-              </div>
-              <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Bcc" />
-              </div>
-              <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Subject" />
-              </div>
-              <textarea class="form-control" placeholder="message"></textarea>
-              <div class="btn-send">
-              <button class="btn btn-success btn-lg"><span class="glyphicon glyphicon-send"></span> Send</button>
-              </div>
-          </div>
-      </div>
-  </div>
-        
-    </div>
-    <div class="tab-pane" id="sent-mail">
-        
-        <div class="container">
-             <div class="content-container clearfix">
-                 <div class="col-md-12">
-                     <h1 class="content-title">Sent Mail</h1>
-                     
-                     <input type="search" placeholder="Search Mail" class="form-control mail-search" />
-                     
-                     <ul class="mail-list">
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">You have ten more subscriptions click her...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-        
-    </div>
-    <div class="tab-pane" id="draft">
-        
-        <div class="container">
-             <div class="content-container clearfix">
-                 <div class="col-md-12">
-                     <h1 class="content-title">Draft</h1>
-                     
-                     <input type="search" placeholder="Search Mail" class="form-control mail-search" />
-                     
-                     <ul class="mail-list">
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">You have ten more subscriptions click her...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-        
-    </div>
-    <div class="tab-pane" id="trash">
-        
-        <div class="container">
-             <div class="content-container clearfix">
-                 <div class="col-md-12">
-                     <h1 class="content-title">Trash</h1>
-                     
-                     <input type="search" placeholder="Search Mail" class="form-control mail-search" />
-                     
-                     <ul class="mail-list">
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">You have ten more subscriptions click her...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="">
-                                 <span class="mail-sender">You Tube</span>
-                                 <span class="mail-subject">New subscribers!</span>
-                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                             </a>
-                         </li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-        
-    </div>
-  </div>
-</div>
+
 
 
       <!----------------------------------쪽지 modal 창----------------------------------------->
@@ -495,221 +240,11 @@ $(document).ready(function(){
 
 
         <!------------------- 찜목록 ------------------------->
-        <div id="tab4" class="tab">
-            <h2>찜목록</h2>
-          <div class="row">
-          <div class="col-lg-4 col-md-12">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item One</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div><!--/.col-->
-
-
-        </div>
-        <!-- /.row -->
-
-      </div>
-      <!-- /.tab4 -->
-
+       
 
 
        <!------------------- 결제내역 ------------------------->
-       <div id="tab5" class="tab">
-          <h2>결제목록</h2>
-        <div class="row">
-        <div class="col-lg-4 col-md-12">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item One</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Two</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Three</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Four</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Five</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Six</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div><!--/.col-->
-
-
-      </div>
-      <!-- /.row -->
-
-    </div>
-    <!-- /.tab5 -->
-
+      
 
 
 </div> <!--/.cal-lg-9-->
@@ -730,7 +265,7 @@ $(document).ready(function(){
  <!-- <div class="footer fixed-bottom">copylight</div> -->
 
   <!-- Bootstrap core JavaScript -->
-<script src="./resources/image/vendor/jquery/jquery.min.js"></script> -->
+<script src="./resources/image/vendor/jquery/jquery.min.js"></script> 
   <script src="./resources/image/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
