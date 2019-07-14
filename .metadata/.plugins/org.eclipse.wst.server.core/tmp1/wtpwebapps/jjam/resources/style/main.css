@@ -40,7 +40,7 @@ h1, h2, h3 {
 }
 
 body{    
-    padding-bottom: 200px;
+  
     background: #033f3b;
 }
 
@@ -107,14 +107,19 @@ body{
     width: 100%;
     height: 700px;
 }
+
 .bigfont{
-    color: white;
+	text-align:center;
+	font-size: 100px;
+    color: black;
+    font-family: NanumSquareL;
+    src: url(../font/NanumSquareL.woff) format('woff');
    
 }
 
 .carousel-caption * {
     color: white;
-    width: 3000%;
+    width: 500%;
     height: 100%;
 }
 .white-text {
@@ -125,6 +130,24 @@ body{
      grid-template-columns: 100%;
      grid-template-rows: 70px 850px 100px ;
 }
+.mypage{
+	display: grid;
+	  grid-template-columns: 20% 60% 20%;
+     grid-template-rows: 400px 1400px ;
+}
+.mypage-columns{
+	display:grid;
+	  grid-template-columns: 30% 70%;
+ 	text-align: center;
+	
+}
+.mypage-rows{
+	display:grid;
+	  grid-template-rows: 30% 70%;
+
+	
+}
+
 
 /* 2_search 페이지 */
 .search{
@@ -271,6 +294,32 @@ body{
         grid-template-columns: 25% 25% 25% 25%;
         grid-template-rows: 50px  50px  50px 50px  50px  50px;
     }
+    
+    
+    .mypage{
+	display: grid;
+	  grid-template-columns: 100%;
+     grid-template-rows: 0px  0px   170px  0px   500px;
+}
+.mypage-columns{
+	display:grid;
+	 grid-template-columns: 100%;
+		  grid-template-rows: 400px 50%;
+ 
+}
+.mypage-rows{
+	display:grid;
+	
+		  grid-template-template: 100%;
+		   grid-template-rows: 60% 40%;
+}
+.mypage-menu{
+	display:grid;
+	
+		  grid-template-rows: 25% 25% 25% 25%;
+}
+
+
     /*챗 모달 사용설명서*/
     .img-chatmodal{
         width:640px;
@@ -305,6 +354,7 @@ body{
     grid-template-columns: 0px 640px 0px;
     grid-template-rows: 50px 640px ;
 }
+
 
 
 }
