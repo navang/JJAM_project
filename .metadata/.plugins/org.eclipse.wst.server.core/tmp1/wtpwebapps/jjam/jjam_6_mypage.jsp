@@ -180,7 +180,7 @@ $(document).ready(function(){
 		<div></div>
 		<!-- 공백 -->
 		<div class="">
-			<img width="100%" src="./resources/image/mypage_test1.png" />
+			<img width="100%" src="./resources/image/mypage_03.png" />
 		</div>
 		<div></div>
 		<!-- 공백 -->
