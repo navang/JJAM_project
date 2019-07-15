@@ -33,16 +33,21 @@
    //map 관련 jquery문
      $(".create").click(function(){
  		var address = $(".address").text();
+ 		var latitude = $(".latitude").text();
+ 		var longitude = $(".longitude").text();
+ 		
  		$("#location").prop('value',address);
+ 		$
  	});
  	$(".nanum_create").click(function(){
  		alert("나눔생성");
- 		var a= $("#icon option:selected").val();
- 		new kakao.maps.Marker({
- 		    position: new kakao.maps.LatLng(latitude, longitude), 
- 		    image: new kakao.maps.MarkerImage(a, imageSize, imageOption) // 마커이미지 설정 
- 		}).setMap(map);  
- 		$("#create").modal("hide");  //추후에 spring연결과 함께 삭제
+//  		var a= $("#icon option:selected").val();
+//  		new kakao.maps.Marker({
+//  		    position: new kakao.maps.LatLng(latitude, longitude), 
+//  		    image: new kakao.maps.MarkerImage(a, imageSize, imageOption) // 마커이미지 설정 
+//  		}).setMap(map);  
+//  		$("#create").modal("hide");  //추후에 spring연결과 함께 삭제
+
  	});
 	});
 </script>
@@ -180,7 +185,7 @@
             </div>
 
             <!----------------------------------생성 MODAL창----------------------------------------->
-
+	<form action="insertBoard.do" method="get">
             <div id="create" class="modal fade">
                 <div class="modal-dialog">
                     <div class="modal-content modal-size">
@@ -190,39 +195,62 @@
                         </div>
                         <div class="modal-body ">
                             <div class="modal-inner-grid">
+                            <div class="form-group"> <label for="">회원 아이디 입력</label></div>
+                                <div class=""><input class="form-control" type="text"  name="c_id"
+                                        placeholder="아이디를 입력해주세요"> </div>
                                 <div class="form-group"> <label for="email">무엇을 나누실 건가요?</label></div>
-                                <div class=""><input class="form-control" type="product" id="product"
+                                <div class=""><input class="form-control" type="text" id="product" name="b_name"
                                         placeholder="물품을 입력해주세요"> </div>
                                         
                                    <div class="form-group"> <label for="email">카테고리를 선택해주세요</label></div>
                                 <div class="" style="text-align: right">
-                                <select id="icon">
-                                        <option value="./resources/image/category_icons_pin/meat_pin.png">육류</option>
-                                        <option value="./resources/image/category_icons_pin/vege_pin.png">채소류</option>
-                                        <option value="./resources/image/category_icons_pin/spam_pin.png">가공식품류</option>
-                                        <option value="./resources/image/category_icons_pin/seafood_pin.png">어패류</option>
-                                        <option value="./resources/image/category_icons_pin/fruit_pin.png">과일류</option>
-                                        <option value="./resources/image/category_icons_pin/bread_pin.png">빵류</option>
-                                        <option value="./resources/image/category_icons_pin/spice_pin.png">소스류</option>
-                                        <option value="./resources/image/category_icons_pin/nangdong_pin.png">냉동식품류</option>
-                                        <option value="./resources/image/category_icons_pin/ingredients_pin.png">기타등등</option>
+                                <select id="icon" name="cate_id">
+<!--                                         <option value="./resources/image/category_icons_pin/meat_pin.png">육류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/vege_pin.png">채소류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/spam_pin.png">가공식품류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/seafood_pin.png">어패류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/fruit_pin.png">과일류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/bread_pin.png">빵류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/spice_pin.png">소스류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/nangdong_pin.png">냉동식품류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/ingredients_pin.png">기타등등</option> -->
                                         
+                                        <option value="c0000">육류</option>
+                                        <option value="c0001">채소류</option>
+                                        <option value="c0002">가공식품류</option>
+                                        <option value="c0003">어패류</option>
+                                        <option value="c0004">과일류</option>
+                                        <option value="c0005">빵류</option>
+                                        <option value="c0006">소스류</option>
+                                        <option value="c0007">냉동식품류</option>
+                                        <option value="c0008">기타등등</option>
                                     </select></div>
                                     
-                                <div class="form-group"> <label for="email">몇명에게 나누실 건가요?</label></div>
-                                <div class="" style="text-align: right"><select>
+                                <div class="form-group"> <label for="email">몇개를 나누실 건가요?</label></div>
+                                <div class="" style="text-align: right"><select name="b_ea">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                         <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
                                     </select></div>
                                     
-                                 <div class="form-group"> <label for="email" >나눔 위치를 확인해주세요</label></div>
-                                <div class=""><input class="form-control" type="location" id="location" value="aaa"> </div>
+                                    <!-- 위도경도값 히든처리 -->
+                                <input type="hidden" name="b_latitude" value=""/>
+                                <input type="hidden" name="b_longitude" value=""/>
+                                   
+                                 <div class="form-group"> <label for="" >나눔 위치를 확인해주세요</label></div>
+                                <div class=""><input class="form-control" type="location" id="location"  name="b_location" value="aaa"> </div>
                                         
-                                        
+                                   <div class="form-group"> <label for="" >게시글 제목을 입력해주세요</label></div>
+                                <div class=""><input class="form-control" type="text" id=""  name="b_title" value="aaa"> </div> 
+                                       
                                 <div class="form-group"> <label for="email">나눔 가격을 확인해주세요</label></div>
-                                <div class=""><input class="form-control" type="price" id="price" placeholder="0">
+                                <div class=""><input class="form-control" type="price" id="price" name="b_price" placeholder="0">
                                 </div>
                                 <div class="form-group"> <label for="email">언제까지 나눔할까요?</label></div>
                                 <div class="">
@@ -234,13 +262,16 @@
                                             <option>for문 써서 24까지</option>
                                         </select><label>시</label></div>
                                 </div>
+                                 <div class="form-group"> <label for="">게시글 내용을 적어주세요</label></div>
+                                 <div class=""><input class="form-control" type="textarea"  id="" name="b_content" placeholder="내용을 입력해주세요">
+                                </div>
                                 <div class="form-group"> <label for="email">나눔 물품의 사진을 올려주세요</label></div>
                                 <div class="">
                                     <div><input type="button" class="btn-dark col-sm-12" value="이미지올리기"></div>
                                 </div>
                                 <div class="form-group"> </div>
                                 <div class="">
-                                    <div><input type="button" class="col-sm-12 nanum_create"
+                                    <div><input type="submit" class="col-sm-12 nanum_create"
                                             style="color:white; background-color: #147b6b" value="만들기"></div>
                                 </div>
                                 <div class="form-group"> </div>
@@ -257,6 +288,7 @@
                     </div>
                 </div>
             </div>
+            </form>
             <!------------------------------------------------------------------------->
             <!----------------------------------길찾기MODAL 창----------------------------------------->
 
@@ -426,8 +458,8 @@ var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_r
              longitude = String(a.substring(20,38));
              
              var content = '<div class="bAddr">' +
-                             '<span class="title">법정동 주소정보</span>' + 
-                             detailAddr + latlng +   //주소, 위도, 경도값
+                             '<span class="title">법정동 주소정보</span>' +
+                             detailAddr + '<span class="latitude" style="display:none;">'+latitude +'</span>' + '<span class="longitude" style="display:none;">'+longitude+'</span>'   //주소, 위도, 경도값
                          '</div>';
   
    // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
