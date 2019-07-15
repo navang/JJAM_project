@@ -105,7 +105,7 @@
             
              <div class="map_wrap">
     <div id="map" class="map-custom" ></div>
-    <div class="hAddr">
+    <div class="hAddr"  >
      </div><!--  end.hAddr -->
 	</div><!--  end div.map_wrap -->
      

@@ -1,31 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-  <title>Shop Homepage - Start Bootstrap Template</title>
+<title>Shop Homepage - Start Bootstrap Template</title>
 
 </head>
- <!-- Bootstrap core CSS -->
- 
-  <link rel="stylesheet" href="./resources/style/mypage1.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+<!-- Bootstrap core CSS -->
+
+<link rel="stylesheet" href="./resources/style/mypage1.css">
+<link rel="stylesheet" href="./resources/style/main.css">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
 
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -77,14 +85,15 @@
             }
         }).open();
     }
-</script> <!--주소 스크립트 end-->
+</script>
+<!--주소 스크립트 end-->
 
 <script>
   $(function(){
-      $('.listul a').each(function(){
+      $('.mypage-menu a').each(function(){
           $(this).click(function() { 
-        	  $('.listul a').css("background-color", "white");
-        	  $('.listul a').css("color", "black");
+        	  $('.mypage-menu a').css("background-color", "white");
+        	  $('.mypage-menu a').css("color", "black");
         	  $(this).css("background-color", "#147b6b");
         	  $(this).css("color", "white");
         	 activeTab = $(this).attr("rel");
@@ -132,141 +141,141 @@ $(document).ready(function(){
 <body>
 
 
-    <!-- ---------------------------------상단 고정 메뉴바--------------------------------------------->
-    
-     <h1 class="seperator"></h1>
-    <nav id="top_navcolor" class="navbar fixed-top navbar navbar-expand-xl navbar-dark">
-        <!-- fixed-top 상단고정-->
-        <div class="container">
-            <!-- 브랜드 로고 삽입-->
-            <a href="jjam_3_form.jsp" class="navbar-brand">
-                <img id="logo" class="" style="width: 60px; height: 60px;" src="./resources/image/character.png" alt=""><img src="./resources/image/JJCR_white1.png">
-            </a>
-            <!-- 햄버거 버튼-->
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#myNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- 네비게이션 버튼 -->
-            <div id="myNav" class="collapse navbar-collapse justify-content-end">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a href="" class="nav-link">HOME</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">나눔찾기(메인지도)</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">검색하기</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">챗봇</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">로그인/로그아웃</a>
-                   
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
- 
-  <!-- Page Content -->
-  <div class="container">
+	<!-- ---------------------------------상단 고정 메뉴바--------------------------------------------->
+	<h1 class="seperator"></h1>
+	<nav id="top_navcolor"
+		class="navbar fixed-top navbar navbar-expand-xl navbar-dark">
+		<!-- fixed-top 상단고정-->
+		<div class="container">
+			<!-- 브랜드 로고 삽입-->
+			<a href="jjam_3_form.jsp" class="navbar-brand"> <img id="logo"
+				class="" style="width: 60px; height: 60px;"
+				src="./resources/image/character.png" alt=""><img
+				src="./resources/image/JJCR_white1.png">
+			</a>
+			<!-- 햄버거 버튼-->
+			<button class="navbar-toggler" data-toggle="collapse"
+				data-target="#myNav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- 네비게이션 버튼 -->
+			<div id="myNav" class="collapse navbar-collapse justify-content-end">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a href="" class="nav-link">HOME</a></li>
+					<li class="nav-item"><a href="" class="nav-link">나눔찾기(메인지도)</a></li>
+					<li class="nav-item"><a href="" class="nav-link">검색하기</a></li>
+					<li class="nav-item"><a href="" class="nav-link">챗봇</a></li>
+					<li class="nav-item"><a href="" class="nav-link">로그인/로그아웃</a>
 
-    <div class="row">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-      <div class="col-lg-3 col-md-6 col-xs-3">
-          <img src="./resources/image/3.jpg" width="150px" alt="My Image">
-        <h1 class="my-4">마이페이지</h1>
-        <div class="list-group listul">
-          <a class="list-group-item" rel="jjam_6_mypage_privacy">개인정보변경</a>
-          <a class="list-group-item" rel="jjam_6_mypage_letter">댓글 및 쪽지</a>
-          <a class="list-group-item" rel="jjam_6_mypage_jjim">찜목록</a>
-          <a class="list-group-item" rel="jjam_6_mypage_payment">결제내역</a>
-        </div>
 
-      </div>
-      <!-- /.col-lg-3 -->
-      <!------------------carousel------------------------->
-      <div class="col-lg-9">
+	<!--------------------------------------본문 ------------------------------------------------------>
+	<!-- Page Content -->
+	<div class="mypage">
+		<div></div>
+		<!-- 공백 -->
+		<div class="">
+			<img width="100%" src="./resources/image/mypage_test1.png" />
+		</div>
+		<div></div>
+		<!-- 공백 -->
+		<div></div>
+		<!-- 공백 -->
+		<!-- ------------------------------------------------------------------------- -->
+		<div class=" mypage-columns ">
+			<!-- ----------------------------------------------------------------------------------------------- -->
+			<!-- ------------------------------------------------------------------------- -->
 
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      
+			
+				<div class="mypage-rows ">
+					<div style="padding:20px;">
+						<img src="./resources/image/3.jpg"
+							style="width: 200px; height: 200px; border-radius: 100px;"
+							alt="My Image">
+						<h1 class="my-4">마이페이지</h1>
+					</div>
 
-  <!--개인정보-->         
-	<div id="ddd">
+			
+				<!-- ------------------------------------------------------------------------- -->
+				<div class="mypage-menu">
+					<div><a class="list-group-item" rel="jjam_6_mypage_privacy">개인정보변경</a>
+					</div>
+					<div><a class="list-group-item" rel="jjam_6_mypage_letter">댓글 및 쪽지</a>
+					</div>
+					<div><a class="list-group-item" rel="jjam_6_mypage_jjim">찜목록</a>
+					</div>
+					<div><a class="list-group-item" rel="jjam_6_mypage_payment">결제내역</a>
+					</div>
+
+				</div>
+			</div>
+				<!-- ------------------------------------------------------------------------- -->
+	
+			<!-- ------------------------------------------------------------------------- -->
+			<div class="">
+			<div id="ddd"></div>
+			</div>
+			
+		</div>
+
 	</div>
-<!-- ----------------------------- 본문_댓글및쪽지 ------------------------------------------------>
+	<!-- Footer -->
+	
+	<footer class="py-5 bg-dark footer">
+		<div class="container">
+			<p class="m-0 text-center text-white">Copyright &copy; Your
+				Website 2019</p>
+		</div>
+
+	</footer>
+
+
+	<!----------------------------------쪽지 modal 창----------------------------------------->
+
+	<div class="modal" tabindex="-1" id="comment">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"
+					style="display: grid; grid-template-columns: 30% 40% 30%;">
+					<div></div>
+					<div class="modal-title" style="text-align: center">
+						<img src="./resources/image/letter.png" width="100px">
+					</div>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>양파좀 네고해주세요</p>
+					<p class="text-secondary">
+						<small>님 양파 네고좀</small>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">닫기</button>
+					<button type="button" class="btn btn-primary">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
-      <!----------------------------------쪽지 modal 창----------------------------------------->
 
-      <div class="modal" tabindex="-1" id="comment">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header" style="display: grid; grid-template-columns:30% 40% 30%;">
-                    <div></div>
-                      <div class="modal-title" style="text-align: center"><img src="./resources/image/letter.png" width="100px"></div>
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>                
-                  </div>
-                  <div class="modal-body">
-                      <p>양파좀 네고해주세요</p>
-                      <p class="text-secondary"><small>님 양파 네고좀</small></p>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-                      <button type="button" class="btn btn-primary">확인</button>
-                  </div>
-              </div>
-          </div>
-      </div>
+	<!-- /.container -->
 
 
-        <!------------------- 찜목록 ------------------------->
-       
 
+	<!-- <div class="footer fixed-bottom">copylight</div> -->
 
-       <!------------------- 결제내역 ------------------------->
-      
-
-
-</div> <!--/.cal-lg-9-->
-    
-
-</div> <!--/.row-->
-  </div>
-  <!-- /.container -->
-
-  <!-- Footer -->
-   <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-     
- </footer> 
-
- <!-- <div class="footer fixed-bottom">copylight</div> -->
-
-  <!-- Bootstrap core JavaScript -->
-<script src="./resources/image/vendor/jquery/jquery.min.js"></script> 
-  <script src="./resources/image/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="./resources/image/vendor/jquery/jquery.min.js"></script>
+	<script
+		src="./resources/image/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
