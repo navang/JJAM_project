@@ -17,14 +17,10 @@ public class BoardService {
 	public void insertBoard(BoardVO vo) {
 		boardDAO.insertBoard(vo);
 	}
-<<<<<<< HEAD
-	
-=======
 	public void viewBoard() {
 		boardDAO.viewBoard();
 	}
 	public List<BoardAndCateVO> viewBoard1(BoardAndCateVO vo){
 		return boardDAO.viewBoard1(vo);
 	}
->>>>>>> 7e8d138b3c3659399a8a16a82dfa3c7f7c505097
 }

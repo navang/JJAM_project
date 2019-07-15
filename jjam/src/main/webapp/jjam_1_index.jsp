@@ -123,12 +123,9 @@
              <div class=""></div>
              <div class=""></div>
              <div class=""></div> 
-<<<<<<< HEAD
+
              <button class="btn btn-primary" type="button"  onclick="location.href='customerLogin.do'">지금 바로 시작하세요 </button><!--다음페이지 링크 버튼-->
-=======
-             <button class="btn btn-primary" type="button"><a href="./jjam_3_form.jsp">지금 바로 시작하세요</a></button><!--다음페이지 링크 버튼-->
->>>>>>> 7e8d138b3c3659399a8a16a82dfa3c7f7c505097
-             <div class=""></div>
+            <div class=""></div>
         
               
             </div>

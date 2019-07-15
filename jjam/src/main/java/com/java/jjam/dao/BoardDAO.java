@@ -2,7 +2,6 @@ package com.java.jjam.dao;
 
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -21,9 +20,6 @@ public class BoardDAO {
 		System.out.println("mybatis insertBoard 실행");
 		mybatis.insert("Board.insertBoard", vo);
 	}
-<<<<<<< HEAD
-	
-=======
 	public void viewBoard() {
 		System.out.println("mybatis viewBoard 실행");
 		mybatis.select("Board.viewBoard", null);
@@ -34,5 +30,4 @@ public class BoardDAO {
 		
 		return list;
 	}
->>>>>>> 7e8d138b3c3659399a8a16a82dfa3c7f7c505097
 }

@@ -1,13 +1,10 @@
 package com.java.jjam.controller;
 
 import java.io.IOException;
-<<<<<<< HEAD
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
-=======
-import java.util.List;
->>>>>>> 7e8d138b3c3659399a8a16a82dfa3c7f7c505097
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +38,6 @@ public class BoardController {
 			public void insertBoard(BoardVO vo) throws IOException {
 				boardService.insertBoard(vo);
 			}
-<<<<<<< HEAD
 
 			@Autowired
 			private CustomerService customerService;
@@ -81,7 +77,7 @@ public class BoardController {
 				mv.setViewName("/customerJoin_done");
 				return mv;
 			}
-=======
+
 			@RequestMapping("/jjam_3_form.do")
 			public void viewBoard(BoardAndCateVO vo, Model model) {
 				List<BoardAndCateVO> list = boardService.viewBoard1(vo);
@@ -93,9 +89,5 @@ public class BoardController {
 				JSONArray jsonArray = new JSONArray();
 				model.addAttribute("jsonList", jsonArray.fromObject(list));
 			}
-			
-			
->>>>>>> 7e8d138b3c3659399a8a16a82dfa3c7f7c505097
-			
-			
+						
 }
