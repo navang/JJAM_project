@@ -26,7 +26,10 @@ public class BoardController {
 			public void insertBoard(BoardVO vo) throws IOException {
 				boardService.insertBoard(vo);
 			}
-			
+			@RequestMapping("/jjam_3_form.do")
+			public void viewBoard() {
+				
+			}
 			
 			
 			
