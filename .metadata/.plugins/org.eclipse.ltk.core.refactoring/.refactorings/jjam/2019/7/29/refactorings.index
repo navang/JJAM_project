@@ -3,9 +3,14 @@
 1563085677211	Delete elements
 1563085691777	Delete element
 1563085787497	Move file
+<<<<<<< HEAD
 1563163462845	Delete element
 1563163499788	Copy file
 1563167994972	Copy compilation unit
 1563168177364	Copy compilation unit
 1563170623899	Copy file
 1563170949857	Copy file
+=======
+1563158912496	Copy file
+1563158918795	Delete element
+>>>>>>> 7e8d138b3c3659399a8a16a82dfa3c7f7c505097

@@ -10,6 +10,6 @@
 
 게시글 등록이 완료되었습니다
 
-<a href="../../jjam_3_form.jsp">이전화면으로</a>
+<a href="jjam_3_form.do">이전화면으로</a>
 </body>
 </html>

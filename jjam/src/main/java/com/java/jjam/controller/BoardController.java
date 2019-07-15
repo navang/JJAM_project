@@ -1,21 +1,29 @@
 package com.java.jjam.controller;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.util.Date;
 
 import javax.servlet.http.HttpSession;
+=======
+import java.util.List;
+>>>>>>> 7e8d138b3c3659399a8a16a82dfa3c7f7c505097
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.java.jjam.domain.BoardAndCateVO;
 import com.java.jjam.domain.BoardVO;
 import com.java.jjam.domain.CustomerVO;
 import com.java.jjam.service.BoardService;
 import com.java.jjam.service.CustomerService;
+
+import net.sf.json.JSONArray;
 
 @Controller
 public class BoardController {
@@ -33,6 +41,7 @@ public class BoardController {
 			public void insertBoard(BoardVO vo) throws IOException {
 				boardService.insertBoard(vo);
 			}
+<<<<<<< HEAD
 
 			@Autowired
 			private CustomerService customerService;
@@ -72,6 +81,21 @@ public class BoardController {
 				mv.setViewName("/customerJoin_done");
 				return mv;
 			}
+=======
+			@RequestMapping("/jjam_3_form.do")
+			public void viewBoard(BoardAndCateVO vo, Model model) {
+				List<BoardAndCateVO> list = boardService.viewBoard1(vo);
+				for(BoardAndCateVO a:list) {
+				System.out.println(a.getB_date());
+				}
+				
+			//mybatis에서 받아온 list값을 json구조의 array로 변환
+				JSONArray jsonArray = new JSONArray();
+				model.addAttribute("jsonList", jsonArray.fromObject(list));
+			}
+			
+			
+>>>>>>> 7e8d138b3c3659399a8a16a82dfa3c7f7c505097
 			
 			
 }

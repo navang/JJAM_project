@@ -12,6 +12,7 @@
 		<typeAlias type="com.java.jjam.domain.JjimVO" alias="jjimVO"/>
 		<typeAlias type="com.java.jjam.domain.LetterVO" alias="letterVO"/>
 		<typeAlias type="com.java.jjam.domain.PaymentVO" alias="paymentVO"/>
+		<typeAlias type="com.java.jjam.domain.BoardAndCateVO" alias="boardAndCateVO"/>
 	</typeAliases>
 
 
