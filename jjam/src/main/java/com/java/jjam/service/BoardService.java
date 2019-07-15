@@ -14,4 +14,5 @@ public class BoardService {
 	public void insertBoard(BoardVO vo) {
 		boardDAO.insertBoard(vo);
 	}
+	
 }

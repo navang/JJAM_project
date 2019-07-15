@@ -123,7 +123,7 @@
              <div class=""></div>
              <div class=""></div>
              <div class=""></div> 
-             <button class="btn btn-primary" type="button">지금 바로 시작하세요 </button><!--다음페이지 링크 버튼-->
+             <button class="btn btn-primary" type="button"  onclick="location.href='customerLogin.do'">지금 바로 시작하세요 </button><!--다음페이지 링크 버튼-->
              <div class=""></div>
         
               

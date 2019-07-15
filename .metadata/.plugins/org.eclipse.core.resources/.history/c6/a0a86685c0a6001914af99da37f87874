@@ -1,0 +1,30 @@
+package com.java.jjam.dao;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.java.jjam.domain.BoardVO;
+import com.java.jjam.domain.CustomerVO;
+
+@Repository
+public class BoardDAO {
+	@Autowired
+	private SqlSessionTemplate mybatis;
+	
+	public void insertBoard(BoardVO vo) {
+		System.out.println("mybatis insertBoard 실행");
+		mybatis.insert("Board.insertBoard", vo);
+	}
+	
+	public void idCheck(CustomerVO vo) {
+		System.out.println("mybatis idCheck 실행");
+		mybatis.selectOne("Customer.idCheck", vo);
+		
+	}
+	public void InsertCustomer(CustomerVO vo) {
+		System.out.println("mybatis insertCustomer 실행");
+		mybatis.insert("Customer.InsertCutomer", vo);
+	}
+	
+}
