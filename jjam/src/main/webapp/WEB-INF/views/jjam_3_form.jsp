@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,7 @@
     <script>
 	$(function(){
    	 $('#info').modal('show');// 페이지 진입시 레이어팝업 modal#info 실행
-	
+
    //map 관련 jquery문
      $(".create").click(function(){
  		var address = $(".address").text();
@@ -156,7 +157,7 @@
                                 <div>
                                     <div>
                                             <li>(uesrId) 님의 나눔</li>
-                                            <li>품목 &nbsp; : 디비에서 가져온 값</li>
+                                            <li>품목 &nbsp; : ${list[0].c_id}</li>
                                             <li>위치 &nbsp; : 디비에서 가져온 값</li>
                                             <li>가격 &nbsp; : 디비에서 가져온 값</li>
                                             <li>날짜 &nbsp; : 디비에서 가져온 값</li>
@@ -406,8 +407,22 @@
 </body>
 
 <!-- --------------------map api script------------------------------------------ -->
+<!-- <script> -->
+<!-- controller에서 가져온 값을 json으로 변환 -->
+<!-- $(function(){ -->
 
+<!-- 	console.log(json); -->
+<!-- 	alert(json[0].b_date); -->
+<!--  }); -->
+
+
+
+<!-- </script> -->
 <script>
+//controller에서 가져온 jsonArray를 파싱
+var jsonList = JSON.parse('${jsonList}');
+
+//map api
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(37.54699, 127.09598), // 지도의 중심좌표
@@ -455,8 +470,10 @@ var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_r
              
              //위도, 경도
              var a = String(latlng);
-             latitude = String(a.substring(1,18));
-             longitude = String(a.substring(20,38));
+            var latitude1 = String(a.substring(1,18));
+            var latitude = String(latitude1.split(","));
+            var longitude1 = String(a.substring(20,38));
+            var longitude = String(longitude1.split(")"))
              
              var content = '<div class="bAddr">' +
                              '<span class="title">법정동 주소정보</span>' +
@@ -472,24 +489,48 @@ var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_r
         
     });
     });
-   
+
     
-    
-// 마커가 지도 위에 표시되도록 설정합니다
+// db값 마커에 입력
+
+for(var i =0; i<jsonList.length; i++){
+	
+	
+marker = new kakao.maps.Marker({
+	map: map,
+    position: new kakao.maps.LatLng(jsonList[i].b_latitude, jsonList[i].b_longitude), 
+    image: new kakao.maps.MarkerImage(jsonList[i].cate_image, imageSize, imageOption) // 마커이미지 설정 
+});
+
+// 마커에 표시할 인포윈도우를 생성합니다 
+infowindow1 = new kakao.maps.InfoWindow({
+    content: '<div id='+"'"+jsonList[i].b_no+"'"+'>'+jsonList[i].b_no+'</div>' // 인포윈도우에 표시할 내용
+});
 
 
-new kakao.maps.Marker({
-    position: new kakao.maps.LatLng(37.43699, 127.09598), 
-    image: new kakao.maps.MarkerImage("./resources/image/category_icons_pin/meat_pin.png", imageSize, imageOption) // 마커이미지 설정 
-}).setMap(map);  
-new kakao.maps.Marker({
-    position: new kakao.maps.LatLng(36.54699, 127.09598), 
-    image: new kakao.maps.MarkerImage("./resources/image/category_icons_pin/ingredients_pin.png", imageSize, imageOption) // 마커이미지 설정 
-}).setMap(map);  
-new kakao.maps.Marker({
-    position: new kakao.maps.LatLng(36.24699, 127.09598), 
-    image: new kakao.maps.MarkerImage("./resources/image/category_icons_pin/seafood_pin.png", imageSize, imageOption) // 마커이미지 설정 
-}).setMap(map);  
+// 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+// 이벤트 리스너로는 클로저를 만들어 등록합니다 
+// for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow1));
+kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow1));
+
+}
+//인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+function makeOverListener(map, marker, infowindow1) {
+    return function() {
+        infowindow1.open(map, marker);
+    };
+}
+
+// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+function makeOutListener(infowindow1) {
+    return function() {
+        infowindow1.close();
+    };
+}
+
+
+
 
 
 //중심 좌표나 확대 수준이 변경됐을 때 지도 중심 좌표에 대한 주소 정보를 표시하도록 이벤트를 등록합니다

@@ -1,9 +1,15 @@
 package com.java.jjam.dao;
 
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.java.jjam.domain.BoardAndCateVO;
 import com.java.jjam.domain.BoardVO;
 
 @Repository
@@ -14,5 +20,15 @@ public class BoardDAO {
 	public void insertBoard(BoardVO vo) {
 		System.out.println("mybatis insertBoard 실행");
 		mybatis.insert("Board.insertBoard", vo);
+	}
+	public void viewBoard() {
+		System.out.println("mybatis viewBoard 실행");
+		mybatis.select("Board.viewBoard", null);
+	}
+	public List<BoardAndCateVO> viewBoard1(BoardAndCateVO vo){
+		System.out.println("mybatis viewBoard1 실행");
+		List<BoardAndCateVO> list = mybatis.selectList("Board.viewBoard", vo);
+		
+		return list;
 	}
 }
