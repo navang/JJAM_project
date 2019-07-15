@@ -14,11 +14,25 @@ public class BoardVO {  //게시판
 	private int b_ea; //게시판 제품 갯수
 	private String cate_id; //카테고리id fk
 	private String c_id; //회원id fk
-	
+	private String b_latitude; //게시판 위도값
+	private String b_longitude; //게시판 경도값
 	
 	
 	
 	//getter, setter
+	public String getB_latitude() {
+		return b_latitude;
+	}
+	public void setB_latitude(String b_latitude) {
+		this.b_latitude = b_latitude;
+	}
+	public String getB_longitude() {
+		return b_longitude;
+	}
+	public void setB_longitude(String b_longitude) {
+		this.b_longitude = b_longitude;
+	}
+	
 	public int getB_no() {
 		return b_no;
 	}
