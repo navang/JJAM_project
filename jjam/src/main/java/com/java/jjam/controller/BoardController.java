@@ -81,13 +81,11 @@ public class BoardController {
 			@RequestMapping("/jjam_3_form.do")
 			public void viewBoard(BoardAndCateVO vo, Model model) {
 				List<BoardAndCateVO> list = boardService.viewBoard1(vo);
-				for(BoardAndCateVO a:list) {
-				System.out.println(a.getB_date());
-				}
-				
+		
 			//mybatis에서 받아온 list값을 json구조의 array로 변환
 				JSONArray jsonArray = new JSONArray();
 				model.addAttribute("jsonList", jsonArray.fromObject(list));
+				model.addAttribute("list",list);
 			}
 						
 }
