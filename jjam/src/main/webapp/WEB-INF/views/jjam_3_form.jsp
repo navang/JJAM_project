@@ -156,11 +156,11 @@
                             <div class="modal-inner-grid">
                                 <div>
                                     <div>
-                                            <li>(uesrId) 님의 나눔</li>
-                                            <li>품목 &nbsp; : ${list[0].c_id}</li>
-                                            <li>위치 &nbsp; : 디비에서 가져온 값</li>
-                                            <li>가격 &nbsp; : 디비에서 가져온 값</li>
-                                            <li>날짜 &nbsp; : 디비에서 가져온 값</li>
+                                            <li>${l} 님의 나눔</li>
+                                            <li>품목 &nbsp; : ${list[0].b_name}</li>
+                                            <li>위치 &nbsp; : ${list[0].b_location}</li>
+                                            <li>가격 &nbsp; : ${list[0].b_price}</li>
+                                            <li>날짜 &nbsp; : ${list[0].b_date}</li>
                                     </div>
                                     <div class="col-lg-12"
                                         style="display: grid; grid-template-columns:50% 50%; grid-template-rows:50% 50%;">
@@ -353,10 +353,10 @@
                                     <div>
                                         <div>
                                             <li>(uesrId) 님의 나눔</li>
-                                            <li>품목 &nbsp; : 디비에서 가져온 값</li>
-                                            <li>위치 &nbsp; : 디비에서 가져온 값</li>
-                                            <li>가격 &nbsp; : 디비에서 가져온 값</li>
-                                            <li>날짜 &nbsp; : 디비에서 가져온 값</li>
+                                            <li>품목 &nbsp; : ${list[0].b_name}</li>
+                                            <li>위치 &nbsp; : ${list[0].b_location}</li>
+                                            <li>가격 &nbsp; : ${list[0].b_price}</li>
+                                            <li>날짜 &nbsp; : ${list[0].b_date}</li>
 
                                             <li><input type="checkbox" class="checkbox"> 위의 내용을 확인 하셨습니까?</li>
                                         </div>
@@ -513,11 +513,15 @@ infowindow1 = new kakao.maps.InfoWindow({
 // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
 kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow1));
 kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow1));
+kakao.maps.event.addListener(marker, 'click', function(){
+	$("#join").modal("show");
+});
 
 }
 //인포윈도우를 표시하는 클로저를 만드는 함수입니다 
 function makeOverListener(map, marker, infowindow1) {
     return function() {
+    	
         infowindow1.open(map, marker);
     };
 }
