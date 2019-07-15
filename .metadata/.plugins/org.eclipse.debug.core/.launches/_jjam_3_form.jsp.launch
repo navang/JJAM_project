@@ -2,7 +2,11 @@
 <launchConfiguration type="org.eclipse.wst.server.ui.launchConfigurationType">
 <stringAttribute key="client-id" value="org.eclipse.wst.server.ui.web"/>
 <stringAttribute key="launchable-adapter-id" value="org.eclipse.jst.server.tomcat.web"/>
+<<<<<<< HEAD:.metadata/.plugins/org.eclipse.debug.core/.launches/_jjam_1_index.jsp.launch
+<stringAttribute key="module-artifact" value="org.eclipse.jst.jee.server:jjam///jjam_1_index.jsp"/>
+=======
 <stringAttribute key="module-artifact" value="org.eclipse.jst.jee.server:jjam///jjam_3_form.jsp"/>
+>>>>>>> 7e8d138b3c3659399a8a16a82dfa3c7f7c505097:.metadata/.plugins/org.eclipse.debug.core/.launches/_jjam_3_form.jsp.launch
 <stringAttribute key="module-artifact-class" value="org.eclipse.wst.server.core.util.WebResource"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/jjam"/>

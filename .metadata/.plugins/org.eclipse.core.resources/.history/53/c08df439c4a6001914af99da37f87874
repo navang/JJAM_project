@@ -1,0 +1,22 @@
+package com.java.jjam.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.java.jjam.dao.CustomerDAO;
+import com.java.jjam.domain.CustomerVO;
+
+@Service
+public class CustomerService {
+	@Autowired
+	private CustomerDAO customerDAO;
+	
+	public void idCheck(CustomerVO vo) {
+		customerDAO.idCheck(vo);
+	}
+	
+	public void insertCustomer(CustomerVO vo) {
+		customerDAO.insertCustomer(vo);
+	}
+	
+}
