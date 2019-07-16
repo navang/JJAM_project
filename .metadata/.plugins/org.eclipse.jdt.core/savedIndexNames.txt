@@ -2,7 +2,6 @@ INDEX VERSION 1.131+C:\Users\navan\Documents\Spring\Jjam_teamproject\.metadata\.
 159419129.index
 2899198020.index
 1502919148.index
-1711262533.index
 2384876506.index
 416869917.index
 1289699494.index
@@ -15,7 +14,6 @@ INDEX VERSION 1.131+C:\Users\navan\Documents\Spring\Jjam_teamproject\.metadata\.
 2935430240.index
 288477893.index
 2129821187.index
-1874516475.index
 2341294296.index
 1152937124.index
 1478822665.index

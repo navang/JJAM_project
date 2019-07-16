@@ -1,3 +1,8 @@
 #Tomcat publish data
-#Tue Jul 16 10:21:13 KST 2019
+#Tue Jul 16 10:23:22 KST 2019
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Playdata\\.m2\\repository\\org\\springframework\\spring-web\\5.0.8.RELEASE\\spring-web-5.0.8.RELEASE.jar=WEB-INF/lib/spring-web-5.0.8.RELEASE.jar
+>>>>>>>=4be300e34becff37bc0c9054084d0d13c6a9af3c
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\navan\\.m2\\repository\\org\\springframework\\spring-web\\5.0.8.RELEASE\\spring-web-5.0.8.RELEASE.jar=WEB-INF/lib/spring-web-5.0.8.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\saqwz\\.m2\\repository\\org\\springframework\\spring-web\\5.0.8.RELEASE\\spring-web-5.0.8.RELEASE.jar=WEB-INF/lib/spring-web-5.0.8.RELEASE.jar
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
