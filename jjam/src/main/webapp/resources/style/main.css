@@ -153,7 +153,7 @@ body{
 .search{
     display : grid;
     grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 100px 60% 40px 50px 20px;
+    grid-template-rows: 100px 300px 40px 50px 20px;
 }
 .search-grid {
    
@@ -214,12 +214,12 @@ body{
     padding: 10px;
 }
 
+
 /* 5*5 그리드 */
 #grid{
     display: grid;
     text-align: center;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows:20% 20% 20% 20% 20%;
+    grid-template-columns:150px 150px 150px 150px 150px 150px;
 }
 /* 메인 1 페이지  */
 .wrapper {
@@ -279,9 +279,16 @@ body{
     }
     .search{
         display : grid;
-        grid-template-columns: 10% 80% 10%;
-        grid-template-rows: 100px 100px 30px 30px 20px ;
+        grid-template-columns: 0px 100% 0px;
+        grid-template-rows: 100px 600px 30px 30px 20px ;
     }
+      /* 5*5 그리드 */
+    #grid{
+    display: grid;
+    text-align: center;
+    grid-template-columns:160px 160px 160px;
+}
+    
     .wrapper {
     display: grid;
     grid-template-columns: 5% 90% 5% ;

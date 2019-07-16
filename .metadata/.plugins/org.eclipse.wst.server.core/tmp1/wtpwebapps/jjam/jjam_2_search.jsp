@@ -68,36 +68,20 @@
     <div></div><!-- 그리드 왼쪽 공백-->
     <div>
    
-         <div id="grid">
-             <!-- 검색 아이콘이들어가는 내부 그리드-->
-             <!-- 버튼 기능 처리해줄까-->
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div></div>
-             <div></div>
-             <div></div>
-             <div></div>
-             <div></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div></div>
-             <div></div>
-             <div></div>
-             <div></div>
-             <div></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-             <div><img src="./resources/image/search-icon.png" class="w-100"></div>
-        </div>
-         
+      <div id="grid">
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/bread_icon.png" alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/fruit_icon.png" alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/ingredients_icon.png" alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/meat_icon.png" alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/nangdong_icon.png" alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/seafood_icon.png" alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/spam_icon.png" alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/spice_icon.png" alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/vege_icon.png" alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/recent_icon.png"alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/nearby_icon.png"alt=""></div>
+             <div style="padding: 10px;"><img src="./resources/image/category_icon/hottem_icon.png"alt=""></div>
+          </div>
                 
     </div>
     <div></div>    <!-- 그리드 오른쪽공백-->  
