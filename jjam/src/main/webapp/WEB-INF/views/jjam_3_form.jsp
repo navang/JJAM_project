@@ -22,7 +22,22 @@
         crossorigin="anonymous"></script>
     <!-- https://getbootstrap.com/docs/4.3/getting-started/introduction/ 부트스트랩에서 가져옴-->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=313dc2a3dad52079f42012b67c645f76&libraries=services"></script>
-
+   <style>
+    .wrap {position: absolute;left: 70px;bottom: -33px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+    .wrap * {padding: 0;margin: 0;}
+    .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+    .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+    .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
+    .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+    .info .close:hover {cursor: pointer;}
+    .info .body {position: relative;overflow: hidden;}
+    .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
+    .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+    .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
+    .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+    .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+    .info .link {color: #5085BB;}
+</style>
 
     <link rel="stylesheet" href="./resources/style/main.css" >
     
@@ -144,47 +159,8 @@
         
 
             <!----------------------------------참여 MODAL창----------------------------------------->
-
-            <div id="join" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content modal-size">
-                        <div class="modal-header">
-                            <h4>나눔에 참여하기 </h4>
-                         
-                        </div>
-                        <div class="modal-body ">
-                            <div class="modal-inner-grid">
-                                <div>
-                                    <div>
-                                            <li>${l} 님의 나눔</li>
-                                            <li>품목 &nbsp; : ${list[0].b_name}</li>
-                                            <li>위치 &nbsp; : ${list[0].b_location}</li>
-                                            <li>가격 &nbsp; : ${list[0].b_price}</li>
-                                            <li>날짜 &nbsp; : ${list[0].b_date}</li>
-                                    </div>
-                                    <div class="col-lg-12"
-                                        style="display: grid; grid-template-columns:50% 50%; grid-template-rows:50% 50%;">
-                                        <input type="button" class="col-sm-12"
-                                            style="color:white; background-color: #147b6b" value="참여하기" data-toggle="modal" data-target="#pay">
-                                        <input type="button" class="col-sm-12"
-                                            style="color:white; background-color: #f37f7f" value="찜 하기">
-                                        <input type="button" class="col-sm-12"  data-dismiss="modal"
-                                            style="color:white; background-color: #999999" value="취소">
-                                        <input type="button" class="col-sm-12"
-                                            style="color:white; background-color: #558ccf" value="길찾기"
-                                            data-toggle="modal" data-target="#road">
-                                    </div>
-                                </div>
-                                <div><img src="./resources/image/apple.jpg" class="w-100 h-100" alt=""></div>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+	<div id="jjoin"></div>
+           
 
             <!----------------------------------생성 MODAL창----------------------------------------->
 	<form action="insertBoard.do" method="get">
@@ -353,10 +329,10 @@
                                     <div>
                                         <div>
                                             <li>(uesrId) 님의 나눔</li>
-                                            <li>품목 &nbsp; : ${list[0].b_name}</li>
-                                            <li>위치 &nbsp; : ${list[0].b_location}</li>
-                                            <li>가격 &nbsp; : ${list[0].b_price}</li>
-                                            <li>날짜 &nbsp; : ${list[0].b_date}</li>
+                                            <li>품목 </li>
+                                            <li>위치 </li>
+                                            <li>가격 </li>
+                                            <li>날짜 </li>
 
                                             <li><input type="checkbox" class="checkbox"> 위의 내용을 확인 하셨습니까?</li>
                                         </div>
@@ -472,8 +448,9 @@ var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_r
              var a = String(latlng);
             var latitude1 = String(a.substring(1,18));
             var latitude = String(latitude1.split(","));
-            var longitude1 = String(a.substring(20,38));
-            var longitude = String(longitude1.split(")"))
+            var longitude2 = String(a.substring(20,38));
+            var longitude1 = String(longitude2.split(")"))
+            var longitude = String(longitude1.split(","))
              
              var content = '<div class="bAddr">' +
                              '<span class="title">법정동 주소정보</span>' +
@@ -504,8 +481,35 @@ marker = new kakao.maps.Marker({
 
 // 마커에 표시할 인포윈도우를 생성합니다 
 infowindow1 = new kakao.maps.InfoWindow({
-    content: '<div id='+"'"+jsonList[i].b_no+"'"+'>'+jsonList[i].b_no+'</div>' // 인포윈도우에 표시할 내용
+    content:
+    	'<div class="wrap">' + 
+        '    <div class="info">' + 
+        '        <div class="title" id="BTITLE">' + 
+       				 jsonList[i].b_title + 
+        '        </div>' + 
+        '        <div class="body">' + 
+        '            <div class="img">' +
+        '                <img src='+"'"+jsonList[i].cate_image+"'"+'width="73" height="70">'+
+        '           </div>'+ 
+        '            <div class="desc">' + 
+        '                <span class="ellipsis">내용 : </span><span id="BCONTENT">'+jsonList[i].b_content+'</span></br>'+ 
+        '                <span class="jibun ellipsis">가격 :'+'</span>'+'<span id="BPRICE">'+jsonList[i].b_price+'</span></br>' + 
+        '                <div></div>' + 
+        '            </div>' + 
+        '        </div>' + 
+        '    </div>' +    
+        '<span id="CID" style="display:none;">'+ jsonList[i].c_id+'</span></br>'+
+        '<span id="BDATE" style="display:none;">'+jsonList[i].b_date+'</span></br>'+
+        '<span id="BLOCATION" style="display:none;">'+jsonList[i].b_location+'</span></br>'+
+        '</div>'
+
 });
+
+
+
+
+
+'</div>'
 
 
 // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
@@ -513,8 +517,35 @@ infowindow1 = new kakao.maps.InfoWindow({
 // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
 kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow1));
 kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow1));
+
+
+//지도위 핀을 클릭했을때 모달에 연결
 kakao.maps.event.addListener(marker, 'click', function(){
-	$("#join").modal("show");
+$("#jjoin").empty();
+	$.ajax({
+		type:"POST",
+		url : "jjam_3_form.do",
+		data : 
+			{"b_title" : $("#BTITLE").text(),
+			 "c_id" : $("#CID").text(),
+			 "b_content" : $("#BCONTENT").text(),
+			 "b_price" : $("#BPRICE").text(),
+			 "b_location" : $("#BLOCATION").text(),
+			 "b_date" : $("#BDATE").text()
+			 },
+	
+		success: function(data){
+			alert("성공");
+			console.log(data);
+			$("#jjoin").html(data);
+			$("#join").css("display","block");
+			
+		},
+		error: function(){
+			alert("실패")
+		}
+		
+	});
 });
 
 }

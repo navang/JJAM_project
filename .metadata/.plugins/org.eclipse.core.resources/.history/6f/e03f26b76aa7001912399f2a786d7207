@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <div id="join" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-size">
+                        <div class="modal-header">
+                            <h4>나눔에 참여하기 </h4>
+                         
+                        </div>
+                        <div class="modal-body ">
+                            <div class="modal-inner-grid">
+                                <div>
+                                    <div>
+                                            <li>${l} 님의 나눔</li>
+                                            <li>품목 &nbsp; : ${b_no}</li>
+                                            <li>위치 &nbsp; : ${list[0].b_location}</li>
+                                            <li>가격 &nbsp; : ${list[0].b_price}</li>
+                                            <li>날짜 &nbsp; : ${list[0].b_date}</li>
+                                    </div>
+                                    <div class="col-lg-12"
+                                        style="display: grid; grid-template-columns:50% 50%; grid-template-rows:50% 50%;">
+                                        <input type="button" class="col-sm-12"
+                                            style="color:white; background-color: #147b6b" value="참여하기" data-toggle="modal" data-target="#pay">
+                                        <input type="button" class="col-sm-12"
+                                            style="color:white; background-color: #f37f7f" value="찜 하기">
+                                        <input type="button" class="col-sm-12"  data-dismiss="modal"
+                                            style="color:white; background-color: #999999" value="취소">
+                                        <input type="button" class="col-sm-12"
+                                            style="color:white; background-color: #558ccf" value="길찾기"
+                                            data-toggle="modal" data-target="#road">
+                                    </div>
+                                </div>
+                                <div><img src="./resources/image/apple.jpg" class="w-100 h-100" alt=""></div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</body>
+</html>
