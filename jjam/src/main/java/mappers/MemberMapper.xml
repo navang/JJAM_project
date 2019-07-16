@@ -21,7 +21,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<result property="b_latitude" column="b_latitude"/>
 	<result property="b_longitude" column="b_longitude"/>
 	<result property="cate_name" column="cate_name"/>
-	<result property="cate_image" column="cate_image"/>
+	<result property="cate_image" column="cate_image"/>	
+	<result property="cate_icon" column="cate_icon"/>
+	<result property="cate_ename" column="cate_ename"/>
 	
 	</resultMap>
 	

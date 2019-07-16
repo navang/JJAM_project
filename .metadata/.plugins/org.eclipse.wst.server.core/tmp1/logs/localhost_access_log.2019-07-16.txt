@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 127.0.0.1 - - [16/Jul/2019:10:24:57 +0900] "GET / HTTP/1.1" 404 1115
 0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:25:00 +0900] "GET /basic/jjam_3_form.jsp HTTP/1.1" 200 227
 0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:25:02 +0900] "GET /basic/jjam_3_form.do HTTP/1.1" 500 30918
@@ -1335,3 +1336,27 @@
 0:0:0:0:0:0:0:1 - - [16/Jul/2019:18:33:49 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2891
 0:0:0:0:0:0:0:1 - - [16/Jul/2019:18:33:50 +0900] "GET /basic/resources/font/NanumSquareR.woff HTTP/1.1" 404 1086
 0:0:0:0:0:0:0:1 - - [16/Jul/2019:18:34:03 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2894
+=======
+127.0.0.1 - - [16/Jul/2019:10:21:20 +0900] "GET / HTTP/1.1" 404 1115
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/jjam_2_search.jsp HTTP/1.1" 200 7775
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/character.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/JJCR_white1.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/style/main.css HTTP/1.1" 200 6727
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/fruit_icon.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/bread_icon.png HTTP/1.1" 200 6450
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/meat_icon.png HTTP/1.1" 200 8462
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/ingredients_icon.png HTTP/1.1" 200 6133
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/seafood_icon.png HTTP/1.1" 200 7393
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/nangdong_icon.png HTTP/1.1" 200 6509
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/spice_icon.png HTTP/1.1" 200 7031
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/spam_icon.png HTTP/1.1" 200 7136
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/pa.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/apple.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/recent_icon.png HTTP/1.1" 200 18508
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/hottem_icon.png HTTP/1.1" 200 12529
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/nearby_icon.png HTTP/1.1" 200 8331
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/category_icon/vege_icon.png HTTP/1.1" 200 8069
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/image/carrot.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:22 +0900] "GET /jjam/resources/font/NanumSquareR.woff HTTP/1.1" 404 1086
+0:0:0:0:0:0:0:1 - - [16/Jul/2019:10:21:23 +0900] "GET /favicon.ico HTTP/1.1" 404 1126
+>>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a

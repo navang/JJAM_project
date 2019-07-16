@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.java.jjam.domain.BoardAndCateVO;
+import com.java.jjam.domain.BoardByCateVO;
 import com.java.jjam.domain.BoardVO;
 import com.java.jjam.domain.CustomerVO;
 import com.java.jjam.service.BoardService;
@@ -47,7 +48,11 @@ public class BoardController {
 			}
 
 			
+<<<<<<< HEAD
 			//아이디체크
+=======
+			//아이디 중복확인
+>>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
 			@RequestMapping(value="idCheck.do", produces="applicateion/text; charset=UTF-8")
 			@ResponseBody
 			public String idCheck(CustomerVO vo) {
@@ -57,7 +62,10 @@ public class BoardController {
 				System.out.println("##idCheck controller##");
 				return result;
 			}
+<<<<<<< HEAD
 			
+=======
+>>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
 			//로그인
 			@RequestMapping("Login.do")
 			public String login(CustomerVO vo, HttpSession session) {
@@ -85,8 +93,12 @@ public class BoardController {
 				mv.setViewName("/customerJoin_done");
 				return mv;
 			}
+<<<<<<< HEAD
 			
 			// 지도화면 시작시 디비값 불러옴
+=======
+			//게시물 가져오기
+>>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
 			@RequestMapping("/jjam_3_form.do")
 			public void viewBoard(BoardAndCateVO vo, Model model) {
 				List<BoardAndCateVO> list = boardService.viewBoard1(vo);
@@ -96,6 +108,7 @@ public class BoardController {
 				model.addAttribute("jsonList", jsonArray.fromObject(list));
 				model.addAttribute("list",list);
 			}
+<<<<<<< HEAD
 			
 			//테스트중
 			@RequestMapping(value= "/jjam_3_form.do", method = RequestMethod.POST)
@@ -108,5 +121,19 @@ public class BoardController {
 				return mv;
 			}
 			
+=======
+			//cate별 검색한 게시물 가져오기 
+			@RequestMapping("/jjam_2_search.do")
+			public void viewBoardByCate(BoardByCateVO vo, Model model) {
+				List<BoardByCateVO> listByCate = boardService.viewBoardByCate1(vo);
+		
+				JSONArray jsonArrayCate = new JSONArray();
+				model.addAttribute("jsonList", jsonArrayCate.fromObject(listByCate));
+				model.addAttribute("listByCate",listByCate);
+			}
+		
+		
+		
+>>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
 						
 }

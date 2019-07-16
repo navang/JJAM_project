@@ -20,9 +20,14 @@ public class BoardAndCateVO {
 	private String b_longitude; //게시판 경도값
 	private String cate_name; //카테고리 이름
 	private String cate_image; //카테고리 이미지
+	private String cate_icon; //카테고리 아이콘이미지
+	private String cate_ename; // 카테고리 검색용 이름 
 	
 	
+	
+
 	//getter setter
+
 	public int getB_no() {
 		return b_no;
 	}
@@ -125,6 +130,19 @@ public class BoardAndCateVO {
 	public void setCate_image(String cate_image) {
 		this.cate_image = cate_image;
 	}
+	public String getCate_icon() {
+		return cate_icon;
+	}
+	public void setCate_icon(String cate_icon) {
+		this.cate_icon = cate_icon;
+	}
+	public String getCate_ename() {
+		return cate_ename;
+	}
+	public void setCate_ename(String cate_ename) {
+		this.cate_ename = cate_ename;
+	}
+
 	
 	
 }

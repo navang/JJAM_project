@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.java.jjam.dao.BoardDAO;
 import com.java.jjam.domain.BoardAndCateVO;
+import com.java.jjam.domain.BoardByCateVO;
 import com.java.jjam.domain.BoardVO;
 
 @Service
@@ -22,5 +23,12 @@ public class BoardService {
 	}
 	public List<BoardAndCateVO> viewBoard1(BoardAndCateVO vo){
 		return boardDAO.viewBoard1(vo);
+	}
+	// select
+	public void viewBoardByCate() {
+		boardDAO.viewBoardByCate();
+	}
+	public List<BoardByCateVO> viewBoardByCate1(BoardByCateVO vo){
+		return boardDAO.viewBoardByCate1(vo);
 	}
 }
