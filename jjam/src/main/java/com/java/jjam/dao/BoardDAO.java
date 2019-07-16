@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.java.jjam.domain.BoardAndCateVO;
+import com.java.jjam.domain.BoardByCateVO;
 import com.java.jjam.domain.BoardVO;
 
 @Repository
@@ -30,4 +31,16 @@ public class BoardDAO {
 		
 		return list;
 	}
+	// select by 
+	public void viewBoardByCate() {
+		System.out.println("mybatis viewBoardByCate 실행");
+		mybatis.select("Board.viewBoardByCate", null);
+	}
+	public List<BoardByCateVO> viewBoardByCate1(BoardByCateVO vo){
+		System.out.println("mybatis viewBoardByCate1 실행");
+		List<BoardByCateVO> listByCate = mybatis.selectList("Board.viewBoardByCate", vo);
+		
+		return listByCate;
+	}
+	
 }

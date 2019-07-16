@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.java.jjam.domain.BoardAndCateVO;
+import com.java.jjam.domain.BoardByCateVO;
 import com.java.jjam.domain.BoardVO;
 import com.java.jjam.domain.CustomerVO;
 import com.java.jjam.service.BoardService;
@@ -77,7 +78,7 @@ public class BoardController {
 				mv.setViewName("/customerJoin_done");
 				return mv;
 			}
-
+			// 동범이가 만든 3_지도에 게시물가져온것
 			@RequestMapping("/jjam_3_form.do")
 			public void viewBoard(BoardAndCateVO vo, Model model) {
 				List<BoardAndCateVO> list = boardService.viewBoard1(vo);
@@ -86,6 +87,17 @@ public class BoardController {
 				JSONArray jsonArray = new JSONArray();
 				model.addAttribute("jsonList", jsonArray.fromObject(list));
 				model.addAttribute("list",list);
+			}
+			
+			// select 해서 가져오는
+			@RequestMapping("/jjam_2_search.do")
+			public void viewBoardByCate(BoardByCateVO vo, Model model) {
+				List<BoardByCateVO> listByCate = boardService.viewBoardByCate1(vo);
+		
+			//mybatis에서 받아온 list값을 json구조의 array로 변환
+				JSONArray jsonArrayCate = new JSONArray();
+				model.addAttribute("jsonList", jsonArrayCate.fromObject(listByCate));
+				model.addAttribute("listByCate",listByCate);
 			}
 						
 }

@@ -26,6 +26,37 @@
     
 <title>Insert title here</title>
 </head>
+<script>
+$(function(){
+	$("input:image").click(function(){
+	
+		// 클릭한 이미지에 'selectImg' 추가 
+		$(this).toggleClass('selectImg');
+		if($(this).hasClass('selectImg')){
+			// selectImg 클래스가 있으면 src에서 앞뒤 짜르고 카테고리 이름 가져와서 /아이디 지정하고?/ 해당이름으로 검색 
+			//--카드에 엘레멘트 생성 
+	
+			$('.card-columns').append("<div class='card w-100'><img src='./resources/image/pa.jpg' alt='' class='card-img-top'><div class='card-body'><h4 class='card-title'>"
+				+"${l}"+"님의 나눔"+ "</h4><div>"
+				+"${list[0].b_name}/${list[0].b_price}/ ${list[0].b_date}/  ${list[0].b_location}/ "
+				+"<input type='button' class='btn btn-success btn-sm' value='"
+				+"참여하기"
+				+"'></div></div></div>");
+			
+	
+			//최초 클릭
+			$('.selectImg').css({"background":"red","border-radius":"0px"});
+		}else{
+			//클릭된 상태
+			$(this).removeAttr('style');
+		}
+		
+		
+				
+	});
+	
+})
+</script>
 <body>
 
  <!-- ---------------------------------상단 고정 메뉴바--------------------------------------------->
@@ -69,18 +100,18 @@
     <div>
    
       <div id="grid">
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/bread_icon.png" alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/fruit_icon.png" alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/ingredients_icon.png" alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/meat_icon.png" alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/nangdong_icon.png" alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/seafood_icon.png" alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/spam_icon.png" alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/spice_icon.png" alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/vege_icon.png" alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/recent_icon.png"alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/nearby_icon.png"alt=""></div>
-             <div style="padding: 10px;"><img src="./resources/image/category_icon/hottem_icon.png"alt=""></div>
+             <div style="padding: 10px;"><input type="image" src="./resources/image/category_icon/bread_icon.png" /></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/fruit_icon.png" /></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/ingredients_icon.png" /></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/meat_icon.png" /></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/nangdong_icon.png" /></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/seafood_icon.png" /></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/spam_icon.png" /></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/spice_icon.png" /></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/vege_icon.png" /></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/recent_icon.png"/></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/nearby_icon.png"/></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/hottem_icon.png"/></div>
           </div>
                 
     </div>
@@ -112,18 +143,8 @@
  <div class="container">
         <!-- 동적으로 게시물을 받아와야함-->
         <div class="card-columns text-center">
-            <!-- 카드 1세트-->
-            <div class="card w-100">
-                <img src="./resources/image/apple.jpg" alt="" class="card-img-top">
-                <div class="card-body">
-                    <h4 class="card-title" style="">품목</h4>
-                 <div>게시자 / 가격/ 개수/ 위치/ <input type="button" class="btn btn-success btn-sm text-center" value="참여하기"></div>
-             
-                </div>
-            </div>         
-        <!-------------- -->
-          <!-- 카드 1세트-->
-          <div class="card w-100">
+             <!-- 카드 1세트-->
+           <div class="card w-100" style="display:none;">
                 <img src="./resources/image/pa.jpg" alt="" class="card-img-top">
                 <div class="card-body">
                     <h4 class="card-title">품목</h4>
@@ -132,16 +153,7 @@
                 </div>
             </div>         
         <!-------------- -->
-          <!-- 카드 1세트-->
-          <div class="card w-100">
-                <img src="./resources/image/carrot.jpg" alt="" class="card-img-top">
-                <div class="card-body">
-                    <h4 class="card-title">품목</h4>
-                 <div>게시자 / 가격/ 개수/ 위치/ <input type="button" class="btn btn-success btn-sm" value="참여하기"></div>
-             
-                </div>
-            </div>         
-        <!-------------- -->
+        
        </div>
             
         <!-- 게시글 끝 페이지 다운-->

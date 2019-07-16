@@ -1,6 +1,6 @@
 package com.java.jjam.domain;
 
-public class BoardAndCateVO {
+public class BoardByCateVO {
 //지도화면에서 mybatis 조인결과를 담기위한 vo
 	
 	private int b_no;   //게시판번호
@@ -24,10 +24,7 @@ public class BoardAndCateVO {
 	private String cate_ename; // 카테고리 검색용 이름 
 	
 	
-	
-
 	//getter setter
-
 	public int getB_no() {
 		return b_no;
 	}
@@ -142,7 +139,5 @@ public class BoardAndCateVO {
 	public void setCate_ename(String cate_ename) {
 		this.cate_ename = cate_ename;
 	}
-
-	
 	
 }
