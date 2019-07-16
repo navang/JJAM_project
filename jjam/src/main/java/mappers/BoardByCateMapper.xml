@@ -22,6 +22,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<result property="b_longitude" column="b_longitude"/>
 	<result property="cate_name" column="cate_name"/>
 	<result property="cate_image" column="cate_image"/>
+	<result property="cate_icon" column="cate_icon"/>
+	<result property="cate_ename" column="cate_ename"/>
 	
 	</resultMap>
 	
@@ -41,14 +43,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		b.b_latitude b_latitude, 
 		b.b_longitude b_longitude, 
 		c.cate_name cate_name, 
-		c.cate_image cate_image 
+		c.cate_image cate_image,
+		c.cate_icon cate_icon,
+		c.cate_ename cate_ename 
 		
 		FROM board b, cate c
 		
-		WHERE (b.cate_id = c.cate_id) <!--  여기에 AND ( VIEW 에서 가져온 CATE_ID 와 같을때 #{cate_id} ) -->
+		WHERE b.cate_id = c.cate_id
+		<if test="cate_ename !=null" >
+		||
+		</if>
 		
 	</select>
 				
 
 </mapper>
-
+<!--  여기에 AND ( VIEW 에서 가져온 CATE_ID 와 같을때 #{cate_id} ) -->

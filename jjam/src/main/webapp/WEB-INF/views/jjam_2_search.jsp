@@ -28,31 +28,37 @@
 </head>
 <script>
 $(function(){
-	$("input:image").click(function(){
-	
+	var jsonList = JSON.parse('${jsonList}');
+	// JSON LIST파싱 
+	$("input:image").click(function(){	
 		// 클릭한 이미지에 'selectImg' 추가 
 		$(this).toggleClass('selectImg');
 		if($(this).hasClass('selectImg')){
-			// selectImg 클래스가 있으면 src에서 앞뒤 짜르고 카테고리 이름 가져와서 /아이디 지정하고?/ 해당이름으로 검색 
-			//--카드에 엘레멘트 생성 
-	
-			$('.card-columns').append("<div class='card w-100'><img src='./resources/image/pa.jpg' alt='' class='card-img-top'><div class='card-body'><h4 class='card-title'>"
-				+"${l}"+"님의 나눔"+ "</h4><div>"
-				+"${list[0].b_name}/${list[0].b_price}/ ${list[0].b_date}/  ${list[0].b_location}/ "
-				+"<input type='button' class='btn btn-success btn-sm' value='"
-				+"참여하기"
-				+"'></div></div></div>");
 			
-	
+			// selectImg 클래스가 있으면 해당이름으로 검색 
+			//--카드에 엘레멘트 생성 
+		for(var i=0; i<jsonList.length; i++){
+				$('.card-columns').append("<div class='card w-100 "
+						+jsonList[i].cate_ename+"'><img src="
+						+"'"+jsonList[i].cate_icon+".png' alt='' class='card-img-top'><div class='card-body'><h4 class='card-title'>"
+						+jsonList[i].c_id+"님의 나눔</h4><div>"
+						+jsonList[i].b_name+"/"
+						+jsonList[i].b_price+"원/"
+						+jsonList[i].b_date+"/"
+						+jsonList[i].b_location+"/ "						
+						+"<input type='button' class='btn btn-success btn-sm' value='"
+						+"참여하기"
+						+"'></div></div></div>");
+		}
 			//최초 클릭
-			$('.selectImg').css({"background":"red","border-radius":"0px"});
+			$('.selectImg').css({"background":"white","border-radius":"0px"});
 		}else{
+			
 			//클릭된 상태
 			$(this).removeAttr('style');
+			$('div[class*="meat"]').remove();// 매퍼 변경 후 속성값을 jsonList[i].cate_ename 로 해주자 
 		}
 		
-		
-				
 	});
 	
 })
@@ -100,7 +106,7 @@ $(function(){
     <div>
    
       <div id="grid">
-             <div style="padding: 10px;"><input type="image" src="./resources/image/category_icon/bread_icon.png" /></div>
+             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/bread_icon.png" /></div>
              <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/fruit_icon.png" /></div>
              <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/ingredients_icon.png" /></div>
              <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/meat_icon.png" /></div>

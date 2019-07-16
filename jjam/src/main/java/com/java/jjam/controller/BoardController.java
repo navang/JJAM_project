@@ -43,6 +43,7 @@ public class BoardController {
 			@Autowired
 			private CustomerService customerService;
 			
+			//아이디 중복확인
 			@RequestMapping(value="idCheck.do", produces="applicateion/text; charset=UTF-8")
 			@ResponseBody
 			public String idCheck(CustomerVO vo) {
@@ -52,6 +53,7 @@ public class BoardController {
 				System.out.println("##idCheck controller##");
 				return result;
 			}
+			//로그인
 			@RequestMapping("Login.do")
 			public String login(CustomerVO vo, HttpSession session) {
 				CustomerVO result= customerService.idCheck_Login(vo);
@@ -78,7 +80,7 @@ public class BoardController {
 				mv.setViewName("/customerJoin_done");
 				return mv;
 			}
-			// 동범이가 만든 3_지도에 게시물가져온것
+			//게시물 가져오기
 			@RequestMapping("/jjam_3_form.do")
 			public void viewBoard(BoardAndCateVO vo, Model model) {
 				List<BoardAndCateVO> list = boardService.viewBoard1(vo);
@@ -88,16 +90,17 @@ public class BoardController {
 				model.addAttribute("jsonList", jsonArray.fromObject(list));
 				model.addAttribute("list",list);
 			}
-			
-			// select 해서 가져오는
+			//cate별 검색한 게시물 가져오기 
 			@RequestMapping("/jjam_2_search.do")
 			public void viewBoardByCate(BoardByCateVO vo, Model model) {
 				List<BoardByCateVO> listByCate = boardService.viewBoardByCate1(vo);
 		
-			//mybatis에서 받아온 list값을 json구조의 array로 변환
 				JSONArray jsonArrayCate = new JSONArray();
 				model.addAttribute("jsonList", jsonArrayCate.fromObject(listByCate));
 				model.addAttribute("listByCate",listByCate);
 			}
+		
+		
+		
 						
 }
