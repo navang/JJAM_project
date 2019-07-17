@@ -22,6 +22,7 @@
         crossorigin="anonymous"></script>
     <!-- https://getbootstrap.com/docs/4.3/getting-started/introduction/ 부트스트랩에서 가져옴-->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=313dc2a3dad52079f42012b67c645f76&libraries=services"></script>
+<<<<<<< HEAD
    <style>
     .wrap {position: absolute;left:112px;bottom: -30px;width: 220px;height: 100px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
@@ -38,6 +39,9 @@
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
     .info .link {color: #5085BB;}
 </style>
+=======
+
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
 
     <link rel="stylesheet" href="./resources/style/main.css" >
     
@@ -57,6 +61,7 @@
  		$("#longitude").prop('value', longitude);
  	});
  	$(".nanum_create").click(function(){
+<<<<<<< HEAD
  		$("#create").modal("hide");  //추후에 spring연결과 함께 삭제
  	});
  	
@@ -78,6 +83,17 @@
  	
  	
  	
+=======
+ 		alert("나눔생성");
+//  		var a= $("#icon option:selected").val();
+//  		new kakao.maps.Marker({
+//  		    position: new kakao.maps.LatLng(latitude, longitude), 
+//  		    image: new kakao.maps.MarkerImage(a, imageSize, imageOption) // 마커이미지 설정 
+//  		}).setMap(map);  
+ 		$("#create").modal("hide");  //추후에 spring연결과 함께 삭제
+
+ 	});
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
 	});
 </script>
  
@@ -144,6 +160,7 @@
 <!--             </div>  그리드 맞춰줌-->
             
             
+<<<<<<< HEAD
         <!------------------------ 게시물  --------------------------->            
             <div class="boardlist"></div> 
        <!-- ------------------------------------------------------- -->
@@ -151,6 +168,24 @@
        
        
        
+=======
+            <!-- 게시물  -->            
+            <div class="">
+                <div class="form-list" style=" text-align: center">
+                   <div></div> <div><img class="w-100" src="./resources/image/category_icon/fruit_icon.png" alt=""></div><div></div><div class="btn-light" style="border-radius: 50px; margin:  3px;">
+                    <a href="" data-toggle="modal"  data-target="#join">참여하기</a></div>
+
+
+          <!------------------------------------------------------------------------------->
+                   <div></div> <div><img class="w-100" src="./resources/image/category_icon/fruit_icon.png"  alt=""></div><div></div><div class="btn-light" style="border-radius: 50px; margin:  3px;">
+                    <a href="" data-toggle="modal" data-target="#join">참여하기</a></div>
+                   
+                   <div></div> <div><img class="w-100" src="./resources/image/category_icon/fruit_icon.png"  alt=""></div><div></div><div class="btn-light" style="border-radius: 50px; margin:  3px;">
+                    <a href="" data-toggle="modal" data-target="#join">참여하기</a></div>
+                </div>
+            </div> 
+        
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
             <!--///  참여 생성 모달 예제////-->                            
                 <a href=""  data-toggle="modal" data-target="#create" class="create">생성하기</a>
 
@@ -162,8 +197,52 @@
         
 
             <!----------------------------------참여 MODAL창----------------------------------------->
+<<<<<<< HEAD
 	<div id="jjoin"></div>
            
+=======
+
+            <div id="join" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-size">
+                        <div class="modal-header">
+                            <h4>나눔에 참여하기 </h4>
+                         
+                        </div>
+                        <div class="modal-body ">
+                            <div class="modal-inner-grid">
+                                <div>
+                                    <div>
+                                            <li>${l} 님의 나눔</li>
+                                            <li>품목 &nbsp; : ${list[0].b_name}</li>
+                                            <li>위치 &nbsp; : ${list[0].b_location}</li>
+                                            <li>가격 &nbsp; : ${list[0].b_price}</li>
+                                            <li>날짜 &nbsp; : ${list[0].b_date}</li>
+                                    </div>
+                                    <div class="col-lg-12"
+                                        style="display: grid; grid-template-columns:50% 50%; grid-template-rows:50% 50%;">
+                                        <input type="button" class="col-sm-12"
+                                            style="color:white; background-color: #147b6b" value="참여하기" data-toggle="modal" data-target="#pay">
+                                        <input type="button" class="col-sm-12"
+                                            style="color:white; background-color: #f37f7f" value="찜 하기">
+                                        <input type="button" class="col-sm-12"  data-dismiss="modal"
+                                            style="color:white; background-color: #999999" value="취소">
+                                        <input type="button" class="col-sm-12"
+                                            style="color:white; background-color: #558ccf" value="길찾기"
+                                            data-toggle="modal" data-target="#road">
+                                    </div>
+                                </div>
+                                <div><img src="./resources/image/apple.jpg" class="w-100 h-100" alt=""></div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
 
             <!----------------------------------생성 MODAL창----------------------------------------->
 	<form action="insertBoard.do" method="get">
@@ -332,10 +411,17 @@
                                     <div>
                                         <div>
                                             <li>(uesrId) 님의 나눔</li>
+<<<<<<< HEAD
                                             <li>품목 </li>
                                             <li>위치 </li>
                                             <li>가격 </li>
                                             <li>날짜 </li>
+=======
+                                            <li>품목 &nbsp; : ${list[0].b_name}</li>
+                                            <li>위치 &nbsp; : ${list[0].b_location}</li>
+                                            <li>가격 &nbsp; : ${list[0].b_price}</li>
+                                            <li>날짜 &nbsp; : ${list[0].b_date}</li>
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
 
                                             <li><input type="checkbox" class="checkbox"> 위의 내용을 확인 하셨습니까?</li>
                                         </div>
@@ -451,9 +537,14 @@ var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_r
              var a = String(latlng);
             var latitude1 = String(a.substring(1,18));
             var latitude = String(latitude1.split(","));
+<<<<<<< HEAD
             var longitude2 = String(a.substring(20,38));
             var longitude1 = String(longitude2.split(")"))
             var longitude = String(longitude1.split(","))
+=======
+            var longitude1 = String(a.substring(20,38));
+            var longitude = String(longitude1.split(")"))
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
              
              var content = '<div class="bAddr">' +
                              '<span class="title">법정동 주소정보</span>' +
@@ -484,6 +575,7 @@ marker = new kakao.maps.Marker({
 
 // 마커에 표시할 인포윈도우를 생성합니다 
 infowindow1 = new kakao.maps.InfoWindow({
+<<<<<<< HEAD
     content:
     	'<div class="wrap">' + 
         '    <div class="info">' + 
@@ -515,11 +607,18 @@ infowindow1 = new kakao.maps.InfoWindow({
 '</div>'
 
 
+=======
+    content: '<div id='+"'"+jsonList[i].b_no+"'"+'>'+jsonList[i].b_no+'</div>' // 인포윈도우에 표시할 내용
+});
+
+
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
 // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
 // 이벤트 리스너로는 클로저를 만들어 등록합니다 
 // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
 kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow1));
 kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow1));
+<<<<<<< HEAD
 
 
 //지도위 핀을 클릭했을때 모달에 연결
@@ -549,6 +648,10 @@ $("#jjoin").empty();
 		}
 		
 	});
+=======
+kakao.maps.event.addListener(marker, 'click', function(){
+	$("#join").modal("show");
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
 });
 
 }

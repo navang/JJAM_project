@@ -126,12 +126,24 @@ public class BoardController {
 
 			//cate별 검색한 게시물 가져오기 
 			@RequestMapping("/jjam_2_search.do")
-			public void viewBoardByCate(BoardByCateVO vo, Model model) {
+			public void jjam() {}
+			
+			
+			
+		@RequestMapping("/boardByCate.do")
+			public ModelAndView viewBoardByCate(BoardByCateVO vo) {
 				List<BoardByCateVO> listByCate = boardService.viewBoardByCate1(vo);
-		
+				ModelAndView mv = new ModelAndView();
+//				for(int i=0; i<listByCate.size(); i++) {
+//					System.out.println(listByCate.get(i).getCate_ename());
+//				}
 				JSONArray jsonArrayCate = new JSONArray();
-				model.addAttribute("jsonList", jsonArrayCate.fromObject(listByCate));
-				model.addAttribute("listByCate",listByCate);
+		
+//				model.addAttribute("listByCate",listByCate);
+				mv.setViewName("/jjam_2_search");
+				mv.addObject("jsonList", jsonArrayCate.fromObject(listByCate));
+			
+				return mv;
 			}
 		
 		

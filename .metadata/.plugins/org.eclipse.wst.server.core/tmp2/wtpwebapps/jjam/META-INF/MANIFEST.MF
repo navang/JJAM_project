@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: saqwz
+=======
+Built-By: navan
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
 Build-Jdk: 1.8.0_211
 Created-By: Maven Integration for Eclipse
 

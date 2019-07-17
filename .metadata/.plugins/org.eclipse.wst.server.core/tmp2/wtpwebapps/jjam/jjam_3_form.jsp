@@ -11,7 +11,10 @@ window.location = "jjam_3_form.do";
 </head>
 <body>
   메인페이지 이동중~~~!
+<<<<<<< HEAD
   
+=======
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
 
 </body>
 </html>
