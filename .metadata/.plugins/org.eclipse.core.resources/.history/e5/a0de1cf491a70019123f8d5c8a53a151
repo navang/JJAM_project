@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!--  alias 설정 -->
+	<typeAliases>
+		<typeAlias type="com.java.jjam.domain.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.java.jjam.domain.CshopVO" alias="cshopVO"/>
+		<typeAlias type="com.java.jjam.domain.CustomerVO" alias="customerVO"/>
+		<typeAlias type="com.java.jjam.domain.JjimVO" alias="jjimVO"/>
+		<typeAlias type="com.java.jjam.domain.LetterVO" alias="letterVO"/>
+		<typeAlias type="com.java.jjam.domain.PaymentVO" alias="paymentVO"/>
+		<typeAlias type="com.java.jjam.domain.BoardAndCateVO" alias="boardAndCateVO"/>
+
+	</typeAliases>
+
+
+</configuration>
+
