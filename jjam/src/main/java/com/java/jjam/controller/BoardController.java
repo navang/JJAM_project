@@ -129,11 +129,41 @@ public class BoardController {
 			@ResponseBody
 			public ModelAndView boardlist(BoardAndCateVO vo){
 				System.out.println("게시판리스트 컨트롤러 실행");
+				List<BoardAndCateVO> list = boardService.viewBoard1(vo);
 				ModelAndView mv = new ModelAndView();
-				mv.setViewName("/jjam_3_boardlist");
-				mv.addObject("data",vo);
+				mv.setViewName("jjam_3_boardlist");
+				JSONArray jsonArray = new JSONArray();
+				mv.addObject("jsonList", jsonArray.fromObject(list));
+				mv.addObject("data",list);
 				return mv;
 			}
+<<<<<<< HEAD
+=======
+			
+<<<<<<< HEAD
+			//지도 클릭마다 게시판리스트 변경
+			@RequestMapping(value="/jjam_3_changeboardlist.do", method=RequestMethod.POST)
+			public ModelAndView changeBoard(BoardAndCateVO vo) {
+				System.out.println(vo.getStart_latitude());
+				System.out.println(vo.getStart_longitude());
+				System.out.println(vo.getEnd_latitude());
+				System.out.println(vo.getEnd_longitude());
+				List<BoardAndCateVO> list = boardService.changeBoard(vo);
+				
+				for(int i=0; i<list.size(); i++) {
+				System.out.println(list.get(i).getB_content());
+			}
+				ModelAndView mv = new ModelAndView();
+				mv.setViewName("jjam_3_boardlist");
+				JSONArray jsonArray = new JSONArray();
+				mv.addObject("jsonList", jsonArray.fromObject(list));
+				mv.addObject("data",list);
+				return mv;
+			}
+=======
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
+>>>>>>> 8e3f1c4f3bed2b5ce5dd1be48f1ae63401ced002
+>>>>>>> 2039c9e1d0ac9f892a531da56fecb0ea79de6550
 
 			// viewBoardByCate 모델 
 //		@RequestMapping(value="boardByCate.do",method=RequestMethod.POST)
