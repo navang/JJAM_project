@@ -136,3 +136,16 @@
 7월 15, 2019 18:08:30.86 [23368:25500:0715/180830.863:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
 7월 15, 2019 18:08:30.94 [23368:612:0715/180830.940:ERROR:browser_process_sub_thread.cc(221)] Waited 14 ms for network service
 >>>>>>> 7e8d138b3c3659399a8a16a82dfa3c7f7c505097
+
+7월 16, 2019 21:14:17.27 NEW SESSION
+7월 16, 2019 21:14:17.27 [18364:9468:0716/211416.784:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 16, 2019 21:14:17.28 [18364:17328:0716/211416.927:ERROR:browser_process_sub_thread.cc(221)] Waited 49 ms for network service
+7월 16, 2019 21:34:01.03 [4000:1504:0716/213401.036:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 16, 2019 21:34:01.12 [4000:17772:0716/213401.120:ERROR:browser_process_sub_thread.cc(221)] Waited 20 ms for network service
+7월 16, 2019 22:09:25.33 [7228:12300:0716/220925.338:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 17, 2019 09:34:44.53 [7228:12324:0717/093444.531:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+7월 17, 2019 09:34:45.31 [7228:12300:0717/093444.537:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 17, 2019 09:34:49.55 [7228:15428:0717/093449.558:ERROR:get_updates_processor.cc(246)] PostClientToServerMessage() failed during GetUpdates
+7월 17, 2019 09:35:15.96 [7228:12300:0717/093515.969:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -105
+7월 17, 2019 09:35:23.18 [7228:15428:0717/093523.188:ERROR:get_updates_processor.cc(246)] PostClientToServerMessage() failed during GetUpdates
+7월 17, 2019 09:35:23.19 [7228:12324:0717/093523.188:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.

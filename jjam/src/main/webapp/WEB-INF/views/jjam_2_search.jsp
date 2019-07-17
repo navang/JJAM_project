@@ -19,7 +19,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!-- https://getbootstrap.com/docs/4.3/getting-started/introduction/ 부트스트랩에서 가져옴-->
-    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./resources/style/main.css">
 
     <script src="https://kit.fontawesome.com/825d367943.js"></script>
@@ -28,13 +28,28 @@
 </head>
 <script>
 $(function(){
-	var jsonList = JSON.parse('${jsonList}');
+ 	
 	// JSON LIST파싱 
-	$("input:image").click(function(){	
+ 	$("input:image").click(function(){	
+ 	
+		$.ajax({
+			type:"POST",
+			url:"/boardByCate.do",
+			data:"meat",
+			success: function(data){
+				alert("연결성공");
+			},
+			error:function(){
+				alert("연결실패");
+			}
+		});
+ 		
+ 		var jsonList = JSON.parse('${jsonList}');
 		// 클릭한 이미지에 'selectImg' 추가 
-		$(this).toggleClass('selectImg');
-		if($(this).hasClass('selectImg')){
+				$(this).toggleClass('selectImg');
+			if($(this).hasClass('selectImg')){
 			
+
 			// selectImg 클래스가 있으면 해당이름으로 검색 
 			//--카드에 엘레멘트 생성 
 		for(var i=0; i<jsonList.length; i++){
@@ -52,16 +67,13 @@ $(function(){
 		}
 			//최초 클릭
 			$('.selectImg').css({"background":"white","border-radius":"0px"});
-		}else{
-			
+			}else{
 			//클릭된 상태
 			$(this).removeAttr('style');
 			$('div[class*="meat"]').remove();// 매퍼 변경 후 속성값을 jsonList[i].cate_ename 로 해주자 
 		}
-		
 	});
-	
-})
+});
 </script>
 <body>
 
@@ -105,16 +117,15 @@ $(function(){
     <div></div><!-- 그리드 왼쪽 공백-->
     <div>
    
-      <div id="grid">
-             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/bread_icon.png" /></div>
-             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/fruit_icon.png" /></div>
-             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/ingredients_icon.png" /></div>
-             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/meat_icon.png" /></div>
-             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/nangdong_icon.png" /></div>
-             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/seafood_icon.png" /></div>
-             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/spam_icon.png" /></div>
-             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/spice_icon.png" /></div>
-             <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/vege_icon.png" /></div>
+      <div id="grid"> 
+      <!--  음식 카테고리 9개는 반복문으로 만듦  -->
+      <% String ename[] = {"bread", "fruit", "ingredients", "meat", "nangdong", "seafood", "spam", "spice", "vege" }; %>     
+      <% for(int i=0; i<9; i++) {%>
+        <div style="padding: 10px;"><input type="image" name="cate_ename"  class="image"
+        value="<%=ename[i]%>" 
+        src="./resources/image/category_icon/<%=ename[i]%>_icon.png" /></div>
+      <%}%>
+           <!--  최근순, 근처, 인기순  -->   
              <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/recent_icon.png"/></div>
              <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/nearby_icon.png"/></div>
              <div style="padding: 10px;"><input type="image"  src="./resources/image/category_icon/hottem_icon.png"/></div>
