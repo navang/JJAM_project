@@ -47,15 +47,12 @@ public class BoardController {
 				boardService.insertBoard(vo);
 			}
 
-<<<<<<< HEAD
 			
-
+<<<<<<< HEAD
 			//아이디체크
-
-			//아이디 중복확인
 =======
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
-
+			//아이디 중복확인
+>>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
 			@RequestMapping(value="idCheck.do", produces="applicateion/text; charset=UTF-8")
 			@ResponseBody
 			public String idCheck(CustomerVO vo) {
@@ -66,9 +63,9 @@ public class BoardController {
 				return result;
 			}
 <<<<<<< HEAD
+			
 =======
-
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
+>>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
 			//로그인
 			@RequestMapping("Login.do")
 			public String login(CustomerVO vo, HttpSession session) {
@@ -97,13 +94,11 @@ public class BoardController {
 				return mv;
 			}
 <<<<<<< HEAD
-=======
-	
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
+			
 			// 지도화면 시작시 디비값 불러옴
-
+=======
 			//게시물 가져오기
-
+>>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
 			@RequestMapping("/jjam_3_form.do")
 			public void viewBoard(BoardAndCateVO vo, Model model) {
 				List<BoardAndCateVO> list = boardService.viewBoard1(vo);
@@ -113,9 +108,9 @@ public class BoardController {
 				model.addAttribute("jsonList", jsonArray.fromObject(list));
 				model.addAttribute("list",list);
 			}
-
+<<<<<<< HEAD
 			
-			//참여모달
+			//테스트중
 			@RequestMapping(value= "/jjam_3_form.do", method = RequestMethod.POST)
 			@ResponseBody
 			public ModelAndView test11(BoardAndCateVO vo){
@@ -125,47 +120,8 @@ public class BoardController {
 				mv.addObject("data", vo);
 				return mv;
 			}
-<<<<<<< HEAD
-=======
 			
-			//게시판리스트
-			@RequestMapping(value="/jjam_3_boardlist.do", method=RequestMethod.POST)
-			@ResponseBody
-			public ModelAndView boardlist(BoardAndCateVO vo){
-				System.out.println("게시판리스트 컨트롤러 실행");
-				List<BoardAndCateVO> list = boardService.viewBoard1(vo);
-				ModelAndView mv = new ModelAndView();
-				mv.setViewName("jjam_3_boardlist");
-				JSONArray jsonArray = new JSONArray();
-				mv.addObject("jsonList", jsonArray.fromObject(list));
-				mv.addObject("data",list);
-				return mv;
-			}
-			
-<<<<<<< HEAD
-			//지도 클릭마다 게시판리스트 변경
-			@RequestMapping(value="/jjam_3_changeboardlist.do", method=RequestMethod.POST)
-			public ModelAndView changeBoard(BoardAndCateVO vo) {
-				System.out.println(vo.getStart_latitude());
-				System.out.println(vo.getStart_longitude());
-				System.out.println(vo.getEnd_latitude());
-				System.out.println(vo.getEnd_longitude());
-				List<BoardAndCateVO> list = boardService.changeBoard(vo);
-				
-				for(int i=0; i<list.size(); i++) {
-				System.out.println(list.get(i).getB_content());
-			}
-				ModelAndView mv = new ModelAndView();
-				mv.setViewName("jjam_3_boardlist");
-				JSONArray jsonArray = new JSONArray();
-				mv.addObject("jsonList", jsonArray.fromObject(list));
-				mv.addObject("data",list);
-				return mv;
-			}
 =======
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
->>>>>>> 8e3f1c4f3bed2b5ce5dd1be48f1ae63401ced002
-
 			//cate별 검색한 게시물 가져오기 
 			@RequestMapping("/jjam_2_search.do")
 			public void jjam() {}
@@ -187,12 +143,9 @@ public class BoardController {
 			
 				return mv;
 			}
-<<<<<<< HEAD
-				
-=======
 		
 		
-
+		
+>>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
 						
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 }
