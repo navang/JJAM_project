@@ -1,0 +1,61 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+    <%@ page import="java.util.*" %>
+    <%@ page import="com.java.jjam.domain.BoardAndCateVO"%>
+
+<meta charset="UTF-8">
+<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+
+
+<script>
+// var jsonList = JSON.parse('${jsonList}');
+
+	$(function(){
+		$(".click").each(function(){
+			$(this).click(function(){
+			$("#insert_modal").empty();
+			$.ajax({
+				type:"POST",
+				url: "jjam_3_form.do",
+				data :
+				{  "b_title" : $(this).find(".b_title").text(),
+					"c_id" : $(this).find("#c_id").text(),
+					"b_content" : $(this).find("#b_content").text(),
+					"b_location" : $(this).find("#b_location").text(),
+					"b_date" : $(this).find("#b_date").text()			
+					},
+				success : function(data){
+					alert("게시판리스트 모달 연결성공");
+					$("#jjoin").html(data);
+					$("#join").modal("show");
+				},
+				error: function(){
+					alert("연결실패");
+				}
+			});	
+			});	
+		});
+		});	
+	
+	
+	 
+
+</script>
+<!-- controller에서 넘어온 파라미터 배열 받기 -->
+<% List<BoardAndCateVO> data= (List<BoardAndCateVO>)request.getAttribute("data"); %>
+<!-- 게시글 리스트를 생성하기위한 for문 -->
+
+<%for(int i =0; i<data.size(); i++){%>
+
+ <div class="form-list click" style=" text-align: center">
+                   <div></div> <div><img class="w-100" src="<%=data.get(i).getCate_icon()%>.png"alt=""></div><div></div><div class="btn-light b_title" style="border-radius: 50px; margin:  3px;">
+                    <%=data.get(i).getB_title()%><div id="b_content"><%=data.get(i).getB_content()%></div><div id="b_date"><%=data.get(i).getB_date()%></div></div>  
+                    <div id="c_id" style="display:none;"><%=data.get(i).getC_id()%></div>               
+                    <div id="b_price" style="display:none;"><%=data.get(i).getB_price()%></div>               
+                    <div id="b_location" style="display:none;"><%=data.get(i).getB_location()%></div>                                
+</div>           
+<%}%>
+<div id="insert_modal"></div>
+</body>
+</html>

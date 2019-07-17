@@ -22,12 +22,40 @@ public class BoardAndCateVO {
 	private String cate_image; //카테고리 이미지
 	private String cate_icon; //카테고리 아이콘이미지
 	private String cate_ename; // 카테고리 검색용 이름 
+	private String start_latitude; // 화면 시작 위도
+	private String start_longitude; //화면 시작 경도
+	private String end_latitude;  //화면 끝 위도
+	private String end_longitude; //화면 끝 경도
 	
 	
 	
 
 	//getter setter
 
+	public String getStart_latitude() {
+		return start_latitude;
+	}
+	public void setStart_latitude(String start_latitude) {
+		this.start_latitude = start_latitude;
+	}
+	public String getStart_longitude() {
+		return start_longitude;
+	}
+	public void setStart_longitude(String start_longitude) {
+		this.start_longitude = start_longitude;
+	}
+	public String getEnd_latitude() {
+		return end_latitude;
+	}
+	public void setEnd_latitude(String end_latitude) {
+		this.end_latitude = end_latitude;
+	}
+	public String getEnd_longitude() {
+		return end_longitude;
+	}
+	public void setEnd_longitude(String end_longitude) {
+		this.end_longitude = end_longitude;
+	}
 	public int getB_no() {
 		return b_no;
 	}

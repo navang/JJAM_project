@@ -31,4 +31,7 @@ public class BoardService {
 	public List<BoardByCateVO> viewBoardByCate1(BoardByCateVO vo){
 		return boardDAO.viewBoardByCate1(vo);
 	}
+	public List<BoardAndCateVO> changeBoard(BoardAndCateVO vo){
+		return boardDAO.changeBoard(vo);
+	}
 }

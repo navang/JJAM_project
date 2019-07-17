@@ -31,6 +31,14 @@ public class BoardDAO {
 		
 		return list;
 	}
+	
+	//마우스클릭시 게시글 리스트 변경
+	public List<BoardAndCateVO> changeBoard(BoardAndCateVO vo){
+		System.out.println("mybatis changeBoard 실행");
+		List<BoardAndCateVO> list = mybatis.selectList("Board.changeBoard", vo);
+		return list;
+	}
+	
 	// select by 
 	public void viewBoardByCate() {
 		System.out.println("mybatis viewBoardByCate 실행");

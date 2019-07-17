@@ -203,3 +203,37 @@
 =======
 >>>>>>> e5deb1b23ec3e1f533c70acfe6a215753970c4ce
 >>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
+
+7월 17, 2019 10:02:46.33 NEW SESSION
+7월 17, 2019 10:02:46.33 [352:27732:0717/100246.335:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 17, 2019 10:02:46.44 [352:25848:0717/100246.444:ERROR:browser_process_sub_thread.cc(221)] Waited 28 ms for network service
+7월 17, 2019 11:11:08.03 [20736:27060:0717/111108.035:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 17, 2019 11:11:08.19 [20736:20688:0717/111108.195:ERROR:browser_process_sub_thread.cc(221)] Waited 76 ms for network service
+7월 17, 2019 12:02:18.27 [4368:20408:0717/120218.270:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 17, 2019 12:02:38.38 [4368:20408:0717/120238.380:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 17, 2019 12:03:23.59 [4368:20408:0717/120323.593:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 17, 2019 12:05:14.12 [4368:20408:0717/120514.121:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 17, 2019 12:09:03.26 [4368:20408:0717/120903.266:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 17, 2019 12:15:20.43 [4368:20408:0717/121520.432:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 17, 2019 12:25:20.43 [4368:20408:0717/122520.435:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 17, 2019 12:29:27.29 [4368:20408:0717/122927.293:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -105
+7월 17, 2019 12:29:31.02 [4368:20408:0717/122931.023:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -105
+7월 17, 2019 12:29:37.05 [4368:20408:0717/122937.055:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -105
+7월 17, 2019 12:29:40.56 [4368:20408:0717/122940.569:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -105
+7월 17, 2019 12:57:33.80 [4368:20408:0717/125733.806:ERROR:socket_stream.cc(219)] Closing stream with result -2
+7월 17, 2019 12:57:36.02 [4368:20408:0717/125736.026:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 17, 2019 12:57:58.76 [4368:20408:0717/125758.762:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -105
+7월 17, 2019 15:35:25.06 [4368:8216:0717/153525.069:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 17, 2019 15:35:35.14 [4368:20408:0717/153535.148:ERROR:browser_process_sub_thread.cc(221)] Waited 10013 ms for network service
+7월 17, 2019 19:18:21.17 [1456:30952:0717/191821.170:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 17, 2019 19:18:21.25 [1456:31888:0717/191821.258:ERROR:browser_process_sub_thread.cc(221)] Waited 24 ms for network service
+7월 17, 2019 19:18:27.14 [33824:32976:0717/191827.146:ERROR:cache_util_win.cc(21)] Unable to move the cache: 액세스가 거부되었습니다. (0x5)
+7월 17, 2019 19:18:27.15 [33824:32976:0717/191827.147:ERROR:cache_util.cc(141)] Unable to move cache folder C:\Users\saqwz\AppData\Local\Google\Chrome\User Data\ShaderCache\GPUCache to C:\Users\saqwz\AppData\Local\Google\Chrome\User Data\ShaderCache\old_GPUCache_000
+7월 17, 2019 19:18:27.16 [33824:32976:0717/191827.147:ERROR:disk_cache.cc(178)] Unable to create cache
+7월 17, 2019 19:18:27.16 [33824:32976:0717/191827.147:ERROR:shader_disk_cache.cc(623)] Shader Cache Creation failed: -2
+7월 17, 2019 19:18:28.16 기존 브라우저 세션에서 여는 중입니다.
+7월 17, 2019 19:18:29.86 [22296:27116:0717/191829.861:ERROR:browser_process_sub_thread.cc(221)] Waited 101 ms for network service
+7월 17, 2019 21:07:25.98 [12104:25400:0717/210725.983:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 17, 2019 21:07:26.06 [12104:30020:0717/210726.068:ERROR:browser_process_sub_thread.cc(221)] Waited 38 ms for network service
+7월 17, 2019 21:23:43.38 [32328:32740:0717/212343.388:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 17, 2019 21:23:43.47 [32328:30788:0717/212343.479:ERROR:browser_process_sub_thread.cc(221)] Waited 39 ms for network service
