@@ -24,11 +24,5 @@ public class BoardService {
 	public List<BoardAndCateVO> viewBoard1(BoardAndCateVO vo){
 		return boardDAO.viewBoard1(vo);
 	}
-	// select
-	public void viewBoardByCate() {
-		boardDAO.viewBoardByCate();
-	}
-	public List<BoardByCateVO> viewBoardByCate1(BoardByCateVO vo){
-		return boardDAO.viewBoardByCate1(vo);
-	}
+
 }

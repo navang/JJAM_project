@@ -203,3 +203,9 @@
 =======
 >>>>>>> e5deb1b23ec3e1f533c70acfe6a215753970c4ce
 >>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
+
+7월 17, 2019 21:17:00.68 NEW SESSION
+7월 17, 2019 21:17:00.68 [19900:18992:0717/211700.223:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 17, 2019 21:17:00.68 [19900:16736:0717/211700.290:ERROR:browser_process_sub_thread.cc(221)] Waited 32 ms for network service
+7월 17, 2019 21:21:38.57 [14100:11224:0717/212138.571:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 17, 2019 21:21:38.62 [14100:7916:0717/212138.623:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service

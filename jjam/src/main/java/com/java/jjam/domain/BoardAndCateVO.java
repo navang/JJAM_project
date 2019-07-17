@@ -22,9 +22,6 @@ public class BoardAndCateVO {
 	private String cate_image; //카테고리 이미지
 	private String cate_icon; //카테고리 아이콘이미지
 	private String cate_ename; // 카테고리 검색용 이름 
-	
-	
-	
 
 	//getter setter
 

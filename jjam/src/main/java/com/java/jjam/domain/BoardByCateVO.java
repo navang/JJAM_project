@@ -1,7 +1,9 @@
 package com.java.jjam.domain;
 
+import java.util.List;
+
 public class BoardByCateVO {
-//지도화면에서 mybatis 조인결과를 담기위한 vo
+
 	
 	private int b_no;   //게시판번호
 	private String b_date; //게시판 등록일
@@ -139,5 +141,6 @@ public class BoardByCateVO {
 	public void setCate_ename(String cate_ename) {
 		this.cate_ename = cate_ename;
 	}
+
 	
 }

@@ -32,14 +32,11 @@ public class BoardDAO {
 		return list;
 	}
 	// select by 
-	public void viewBoardByCate() {
-		System.out.println("mybatis viewBoardByCate 실행");
-		mybatis.select("BoardByCate.viewBoardByCate", null);
-	}
-	public List<BoardByCateVO> viewBoardByCate1(BoardByCateVO vo){
-		System.out.println("mybatis viewBoardByCate1 실행");
+
+	public List<BoardByCateVO> viewBoardByCate(BoardByCateVO vo){
+		System.out.println("mybatis viewBoardByCate 실행"+vo.getCate_ename());
 		List<BoardByCateVO> listByCate = mybatis.selectList("BoardByCate.viewBoardByCate", vo);
-		
+	
 		return listByCate;
 	}
 	

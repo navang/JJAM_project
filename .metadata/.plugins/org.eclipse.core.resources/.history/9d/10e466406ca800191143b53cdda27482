@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+   <%@ page import="java.util.*" %>
+   <%@ page import="com.java.jjam.domain.BoardByCateVO"%>
+    
+  
+  <% List<BoardByCateVO> list = (List<BoardByCateVO>)request.getAttribute("data")%>  
+    
+  <div class="card w-100">
+                <img src="./resources/image/pa.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">품목</h4>
+                 <div>게시자 / 가격/ 개수/ 위치/ <input type="button" class="btn btn-success btn-sm" value="참여하기"></div>
+             
+                </div>
+            </div>         
+

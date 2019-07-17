@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +19,19 @@ import com.java.jjam.domain.BoardAndCateVO;
 import com.java.jjam.domain.BoardByCateVO;
 import com.java.jjam.domain.BoardVO;
 import com.java.jjam.domain.CustomerVO;
+import com.java.jjam.service.BoardByCateService;
 import com.java.jjam.service.BoardService;
 import com.java.jjam.service.CustomerService;
 
+import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 
 @Controller
 public class BoardController {
 	@Autowired
 	private BoardService boardService;
+	@Autowired
+	private BoardByCateService boardByCateService;
 	
 	@Autowired
 	private CustomerService customerService;
@@ -47,14 +49,16 @@ public class BoardController {
 				boardService.insertBoard(vo);
 			}
 
-<<<<<<< HEAD
+			@RequestMapping("jjam_2_search.do")
+			public void jjam_2() {
+				
+			}
 			
 
 			//아이디체크
 
 			//아이디 중복확인
-=======
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
+
 
 			@RequestMapping(value="idCheck.do", produces="applicateion/text; charset=UTF-8")
 			@ResponseBody
@@ -65,10 +69,7 @@ public class BoardController {
 				System.out.println("##idCheck controller##");
 				return result;
 			}
-<<<<<<< HEAD
-=======
 
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 			//로그인
 			@RequestMapping("Login.do")
 			public String login(CustomerVO vo, HttpSession session) {
@@ -96,10 +97,7 @@ public class BoardController {
 				mv.setViewName("/customerJoin_done");
 				return mv;
 			}
-<<<<<<< HEAD
-=======
-	
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
+
 			// 지도화면 시작시 디비값 불러옴
 
 			//게시물 가져오기
@@ -125,9 +123,7 @@ public class BoardController {
 				mv.addObject("data", vo);
 				return mv;
 			}
-<<<<<<< HEAD
-=======
-			
+
 			//게시판리스트
 			@RequestMapping(value="/jjam_3_boardlist.do", method=RequestMethod.POST)
 			@ResponseBody
@@ -138,36 +134,36 @@ public class BoardController {
 				mv.addObject("data",vo);
 				return mv;
 			}
-			
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 
-			//cate별 검색한 게시물 가져오기 
-			@RequestMapping("/jjam_2_search.do")
-			public void jjam() {}
-			
-			
-			
-		@RequestMapping("/boardByCate.do")
-			public ModelAndView viewBoardByCate(BoardByCateVO vo) {
-				List<BoardByCateVO> listByCate = boardService.viewBoardByCate1(vo);
-				ModelAndView mv = new ModelAndView();
+			// viewBoardByCate 모델 
+//		@RequestMapping(value="boardByCate.do",method=RequestMethod.POST)
+//		@ResponseBody
+//			public void viewBoardByCate(BoardByCateVO vo, Model model) {
+//			List<BoardByCateVO> listByCate = boardByCateService.viewBoardByCate(vo);
+////			String	 result ="";
 //				for(int i=0; i<listByCate.size(); i++) {
-//					System.out.println(listByCate.get(i).getCate_ename());
-//				}
-				JSONArray jsonArrayCate = new JSONArray();
-		
-//				model.addAttribute("listByCate",listByCate);
-				mv.setViewName("/jjam_2_search");
-				mv.addObject("jsonList", jsonArrayCate.fromObject(listByCate));
-			
+//					System.out.println(listByCate.get(i).getB_content());
+//			}
+//				JSONArray jsonArrayCate = new JSONArray();
+//				model.addAttribute("jsonListCate", jsonArrayCate.fromObject(listByCate));
+//				model.addAttribute("data",listByCate);
+//			}
+			// viewBoardByCate 모델 엔뷰 
+		@RequestMapping(value="boardByCate.do",method=RequestMethod.POST)
+		@ResponseBody
+			public ModelAndView viewBoardByCate(BoardByCateVO vo) {
+			List<BoardByCateVO> listByCate = boardByCateService.viewBoardByCate(vo);
+//			String	 result ="";
+				for(int i=0; i<listByCate.size(); i++) {
+					System.out.println(listByCate.get(i).getB_content());
+			}
+				ModelAndView mv= new ModelAndView();
+				mv.addObject("data", listByCate);
+				mv.setViewName("jjam_2_search_result");
 				return mv;
 			}
-<<<<<<< HEAD
-				
-=======
-		
+
+			
 		
 
-						
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 }

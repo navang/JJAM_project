@@ -28,7 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	
-	<select id="viewBoardByCate" resultMap="boardByCateList" parameterType="hashmap">
+	<select id="viewBoardByCate" resultMap="boardByCateList" parameterType="boardByCateVO">
 		SELECT b.b_no b_no, 
 		b.b_date b_date, 
 		b.b_content b_content, 
@@ -49,10 +49,48 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 		FROM board b, cate c
 		
-		WHERE b.cate_id = c.cate_id
+		WHERE
+		b.cate_id = c.cate_id
+		
 		<if test= "cate_ename !=null">
+			
 		 AND cate_ename=#{cate_ename}
-	</if>
+		</if>
+	
+	
+	</select>
+	
+	
+	<select id="viewBoardByCate" resultMap="boardByCateList" parameterType="boardByCateVO">
+		SELECT b.b_no b_no, 
+		b.b_date b_date, 
+		b.b_content b_content, 
+		b.b_location b_location, 
+		b.b_price b_price, 
+		b.b_name b_name, 
+		b.b_title b_title,
+		b.b_view b_view, 
+		b.b_heart b_heart, 
+		b.b_ea b_ea, 
+		b.c_id c_id, 
+		b.b_latitude b_latitude, 
+		b.b_longitude b_longitude, 
+		c.cate_name cate_name, 
+		c.cate_image cate_image,
+		c.cate_icon cate_icon,
+		c.cate_ename cate_ename 
+		
+		FROM board b, cate c
+		
+		WHERE
+		b.cate_id = c.cate_id
+		
+		<if test= "cate_ename !=null">
+			
+		 AND cate_ename=#{cate_ename}
+		</if>
+	
+	
 	</select>
 				
 

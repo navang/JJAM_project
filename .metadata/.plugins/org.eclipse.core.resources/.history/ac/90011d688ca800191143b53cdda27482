@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+   <%@ page import="java.util.*" %>
+   <%@ page import="com.java.jjam.domain.BoardByCateVO"%>
+    
+ <body> 
+  <%List<BoardByCateVO> list = (List<BoardByCateVO>)request.getAttribute("data");%>  
+    
+    <% for(int i=0; i<list.size(); i++){%>
+  <div class="card w-100">
+                <img src="<%=list.get(i).getCate_icon()%>.png" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title"><%=list.get(i).getB_name() %></h4>
+                 <div><%=list.get(i).getC_id() %>
+                  / <%=list.get(i).getB_content() %>
+                  / <%=list.get(i).getB_ea() %>
+                  / <%=list.get(i).getB_date() %>
+                  / <input type="button" class="btn btn-success btn-sm" value="참여하기"></div>
+             
+                </div>
+            </div>         
+	<%} %>
+</body>
