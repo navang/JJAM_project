@@ -47,12 +47,7 @@ public class BoardController {
 				boardService.insertBoard(vo);
 			}
 
-			
-<<<<<<< HEAD
-			//아이디체크
-=======
-			//아이디 중복확인
->>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
+
 			@RequestMapping(value="idCheck.do", produces="applicateion/text; charset=UTF-8")
 			@ResponseBody
 			public String idCheck(CustomerVO vo) {
@@ -62,10 +57,7 @@ public class BoardController {
 				System.out.println("##idCheck controller##");
 				return result;
 			}
-<<<<<<< HEAD
-			
-=======
->>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
+
 			//로그인
 			@RequestMapping("Login.do")
 			public String login(CustomerVO vo, HttpSession session) {
@@ -93,12 +85,11 @@ public class BoardController {
 				mv.setViewName("/customerJoin_done");
 				return mv;
 			}
-<<<<<<< HEAD
-			
+	
 			// 지도화면 시작시 디비값 불러옴
-=======
+
 			//게시물 가져오기
->>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
+
 			@RequestMapping("/jjam_3_form.do")
 			public void viewBoard(BoardAndCateVO vo, Model model) {
 				List<BoardAndCateVO> list = boardService.viewBoard1(vo);
@@ -108,9 +99,9 @@ public class BoardController {
 				model.addAttribute("jsonList", jsonArray.fromObject(list));
 				model.addAttribute("list",list);
 			}
-<<<<<<< HEAD
+
 			
-			//테스트중
+			//참여모달
 			@RequestMapping(value= "/jjam_3_form.do", method = RequestMethod.POST)
 			@ResponseBody
 			public ModelAndView test11(BoardAndCateVO vo){
@@ -121,7 +112,18 @@ public class BoardController {
 				return mv;
 			}
 			
-=======
+			//게시판리스트
+			@RequestMapping(value="/jjam_3_boardlist.do", method=RequestMethod.POST)
+			@ResponseBody
+			public ModelAndView boardlist(BoardAndCateVO vo){
+				System.out.println("게시판리스트 컨트롤러 실행");
+				ModelAndView mv = new ModelAndView();
+				mv.setViewName("/jjam_3_boardlist");
+				mv.addObject("data",vo);
+				return mv;
+			}
+			
+
 			//cate별 검색한 게시물 가져오기 
 			@RequestMapping("/jjam_2_search.do")
 			public void viewBoardByCate(BoardByCateVO vo, Model model) {
@@ -133,7 +135,6 @@ public class BoardController {
 			}
 		
 		
-		
->>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
+
 						
 }

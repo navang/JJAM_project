@@ -1,20 +1,10 @@
-<<<<<<< HEAD
 INDEX VERSION 1.4+C:\programming\jjam\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 27030827.index
-1747111488.index
 3644895680.index
+862651493.index
 438324424.index
 1711262533.index
 3135979278.index
-862651493.index
-=======
-INDEX VERSION 1.4+C:\Users\navan\Documents\Spring\Jjam_teamproject\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1664939340.index
-1433660289.index
-862651493.index
-862651493.index
-1434956689.index
-1474619787.index
-1711262533.index
-3654195124.index
->>>>>>> 47ee6219aa792d73d95672e4e44a619b8904b61a
+1747111488.index
+3507950319.index
+2736214212.index

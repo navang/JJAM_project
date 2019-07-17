@@ -23,7 +23,7 @@
     <!-- https://getbootstrap.com/docs/4.3/getting-started/introduction/ 부트스트랩에서 가져옴-->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=313dc2a3dad52079f42012b67c645f76&libraries=services"></script>
    <style>
-    .wrap {position: absolute;left: 70px;bottom: -33px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+    .wrap {position: absolute;left:112px;bottom: -30px;width: 220px;height: 100px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
     .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
     .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
@@ -57,15 +57,27 @@
  		$("#longitude").prop('value', longitude);
  	});
  	$(".nanum_create").click(function(){
- 		alert("나눔생성");
-//  		var a= $("#icon option:selected").val();
-//  		new kakao.maps.Marker({
-//  		    position: new kakao.maps.LatLng(latitude, longitude), 
-//  		    image: new kakao.maps.MarkerImage(a, imageSize, imageOption) // 마커이미지 설정 
-//  		}).setMap(map);  
  		$("#create").modal("hide");  //추후에 spring연결과 함께 삭제
-
  	});
+ 	
+	$.ajax({
+		type:"POST",
+		url : "jjam_3_boardlist.do",
+		data : jsonList,
+		success: function(data){
+			alert("성공");
+			$(".boardlist").html(data);	
+		},
+		error: function(){
+			alert("실패")
+		}
+		
+	});
+ 	
+ 	
+ 	
+ 	
+ 	
 	});
 </script>
  
@@ -132,22 +144,13 @@
 <!--             </div>  그리드 맞춰줌-->
             
             
-            <!-- 게시물  -->            
-            <div class="">
-                <div class="form-list" style=" text-align: center">
-                   <div></div> <div><img class="w-100" src="./resources/image/category_icon/fruit_icon.png" alt=""></div><div></div><div class="btn-light" style="border-radius: 50px; margin:  3px;">
-                    <a href="" data-toggle="modal"  data-target="#join">참여하기</a></div>
-
-
-          <!------------------------------------------------------------------------------->
-                   <div></div> <div><img class="w-100" src="./resources/image/category_icon/fruit_icon.png"  alt=""></div><div></div><div class="btn-light" style="border-radius: 50px; margin:  3px;">
-                    <a href="" data-toggle="modal" data-target="#join">참여하기</a></div>
-                   
-                   <div></div> <div><img class="w-100" src="./resources/image/category_icon/fruit_icon.png"  alt=""></div><div></div><div class="btn-light" style="border-radius: 50px; margin:  3px;">
-                    <a href="" data-toggle="modal" data-target="#join">참여하기</a></div>
-                </div>
-            </div> 
-        
+        <!------------------------ 게시물  --------------------------->            
+            <div class="boardlist"></div> 
+       <!-- ------------------------------------------------------- -->
+       
+       
+       
+       
             <!--///  참여 생성 모달 예제////-->                            
                 <a href=""  data-toggle="modal" data-target="#create" class="create">생성하기</a>
 
@@ -489,7 +492,7 @@ infowindow1 = new kakao.maps.InfoWindow({
         '        </div>' + 
         '        <div class="body">' + 
         '            <div class="img">' +
-        '                <img src='+"'"+jsonList[i].cate_image+"'"+'width="73" height="70">'+
+        '                <img src='+"'"+jsonList[i].cate_icon+".png"+"'"+'width="73" height="70">'+
         '           </div>'+ 
         '            <div class="desc">' + 
         '                <span class="ellipsis">내용 : </span><span id="BCONTENT">'+jsonList[i].b_content+'</span></br>'+ 
