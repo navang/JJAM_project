@@ -47,11 +47,14 @@ public class BoardController {
 				boardService.insertBoard(vo);
 			}
 
+<<<<<<< HEAD
 			
 
 			//아이디체크
 
 			//아이디 중복확인
+=======
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 
 			@RequestMapping(value="idCheck.do", produces="applicateion/text; charset=UTF-8")
 			@ResponseBody
@@ -62,6 +65,10 @@ public class BoardController {
 				System.out.println("##idCheck controller##");
 				return result;
 			}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 			//로그인
 			@RequestMapping("Login.do")
 			public String login(CustomerVO vo, HttpSession session) {
@@ -89,6 +96,10 @@ public class BoardController {
 				mv.setViewName("/customerJoin_done");
 				return mv;
 			}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 			// 지도화면 시작시 디비값 불러옴
 
 			//게시물 가져오기
@@ -104,7 +115,7 @@ public class BoardController {
 			}
 
 			
-			//테스트중
+			//참여모달
 			@RequestMapping(value= "/jjam_3_form.do", method = RequestMethod.POST)
 			@ResponseBody
 			public ModelAndView test11(BoardAndCateVO vo){
@@ -114,6 +125,21 @@ public class BoardController {
 				mv.addObject("data", vo);
 				return mv;
 			}
+<<<<<<< HEAD
+=======
+			
+			//게시판리스트
+			@RequestMapping(value="/jjam_3_boardlist.do", method=RequestMethod.POST)
+			@ResponseBody
+			public ModelAndView boardlist(BoardAndCateVO vo){
+				System.out.println("게시판리스트 컨트롤러 실행");
+				ModelAndView mv = new ModelAndView();
+				mv.setViewName("/jjam_3_boardlist");
+				mv.addObject("data",vo);
+				return mv;
+			}
+			
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 
 			//cate별 검색한 게시물 가져오기 
 			@RequestMapping("/jjam_2_search.do")
@@ -136,5 +162,12 @@ public class BoardController {
 			
 				return mv;
 			}
+<<<<<<< HEAD
 				
+=======
+		
+		
+
+						
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 }

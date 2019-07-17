@@ -1,3 +1,38 @@
+<<<<<<< HEAD
 127.0.0.1 - - [17/Jul/2019:09:55:22 +0900] "GET / HTTP/1.1" 404 1115
 0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:55:22 +0900] "GET /basic/jjam_2_search.jsp HTTP/1.1" 200 229
 0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:55:23 +0900] "GET /basic/jjam_2_search.do HTTP/1.1" 500 14652
+=======
+127.0.0.1 - - [17/Jul/2019:09:27:23 +0900] "GET / HTTP/1.1" 404 1115
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:25 +0900] "GET /basic/jjam_3_form.jsp HTTP/1.1" 200 231
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:26 +0900] "GET /basic/resources/style/main.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:26 +0900] "GET /basic/resources/image/character.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:26 +0900] "GET /basic/resources/image/JJCR_white1.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:26 +0900] "GET /basic/jjam_3_form.do HTTP/1.1" 200 33550
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icons_pin/spam_pin.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icon/spam_icon.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icons_pin/vege_pin.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icons_pin/meat_pin.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icon/meat_icon.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icon/fruit_icon.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icons_pin/fruit_pin.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icons_pin/nangdong_pin.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icon/vege_icon.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icon/nangdong_icon.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icons_pin/ingredients_pin.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "GET /basic/resources/image/category_icon/ingredients_icon.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:27 +0900] "POST /basic/jjam_3_boardlist.do HTTP/1.1" 500 6883
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:40 +0900] "GET /basic/resources/image/chatbot_modal.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:27:41 +0900] "GET /favicon.ico HTTP/1.1" 404 1126
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:29:23 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2902
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:29:24 +0900] "GET /basic/resources/image/apple.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:29:24 +0900] "GET /basic/resources/font/NanumSquareR.woff HTTP/1.1" 404 1086
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:29:29 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2894
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:29:33 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2891
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:29:45 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2901
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:29:49 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2913
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:29:51 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2891
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:29:54 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2894
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:31:14 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2891
+0:0:0:0:0:0:0:1 - - [17/Jul/2019:09:33:24 +0900] "POST /basic/jjam_3_form.do HTTP/1.1" 200 2894
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1

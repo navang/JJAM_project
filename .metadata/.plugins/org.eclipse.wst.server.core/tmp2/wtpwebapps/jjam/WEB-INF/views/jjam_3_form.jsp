@@ -22,8 +22,14 @@
         crossorigin="anonymous"></script>
     <!-- https://getbootstrap.com/docs/4.3/getting-started/introduction/ 부트스트랩에서 가져옴-->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=313dc2a3dad52079f42012b67c645f76&libraries=services"></script>
+<<<<<<< HEAD
    <style>
     .wrap {position: absolute;left: 70px;bottom: -33px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+=======
+<<<<<<< HEAD
+   <style>
+    .wrap {position: absolute;left:112px;bottom: -30px;width: 220px;height: 100px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
     .wrap * {padding: 0;margin: 0;}
     .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
     .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
@@ -38,6 +44,12 @@
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
     .info .link {color: #5085BB;}
 </style>
+<<<<<<< HEAD
+=======
+=======
+
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 
     <link rel="stylesheet" href="./resources/style/main.css" >
     
@@ -57,6 +69,29 @@
  		$("#longitude").prop('value', longitude);
  	});
  	$(".nanum_create").click(function(){
+<<<<<<< HEAD
+ 		$("#create").modal("hide");  //추후에 spring연결과 함께 삭제
+ 	});
+ 	
+	$.ajax({
+		type:"POST",
+		url : "jjam_3_boardlist.do",
+		data : jsonList,
+		success: function(data){
+			alert("성공");
+			$(".boardlist").html(data);	
+		},
+		error: function(){
+			alert("실패")
+		}
+		
+	});
+ 	
+ 	
+ 	
+ 	
+ 	
+=======
  		alert("나눔생성");
 //  		var a= $("#icon option:selected").val();
 //  		new kakao.maps.Marker({
@@ -66,6 +101,7 @@
  		$("#create").modal("hide");  //추후에 spring연결과 함께 삭제
 
  	});
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
 	});
 </script>
  
@@ -132,6 +168,15 @@
 <!--             </div>  그리드 맞춰줌-->
             
             
+<<<<<<< HEAD
+        <!------------------------ 게시물  --------------------------->            
+            <div class="boardlist"></div> 
+       <!-- ------------------------------------------------------- -->
+       
+       
+       
+       
+=======
             <!-- 게시물  -->            
             <div class="">
                 <div class="form-list" style=" text-align: center">
@@ -148,6 +193,7 @@
                 </div>
             </div> 
         
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
             <!--///  참여 생성 모달 예제////-->                            
                 <a href=""  data-toggle="modal" data-target="#create" class="create">생성하기</a>
 
@@ -159,8 +205,57 @@
         
 
             <!----------------------------------참여 MODAL창----------------------------------------->
+<<<<<<< HEAD
 	<div id="jjoin"></div>
            
+=======
+<<<<<<< HEAD
+	<div id="jjoin"></div>
+           
+=======
+
+            <div id="join" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-size">
+                        <div class="modal-header">
+                            <h4>나눔에 참여하기 </h4>
+                         
+                        </div>
+                        <div class="modal-body ">
+                            <div class="modal-inner-grid">
+                                <div>
+                                    <div>
+                                            <li>${l} 님의 나눔</li>
+                                            <li>품목 &nbsp; : ${list[0].b_name}</li>
+                                            <li>위치 &nbsp; : ${list[0].b_location}</li>
+                                            <li>가격 &nbsp; : ${list[0].b_price}</li>
+                                            <li>날짜 &nbsp; : ${list[0].b_date}</li>
+                                    </div>
+                                    <div class="col-lg-12"
+                                        style="display: grid; grid-template-columns:50% 50%; grid-template-rows:50% 50%;">
+                                        <input type="button" class="col-sm-12"
+                                            style="color:white; background-color: #147b6b" value="참여하기" data-toggle="modal" data-target="#pay">
+                                        <input type="button" class="col-sm-12"
+                                            style="color:white; background-color: #f37f7f" value="찜 하기">
+                                        <input type="button" class="col-sm-12"  data-dismiss="modal"
+                                            style="color:white; background-color: #999999" value="취소">
+                                        <input type="button" class="col-sm-12"
+                                            style="color:white; background-color: #558ccf" value="길찾기"
+                                            data-toggle="modal" data-target="#road">
+                                    </div>
+                                </div>
+                                <div><img src="./resources/image/apple.jpg" class="w-100 h-100" alt=""></div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 
             <!----------------------------------생성 MODAL창----------------------------------------->
 	<form action="insertBoard.do" method="get">
@@ -329,10 +424,23 @@
                                     <div>
                                         <div>
                                             <li>(uesrId) 님의 나눔</li>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
                                             <li>품목 </li>
                                             <li>위치 </li>
                                             <li>가격 </li>
                                             <li>날짜 </li>
+<<<<<<< HEAD
+=======
+=======
+                                            <li>품목 &nbsp; : ${list[0].b_name}</li>
+                                            <li>위치 &nbsp; : ${list[0].b_location}</li>
+                                            <li>가격 &nbsp; : ${list[0].b_price}</li>
+                                            <li>날짜 &nbsp; : ${list[0].b_date}</li>
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 
                                             <li><input type="checkbox" class="checkbox"> 위의 내용을 확인 하셨습니까?</li>
                                         </div>
@@ -448,9 +556,20 @@ var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_r
              var a = String(latlng);
             var latitude1 = String(a.substring(1,18));
             var latitude = String(latitude1.split(","));
+<<<<<<< HEAD
             var longitude2 = String(a.substring(20,38));
             var longitude1 = String(longitude2.split(")"))
             var longitude = String(longitude1.split(","))
+=======
+<<<<<<< HEAD
+            var longitude2 = String(a.substring(20,38));
+            var longitude1 = String(longitude2.split(")"))
+            var longitude = String(longitude1.split(","))
+=======
+            var longitude1 = String(a.substring(20,38));
+            var longitude = String(longitude1.split(")"))
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
              
              var content = '<div class="bAddr">' +
                              '<span class="title">법정동 주소정보</span>' +
@@ -481,6 +600,10 @@ marker = new kakao.maps.Marker({
 
 // 마커에 표시할 인포윈도우를 생성합니다 
 infowindow1 = new kakao.maps.InfoWindow({
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
     content:
     	'<div class="wrap">' + 
         '    <div class="info">' + 
@@ -489,7 +612,11 @@ infowindow1 = new kakao.maps.InfoWindow({
         '        </div>' + 
         '        <div class="body">' + 
         '            <div class="img">' +
+<<<<<<< HEAD
         '                <img src='+"'"+jsonList[i].cate_image+"'"+'width="73" height="70">'+
+=======
+        '                <img src='+"'"+jsonList[i].cate_icon+".png"+"'"+'width="73" height="70">'+
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
         '           </div>'+ 
         '            <div class="desc">' + 
         '                <span class="ellipsis">내용 : </span><span id="BCONTENT">'+jsonList[i].b_content+'</span></br>'+ 
@@ -503,6 +630,7 @@ infowindow1 = new kakao.maps.InfoWindow({
         '<span id="BLOCATION" style="display:none;">'+jsonList[i].b_location+'</span></br>'+
         '</div>'
 
+<<<<<<< HEAD
 });
 
 
@@ -512,11 +640,29 @@ infowindow1 = new kakao.maps.InfoWindow({
 '</div>'
 
 
+=======
+});
+
+
+
+
+
+'</div>'
+
+
+=======
+    content: '<div id='+"'"+jsonList[i].b_no+"'"+'>'+jsonList[i].b_no+'</div>' // 인포윈도우에 표시할 내용
+});
+
+
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
 // 이벤트 리스너로는 클로저를 만들어 등록합니다 
 // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
 kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow1));
 kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow1));
+<<<<<<< HEAD
 
 
 //지도위 핀을 클릭했을때 모달에 연결
@@ -546,6 +692,42 @@ $("#jjoin").empty();
 		}
 		
 	});
+=======
+<<<<<<< HEAD
+
+
+//지도위 핀을 클릭했을때 모달에 연결
+kakao.maps.event.addListener(marker, 'click', function(){
+$("#jjoin").empty();
+	$.ajax({
+		type:"POST",
+		url : "jjam_3_form.do",
+		data : 
+			{"b_title" : $("#BTITLE").text(),
+			 "c_id" : $("#CID").text(),
+			 "b_content" : $("#BCONTENT").text(),
+			 "b_price" : $("#BPRICE").text(),
+			 "b_location" : $("#BLOCATION").text(),
+			 "b_date" : $("#BDATE").text()
+			 },
+	
+		success: function(data){
+			alert("성공");
+			console.log(data);
+			$("#jjoin").html(data);
+			$("#join").css("display","block");
+			
+		},
+		error: function(){
+			alert("실패")
+		}
+		
+	});
+=======
+kakao.maps.event.addListener(marker, 'click', function(){
+	$("#join").modal("show");
+>>>>>>> a25fb1fed1b0ce7e9caf99ecb4fee8694ef4ec8f
+>>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
 });
 
 }
