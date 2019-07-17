@@ -43,9 +43,14 @@
     
     <script src="https://kit.fontawesome.com/825d367943.js"></script>
     <script>
+  //controller에서 가져온 jsonArray를 파싱
+    var jsonList = JSON.parse('${jsonList}');
 	$(function(){
    	 $('#info').modal('show');// 페이지 진입시 레이어팝업 modal#info 실행
 
+   	
+   	 
+   	 
    //map 관련 jquery문
      $(".create").click(function(){
  		var address = $(".address").text();
@@ -63,12 +68,10 @@
 	$.ajax({
 		type:"POST",
 		url : "jjam_3_boardlist.do",
-		data : jsonList,
 		success: function(data){
-			alert("성공");
 			$(".boardlist").html(data);	
 		},
-		error: function(){
+		error: function(data){
 			alert("실패")
 		}
 		
@@ -398,8 +401,7 @@
 
 <!-- </script> -->
 <script>
-//controller에서 가져온 jsonArray를 파싱
-var jsonList = JSON.parse('${jsonList}');
+
 
 //map api
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -433,10 +435,56 @@ var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_r
  	var latlng;
 	var latitude;
 	var longitude;
+	
+	
+	//화면 전환시 게시판리스트 변경
+	kakao.maps.event.addListener(map, 'bounds_changed', function(){
+		
+		//지도 화면 전체의 위도 경도값 자르기
+		var boundArr = new Array();
+		var bounds = String(map.getBounds());
+		boundArr = bounds.split(',');
+		var start_latitude = boundArr[0].substring(2,); //시작 위도
+	
+		var start_longitude2 = boundArr[1];
+		var start_longitude1= start_longitude2.slice(0,-1);
+		var start_longitude = start_longitude1.substring(1,);  // 시작 경도
+
+		var end_latitude1 = boundArr[2];
+		var end_latitude= end_latitude1.substring(2,); // 끝 위도
+
+		var end_longitude2 = boundArr[3];
+		var end_longitude1= end_longitude2.slice(0,-2);
+		var end_longitude = end_longitude1.substring(1,); //끝 경도
+
+		//위도 경도값 ajax로 전송
+		$(".boardlist").empty();
+		$.ajax({
+			type : "POST",
+			url : "jjam_3_changeboardlist.do",
+			data : 
+			{ 	"start_latitude" : start_latitude,
+				"start_longitude" : start_longitude,
+				"end_latitude" : end_latitude,
+				"end_longitude" : end_longitude
+				},
+			success: function(data){
+				$(".boardlist").html(data);	
+				
+			},
+			error: function(){
+				alert("위도경도연결실패");
+			}
+		});
+		
+	});
+	
+	
+	
 //한번 클릭
     kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-    	searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
-    		
+    	searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {	
+	
         latlng = mouseEvent.latLng;  //위도 경도값
         // 마커를 클릭한 위치에 표시합니다 
 		marker.setPosition(mouseEvent.latLng);
@@ -448,12 +496,10 @@ var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_r
              detailAddr += '<div>지번 주소: ' +'<span class="address">'+ result[0].address.address_name +'</span>'+ '</div>';
              
              //위도, 경도
-             var a = String(latlng);
-            var latitude1 = String(a.substring(1,18));
-            var latitude = String(latitude1.split(","));
-            var longitude2 = String(a.substring(20,38));
-            var longitude1 = String(longitude2.split(")"))
-            var longitude = String(longitude1.split(","))
+ 		latitude= latlng.getLat();
+        longitude = latlng.getLng();
+
+             
              
              var content = '<div class="bAddr">' +
                              '<span class="title">법정동 주소정보</span>' +
@@ -504,6 +550,7 @@ infowindow1 = new kakao.maps.InfoWindow({
         '<span id="CID" style="display:none;">'+ jsonList[i].c_id+'</span></br>'+
         '<span id="BDATE" style="display:none;">'+jsonList[i].b_date+'</span></br>'+
         '<span id="BLOCATION" style="display:none;">'+jsonList[i].b_location+'</span></br>'+
+        '<span id="BCATEICON" style="display:none;">'+jsonList[i].cate_icon+'</span></br>'+
         '</div>'
 
 });
@@ -525,30 +572,30 @@ kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow1));
 //지도위 핀을 클릭했을때 모달에 연결
 kakao.maps.event.addListener(marker, 'click', function(){
 $("#jjoin").empty();
+//참여 모달창 연결
 	$.ajax({
-		type:"POST",
-		url : "jjam_3_form.do",
-		data : 
-			{"b_title" : $("#BTITLE").text(),
-			 "c_id" : $("#CID").text(),
-			 "b_content" : $("#BCONTENT").text(),
-			 "b_price" : $("#BPRICE").text(),
-			 "b_location" : $("#BLOCATION").text(),
-			 "b_date" : $("#BDATE").text()
-			 },
-	
-		success: function(data){
-			alert("성공");
-			console.log(data);
-			$("#jjoin").html(data);
-			$("#join").css("display","block");
-			
-		},
-		error: function(){
-			alert("실패")
-		}
+	type:"POST",
+	url : "jjam_3_form.do",
+	data : 
+		{"b_title" : $("#BTITLE").text(),
+		 "c_id" : $("#CID").text(),
+		 "b_content" : $("#BCONTENT").text(),
+		 "b_price" : $("#BPRICE").text(),
+		 "b_location" : $("#BLOCATION").text(),
+		 "b_date" : $("#BDATE").text(),
+		 "cate_icon" : $("#BCATEICON").text()
+		 },
+
+	success: function(data){
+		$("#jjoin").html(data);
+		$("#join").modal("show");
 		
-	});
+	},
+	error: function(){
+		alert("실패")
+	}
+	
+});
 });
 
 }

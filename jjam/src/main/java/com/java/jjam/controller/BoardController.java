@@ -137,10 +137,6 @@ public class BoardController {
 				mv.addObject("data",list);
 				return mv;
 			}
-<<<<<<< HEAD
-=======
-			
-<<<<<<< HEAD
 			//지도 클릭마다 게시판리스트 변경
 			@RequestMapping(value="/jjam_3_changeboardlist.do", method=RequestMethod.POST)
 			public ModelAndView changeBoard(BoardAndCateVO vo) {
@@ -160,10 +156,6 @@ public class BoardController {
 				mv.addObject("data",list);
 				return mv;
 			}
-=======
->>>>>>> 75ae80a707e956a71b69ec5d137b2ab050052fa1
->>>>>>> 8e3f1c4f3bed2b5ce5dd1be48f1ae63401ced002
->>>>>>> 2039c9e1d0ac9f892a531da56fecb0ea79de6550
 
 			// viewBoardByCate 모델 
 //		@RequestMapping(value="boardByCate.do",method=RequestMethod.POST)

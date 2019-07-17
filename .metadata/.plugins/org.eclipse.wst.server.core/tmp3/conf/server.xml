@@ -149,11 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-<<<<<<< HEAD
-      <Context docBase="C:\Users\navan\Documents\Spring\Jjam_teamproject\.metadata\.plugins\org.eclipse.wst.server.core\tmp3\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\navan\Documents\Spring\Jjam_teamproject\.metadata\.plugins\org.eclipse.wst.server.core\tmp3\wtpwebapps\jjam" path="/jjam" reloadable="true" source="org.eclipse.jst.jee.server:jjam"/></Host>
-=======
-      <Context docBase="C:\programming\jjam\.metadata\.plugins\org.eclipse.wst.server.core\tmp3\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\programming\jjam\.metadata\.plugins\org.eclipse.wst.server.core\tmp3\wtpwebapps\jjam" path="/basic" reloadable="true" source="org.eclipse.jst.jee.server:jjam"/></Host>
->>>>>>> 2039c9e1d0ac9f892a531da56fecb0ea79de6550
+      <Context docBase="C:\Users\navan\Documents\Spring\Jjam_teamproject\.metadata\.plugins\org.eclipse.wst.server.core\tmp3\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\navan\Documents\Spring\Jjam_teamproject\.metadata\.plugins\org.eclipse.wst.server.core\tmp3\wtpwebapps\jjam" path="/basic" reloadable="true" source="org.eclipse.jst.jee.server:jjam"/></Host>
     </Engine>
   </Service>
 </Server>

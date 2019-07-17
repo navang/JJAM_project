@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD:.metadata/.plugins/org.eclipse.wst.server.core/tmp3/wtpwebapps/jjam/META-INF/MANIFEST.MF
 Built-By: navan
-=======
-Built-By: saqwz
->>>>>>> 2039c9e1d0ac9f892a531da56fecb0ea79de6550:.metadata/.plugins/org.eclipse.wst.server.core/tmp3/wtpwebapps/jjam/META-INF/MANIFEST.MF
 Build-Jdk: 1.8.0_211
 Created-By: Maven Integration for Eclipse
 

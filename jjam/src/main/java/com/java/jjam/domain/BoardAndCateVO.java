@@ -22,17 +22,11 @@ public class BoardAndCateVO {
 	private String cate_image; //카테고리 이미지
 	private String cate_icon; //카테고리 아이콘이미지
 	private String cate_ename; // 카테고리 검색용 이름 
-<<<<<<< HEAD
-=======
 	private String start_latitude; // 화면 시작 위도
 	private String start_longitude; //화면 시작 경도
 	private String end_latitude;  //화면 끝 위도
 	private String end_longitude; //화면 끝 경도
 	
-	
-	
->>>>>>> 2039c9e1d0ac9f892a531da56fecb0ea79de6550
-
 	//getter setter
 
 	public String getStart_latitude() {
