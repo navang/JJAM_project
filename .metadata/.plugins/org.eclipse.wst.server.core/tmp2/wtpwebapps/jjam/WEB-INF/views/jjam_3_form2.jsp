@@ -22,22 +22,7 @@
         crossorigin="anonymous"></script>
     <!-- https://getbootstrap.com/docs/4.3/getting-started/introduction/ 부트스트랩에서 가져옴-->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=313dc2a3dad52079f42012b67c645f76&libraries=services"></script>
-   <style>
-    .wrap {position: absolute;left: 70px;bottom: -33px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
-    .wrap * {padding: 0;margin: 0;}
-    .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
-    .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
-    .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
-    .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
-    .info .close:hover {cursor: pointer;}
-    .info .body {position: relative;overflow: hidden;}
-    .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
-    .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
-    .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
-    .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
-    .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
-    .info .link {color: #5085BB;}
-</style>
+
 
     <link rel="stylesheet" href="./resources/style/main.css" >
     
@@ -482,34 +467,15 @@ marker = new kakao.maps.Marker({
 // 마커에 표시할 인포윈도우를 생성합니다 
 infowindow1 = new kakao.maps.InfoWindow({
     content:
-    	'<div class="wrap">' + 
-        '    <div class="info">' + 
-        '        <div class="title" id="BTITLE">' + 
-       				 jsonList[i].b_title + 
-        '        </div>' + 
-        '        <div class="body">' + 
-        '            <div class="img">' +
-        '                <img src='+"'"+jsonList[i].cate_image+"'"+'width="73" height="70">'+
-        '           </div>'+ 
-        '            <div class="desc">' + 
-        '                <span class="ellipsis">내용 : </span><span id="BCONTENT">'+jsonList[i].b_content+'</span></br>'+ 
-        '                <span class="jibun ellipsis">가격 :'+'</span>'+'<span id="BPRICE">'+jsonList[i].b_price+'</span></br>' + 
-        '                <div></div>' + 
-        '            </div>' + 
-        '        </div>' + 
-        '    </div>' +    
-        '<span id="CID" style="display:none;">'+ jsonList[i].c_id+'</span></br>'+
-        '<span id="BDATE" style="display:none;">'+jsonList[i].b_date+'</span></br>'+
-        '<span id="BLOCATION" style="display:none;">'+jsonList[i].b_location+'</span></br>'+
-        '</div>'
-
+   '<div class="infowindow" style="border-radius : 10px;">'+
+    '<span>제목 : </span>'+'</span>'+'<span id="BTITLE">'+jsonList[i].b_title+
+    '</span></br><span>작성자아이디: </span>'+'<span id="CID">'+ jsonList[i].c_id+'</span></br>'+
+    '<span>내용 :</span>'+'<span id="BCONTENT">'+jsonList[i].b_content+'</span></br>'+
+    '<span>가격</span>'+'<span id="BPRICE">'+jsonList[i].b_price+'</span></br>'+
+    '<span id="BLOCATION" style="display:none;">'+jsonList[i].b_location+'</span></br>'+
+    '<span id="BDATE" style="display:none;">'+jsonList[i].b_date+'</span></br>'+
+    '</div>'
 });
-
-
-
-
-
-'</div>'
 
 
 // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
