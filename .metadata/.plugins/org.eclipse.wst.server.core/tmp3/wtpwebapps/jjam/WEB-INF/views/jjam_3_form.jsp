@@ -75,13 +75,40 @@
 			alert("실패")
 		}
 		
+	}); 	
+	
+	
+	//결제모달창
+
+	$(".pay_button").click(function(){
+		if($(".pay_checkbox").prop("checked")){
+			$.ajax({
+				type:"POST",
+				url:"jjam_3_payment.do",
+				data:
+				{
+				"c_id" : $("#bc_id1").text(),
+				"b_no" : $("#b_no1").text()
+				},
+				success: function(){
+					$("#join").modal("hide");
+					$("#pay").modal("hide");
+					alert("결제성공")
+				},
+				error:function(){
+					alert("결제보내기 실패")
+				}
+				
+			});
+		}else{
+// 			$("#pay_cancel_Modal").modal("show");
+			$("#pay_cancel_Modal").modal("show");
+		}
 	});
- 	
- 	
- 	
- 	
- 	
-	});
+
+});
+	
+
 </script>
  
 <title>Insert title here</title>
@@ -107,7 +134,7 @@
                      <li class="nav-item"><a href="" class="nav-link">HOME</a></li>
                      <li class="nav-item"><a href="" class="nav-link">나눔찾기(메인지도)</a></li>
                      <li class="nav-item"><a href="" class="nav-link">검색하기</a></li>
-                     <li class="nav-item"><a href="" class="nav-link">챗봇</a></li>
+                     <li class="nav-item"><a href="jjam_6_mypage.do" class="nav-link">마이페이지</a></li>
                      <li class="nav-item"><a href="" class="nav-link">로그인/로그아웃</a>
                     
                      </li>
@@ -135,7 +162,7 @@
       <!---------------------------------- 지도 api 자리-->
 <!--             <div class=""> -->
             
-             <div class="map_wrap">
+             <div class="map_wrap" >
     <div id="map" class="map-custom" ></div>
     <div class="hAddr"  >
      </div><!--  end.hAddr -->
@@ -150,19 +177,20 @@
         <!------------------------ 게시물  --------------------------->            
             <div class="boardlist"></div> 
        <!-- ------------------------------------------------------- -->
+        <div style="text-align:center;"><br><button class="btn btn-info create col-md-6"  type="button" data-toggle="modal" data-target="#create" >생성하기 ${userName}님 안녕하세요</button></div>
        
        
-       
-       
-            <!--///  참여 생성 모달 예제////-->                            
-                <a href=""  data-toggle="modal" data-target="#create" class="create">생성하기</a>
-
+           
         </div> <!-- 상단 navbar로 인한 공백-->
 
         <div class=""></div> <!-- 상단 navbar로 인한 공백-->
 
-        <div></div><!-- 그리드 왼쪽 공백-->
+        <div>
+         <!--///  참여 생성 모달 예제////-->                            
+        </div><!-- 그리드 왼쪽 공백-->
+
         
+        <div></div><div></div>
 
             <!----------------------------------참여 MODAL창----------------------------------------->
 	<div id="jjoin"></div>
@@ -181,7 +209,7 @@
                             <div class="modal-inner-grid">
                             <div class="form-group"> <label for="">회원 아이디 입력</label></div>
                                 <div class=""><input class="form-control" type="text"  name="c_id"
-                                        placeholder="아이디를 입력해주세요"> </div>
+                                        placeholder="아이디를 입력해주세요" value="${userName}" readonly></div>
                                 <div class="form-group"> <label for="email">무엇을 나누실 건가요?</label></div>
                                 <div class=""><input class="form-control" type="text" id="product" name="b_name"
                                         placeholder="물품을 입력해주세요"> </div>
@@ -321,7 +349,7 @@
             <!------------------------------------------------------------------------->
 
             
-            <!----------------------------------참여 MODAL창----------------------------------------->
+            <!----------------------------------결제 MODAL창----------------------------------------->
 
             <div id="pay" class="modal fade">
                     <div class="modal-dialog">
@@ -334,18 +362,23 @@
                                 <div >
                                     <div>
                                         <div>
-                                            <li>(uesrId) 님의 나눔</li>
-                                            <li>품목 </li>
-                                            <li>위치 </li>
-                                            <li>가격 </li>
-                                            <li>날짜 </li>
-
-                                            <li><input type="checkbox" class="checkbox"> 위의 내용을 확인 하셨습니까?</li>
+                                            <li>판매자: <span id="c_id1" class="parti"></span> 님의 나눔</li>
+                                            <li>글번호: <span id="b_no1" class="parti"></span></li>
+                              
+                                            <li>구매자id : <span id="bc_id1" class="parti">${userName}</span></li>
+                                            <li>제목 : <span id="b_title1" class="parti"></span></li>
+                                            <li>품목 : <span id="cate_name1" class="parti"></span></li>                                          
+                                            <li>위치 : <span id="b_location1" class="parti"></span></li>
+                                            <li>가격 : <span id="b_price1" class="parti"></span></li>
+                                            <li>날짜 : <span id="b_date1" class="parti"></span></li>
+                                            <li>내용 : <span id="b_content1" class="parti"></span></li>
+											<span id="cate_image1" style="display:none;" class="parti"></span>
+                                            <li><input type="checkbox" class="pay_checkbox"> 위의 내용을 확인 하셨습니까?</li>
                                         </div>
                                         
                                         <div class="col-lg-12"
                                             style="display: grid;  grid-template-rows:50% 50%;">
-                                            <input type="button" class="col-sm-12" style="border-radius: 10px; color:white; background-color: #d4b113" value="카카오페이">
+                                            <input type="button" class="col-sm-12 pay_button" style="border-radius: 10px; color:white; background-color: #d4b113" value="카카오페이">
                                             <input  data-dismiss="modal" type="button" class="col-sm-12" style="border-radius: 10px; color:white; background-color: #525252" value="돌아가기">
                                          
                                         </div>
@@ -360,6 +393,31 @@
                         </div>
                     </div>
                 </div>
+                
+<!--                 aria-hidden="true" -->
+                <!-- --------------------결제 실패시 뜨는 모달창 ---------------->
+                
+                <div class="modal fade" id="pay_cancel_Modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" >
+ 				 <div class="modal-dialog">
+    				<div class="modal-content">
+      					<div class="modal-header">
+        	<h4 class="modal-title" id="myModalLabel">결제실패</h4>
+       		 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+       			 </button>
+      			</div>
+      			<div class="modal-body">
+        <h5 style="text-align:center; color:black">체크버튼을 눌러주세요</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     
                  <!----------------------------------챗봇 modal info----------------------------------------->
 
@@ -551,6 +609,8 @@ infowindow1 = new kakao.maps.InfoWindow({
         '<span id="BDATE" style="display:none;">'+jsonList[i].b_date+'</span></br>'+
         '<span id="BLOCATION" style="display:none;">'+jsonList[i].b_location+'</span></br>'+
         '<span id="BCATEICON" style="display:none;">'+jsonList[i].cate_icon+'</span></br>'+
+        '<span id="CATENAME" style="display:none;">'+jsonList[i].cate_name+'</span></br>'+
+        '<span id="BNO" style="display:none;">'+jsonList[i].b_no+'</span></br>'+
         '</div>'
 
 });
@@ -583,7 +643,9 @@ $("#jjoin").empty();
 		 "b_price" : $("#BPRICE").text(),
 		 "b_location" : $("#BLOCATION").text(),
 		 "b_date" : $("#BDATE").text(),
-		 "cate_icon" : $("#BCATEICON").text()
+		 "cate_icon" : $("#BCATEICON").text(),
+		 "cate_name": $("#CATENAME").text(),
+		 "b_no":$("#BNO").text()
 		 },
 
 	success: function(data){

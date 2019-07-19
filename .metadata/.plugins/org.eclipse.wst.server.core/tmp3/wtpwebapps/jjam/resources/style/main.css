@@ -69,10 +69,10 @@ body{
     border: #eaa solid 4px;
 }
 
-.yellow {
-    background: #f6f6c0;
-    border: #dd7 solid 4px;
-}
+/* .yellow { */
+/*     background: #f6f6c0; */
+/*     border: #dd7 solid 4px; */
+/* } */
 
 
 .green {
@@ -86,10 +86,10 @@ body{
     border: #8dd solid 4px;
 }
 
-.blue {
-    background: #bcf;
-    border: #9ae solid 4px;
-}
+/* .blue { */
+/*     background: #bcf; */
+/*     border: #9ae solid 4px; */
+/* } */
 
 
 
@@ -167,14 +167,14 @@ body{
 .modal-form{
     display : grid;
     grid-template-columns: 15% 70% 15%;
-    grid-template-rows: 60px 500px ;
+    grid-template-rows: 60px 780px  50px;
 
 }
 /* 가운데화면 분할*/
 .modal-form-grid{
     display : grid;
     grid-template-columns: 60% 40%;
-    grid-template-rows: 60px 100%;
+    grid-template-rows: 60px  700px 70px;
 
 }
 /* */

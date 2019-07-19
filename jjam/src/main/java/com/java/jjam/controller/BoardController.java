@@ -73,15 +73,17 @@ public class BoardController {
 			//로그인
 			@RequestMapping("Login.do")
 			public String login(CustomerVO vo, HttpSession session) {
+				System.out.println("로그인 컨트롤러 실행");
 				CustomerVO result= customerService.idCheck_Login(vo);
 				if(result ==null || result.getC_id() ==null) {
-					
+					System.out.println("로그인 실패");
 					return "/customerLogin";
 				}else {
-					session.setAttribute("sessionTime", new Date().toLocaleString());
-					session.setAttribute("c_id", result.getC_id());
+					System.out.println("로그인성공");
+//					session.setAttribute("sessionTime", new Date().toLocaleString());
+					session.setAttribute("userName", result.getC_id());
 				}
-				return "/insertBoard";
+				return "redirect:jjam_3_form.do";
 			}
 
 			// 회원가입
@@ -140,21 +142,26 @@ public class BoardController {
 			//지도 클릭마다 게시판리스트 변경
 			@RequestMapping(value="/jjam_3_changeboardlist.do", method=RequestMethod.POST)
 			public ModelAndView changeBoard(BoardAndCateVO vo) {
-				System.out.println(vo.getStart_latitude());
-				System.out.println(vo.getStart_longitude());
-				System.out.println(vo.getEnd_latitude());
-				System.out.println(vo.getEnd_longitude());
 				List<BoardAndCateVO> list = boardService.changeBoard(vo);
-				
-				for(int i=0; i<list.size(); i++) {
-				System.out.println(list.get(i).getB_content());
-			}
 				ModelAndView mv = new ModelAndView();
 				mv.setViewName("jjam_3_boardlist");
 				JSONArray jsonArray = new JSONArray();
-				mv.addObject("jsonList", jsonArray.fromObject(list));
 				mv.addObject("data",list);
 				return mv;
+			}
+			
+			//참여하기 클릭하고 결제와 동시에 db에 데이터 전송
+			@RequestMapping(value="/jjam_3_payment.do", method=RequestMethod.POST)
+			@ResponseBody
+			public void insertPayment(BoardVO vo) {
+				boardService.insertPayment(vo);	
+			}
+			
+			//찜하기 눌렀을때 db에 전송
+			@RequestMapping(value="/jjam_3_jjim.do", method=RequestMethod.POST)
+			@ResponseBody
+			public void insertJjim(BoardVO vo) {
+				boardService.insertJjim(vo);
 			}
 
 			// viewBoardByCate 모델 

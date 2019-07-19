@@ -38,7 +38,7 @@
 			$('div form').attr('action', 'Login.do');
 		});
 		$('label[for="signup"]').click(function() {
-			$('div form').attr('action', 'customerLogin.do');
+			$('div form').attr('action', 'insertCustomer.do');
 		});
 
 		//입력폼에 마우스 올리면 변화, 빼면 되돌아가기       	
@@ -123,7 +123,7 @@
 		<!-- 공백-->
 
 
-		<form name="frm" method="post" action="">
+		<form name="frm" method="post" action="Login.do">
 			<input checked="true" id="signin" name="action" type="radio"
 				value="signin"></input> <label for="signin">Sign in</label> <input
 				id="signup" name="action" type="radio" value="signup"></input> <label

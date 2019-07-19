@@ -17,6 +17,15 @@ public class BoardDAO {
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
+	public void insertPayment(BoardVO vo) {
+		System.out.println("mybatis insertPayment 실행");
+		mybatis.insert("Board.insertPayment", vo);
+	}
+	public void insertJjim(BoardVO vo) {
+		System.out.println("mybatis insertJjim 실행");
+		mybatis.insert("Board.insertJjim", vo);
+	}
+	
 	public void insertBoard(BoardVO vo) {
 		System.out.println("mybatis insertBoard 실행");
 		mybatis.insert("Board.insertBoard", vo);

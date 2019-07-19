@@ -7,8 +7,8 @@
 <title>짬처리</title>
 </head>
 <body>
+회원가입완료
 
-
-<a href="../../jjam_3_form.jsp">이전화면으로</a>
+<a href="customerLogin.do">이전화면으로</a>
 </body>
 </html>

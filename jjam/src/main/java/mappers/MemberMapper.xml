@@ -30,6 +30,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="insertBoard" parameterType="boardVO">
 		INSERT INTO board VALUES(seq_b_no.nextval, sysdate, #{b_content}, #{b_location}, #{b_price}, #{b_name}, #{b_title}, 1, 0, 0, #{b_ea}, #{cate_id}, #{c_id}, #{b_latitude},#{b_longitude})
 	</insert>
+	
+	<insert id="insertPayment" parameterType="boardVO">
+		INSERT INTO payment VALUES(#{c_id}, #{b_no})
+	</insert>
+	
+	<insert id="insertJjim" parameterType="boardVO">
+		INSERT INTO jjim VALUES(#{c_id}, #{b_no})
+	</insert>
 		<!--  #{}: ''(따옴표가 자동으로 붙음)
 				${} : "(따옴표가 붙지않음) -->
 	<select id="viewBoard" resultMap="boardAndCateList">

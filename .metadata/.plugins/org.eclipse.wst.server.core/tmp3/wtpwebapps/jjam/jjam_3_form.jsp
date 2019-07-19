@@ -12,6 +12,6 @@ window.location = "jjam_3_form.do";
 <body>
   메인페이지 이동중~~~!
   
-
+<!-- 3, buyer -->
 </body>
 </html>

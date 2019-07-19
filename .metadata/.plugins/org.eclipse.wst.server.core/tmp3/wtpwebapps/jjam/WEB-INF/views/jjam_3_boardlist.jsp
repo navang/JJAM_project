@@ -19,14 +19,17 @@
 				type:"POST",
 				url: "jjam_3_form.do",
 				data :
-				{  "b_title" : $(this).find(".b_title").text(),
+				{  
+					"b_no" : $(this).find("#b_no").text(),
+					"b_title" : $(this).find(".b_title").text(),
 					"c_id" : $(this).find("#c_id").text(),
 					"b_content" : $(this).find("#b_content").text(),
 					"b_location" : $(this).find("#b_location").text(),
 					"b_date" : $(this).find("#b_date").text(),
 					"cate_icon": $(this).find("#cate_icon").text(),
 					"b_price" : $(this).find("#b_price").text(),
-					"b_name":$(this).find("#b_name").text()
+					"b_name":$(this).find("#b_name").text(),
+					"cate_name" :$(this).find("#cate_name").text()
 					},
 				success : function(data){
 					$("#jjoin").html(data);
@@ -38,6 +41,8 @@
 			});	
 			});	
 		});
+		
+		
 		});	
 	
 	
@@ -57,7 +62,9 @@
                     <div id="b_price" style="display:none;"><%=data.get(i).getB_price()%></div>               
                     <div id="b_location" style="display:none;"><%=data.get(i).getB_location()%></div>
                     <div id="cate_icon" style="display:none;"><%=data.get(i).getCate_icon()%></div>    
-                    <div id="b_nane" style="display:none;"><%=data.get(i).getB_name()%></div>                            
+                    <div id="b_nane" style="display:none;"><%=data.get(i).getB_name()%></div>          
+                    <div id="cate_name" style="display:none;"><%=data.get(i).getCate_name()%></div>      
+                    <div id="b_no" style="display:none;"><%=data.get(i).getB_no()%></div>                
 </div>           
 <%}%>
 <div id="insert_modal"></div>
