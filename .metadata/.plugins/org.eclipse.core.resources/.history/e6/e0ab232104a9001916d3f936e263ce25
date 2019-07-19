@@ -1,0 +1,389 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: NanumSquareR;
+    src: url(../font/NanumSquareR.woff) format('woff');
+}
+
+@font-face {
+    font-family: NanumSquareL;
+    src: url(../font/NanumSquareL.woff) format('woff');
+}
+
+@font-face {
+    font-family: NanumSquareB;
+    src: url(../font/NanumSquareB.woff) format('woff');
+}
+
+
+
+
+
+/* background*/
+
+
+h1, h2, h3, h5, p {
+    font-family: NanumSquareR, sans-serif;
+    font-weight: 500;
+    color: white;
+}
+h4{
+    font-family: NanumSquareR, sans-serif;
+    font-weight: 500;
+    color: black;
+}
+
+h1, h2, h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+body{    
+  
+    background: #033f3b;
+}
+
+#top_navbar {
+    background: rgba(0,0,0,0.7);
+}
+#top_navcolor {
+    background-color: #147b6b;
+}
+
+#top_navbar-nav > li > a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.separator {
+    background: #59e;
+    margin-top: 80px;
+    padding: 21px;
+    text-align: center;
+    color: #fff;
+}
+
+.red {
+    background: #fcc;
+    border: #eaa solid 4px;
+}
+
+.yellow {
+    background: #f6f6c0;
+    border: #dd7 solid 4px;
+}
+
+
+.green {
+    font:white;
+    background: #147b6b;
+
+}
+
+.bluegreen {
+    background: #aee;
+    border: #8dd solid 4px;
+}
+
+.blue {
+    background: #bcf;
+    border: #9ae solid 4px;
+}
+
+
+
+/*  풀어주기   */
+.map-custom{
+	width:700px;
+	height:700px;
+	position:relative;
+	overflow:hidden; 
+	margin-left: 80px; 
+	border-radius:30px;
+}
+
+.carousel-item{
+    width: 100%;
+    height: 700px;
+}
+
+.bigfont{
+	text-align:center;
+	font-size: 100px;
+    color: black;
+    font-family: NanumSquareL;
+    src: url(../font/NanumSquareL.woff) format('woff');
+   
+}
+
+.carousel-caption * {
+    color: white;
+    width: 500%;
+    height: 100%;
+}
+.white-text {
+    color: white;
+}
+.row{
+     display : grid;
+     grid-template-columns: 100%;
+     grid-template-rows: 70px 850px 100px ;
+}
+.mypage{
+	display: grid;
+	  grid-template-columns: 20% 60% 20%;
+     grid-template-rows: 400px 1400px ;
+}
+.mypage-columns{
+	display:grid;
+	  grid-template-columns: 30% 70%;
+ 	text-align: center;
+	
+}
+.mypage-rows{
+	display:grid;
+	  grid-template-rows: 30% 70%;
+
+	
+}
+
+
+/* 2_search 페이지 */
+.search{
+    display : grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 100px 300px 40px 50px 20px;
+}
+.search-grid {
+   
+    display : grid;
+    text-align: center;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+}
+/* 3 form*/
+/* 전체화면 분할*/
+.modal-form{
+    display : grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 60px 500px ;
+
+}
+/* 가운데화면 분할*/
+.modal-form-grid{
+    display : grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 60px 100%;
+
+}
+/* */
+.modal-inner-grid{
+    display : grid;
+    grid-template-columns: 50% 50%;
+   
+}
+
+.modal-size{
+    position: absolute;
+
+
+}
+/* modal fullsize*/
+.modal-dialog.modal-fullsize { 
+    width: 150%; height: 100%; margin: 0; padding: 0; 
+}
+.modal-content.modal-fullsize {
+    height: auto;
+    min-height: 100%;
+    border-radius: 0; 
+  }
+
+
+/* info modal img*/
+.img-chatmodal{
+    width:1900px;
+    height: 950px;
+    background-image:url('../image/chatbot_modal.png');
+}
+
+/*게시물 리스트*/
+.form-list {
+    display: grid; 
+    grid-template-columns:3% 20% 3% 74%;
+    padding: 10px;
+}
+
+
+/* 5*5 그리드 */
+#grid{
+    display: grid;
+    text-align: center;
+    grid-template-columns:150px 150px 150px 150px 150px 150px;
+}
+/* 메인 1 페이지  */
+.wrapper {
+    display: grid;
+    grid-template-columns: 5% 55% 40% ;
+    grid-template-rows: 100px 7px 100px 30px 100px 100px 30px 100px 100px;
+}
+
+/* 4 login form*/
+.login{
+    display : grid;
+    grid-template-columns: 30% 800px 27%;
+    grid-template-rows: 100px 800px ;
+}
+.login-set{
+    color : #1f0a01;
+    background-color: white;
+    border-radius: 15px;
+    display:grid; 
+    grid-template-rows: 80px 380px 300px 40px; 
+    text-align: center;
+
+}
+.login-set.login-form{
+    display: grid; 
+    grid-template-columns:240px 320px 240px;
+    grid-template-rows: 100px 100px 100px ;
+    
+}
+.design-border{
+    border: silver solid 2px;
+}
+
+/* 7_result*/
+.result-form{
+    display: grid;
+     grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 300px 300px 300px ;
+}
+/* footer*/
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	padding: 20px 0;
+	text-align: center;
+	color: white;
+	background:  black;
+}
+.card { 
+  height: 30%;
+}
+.card-columns {
+    @include media-breakpoint-only(lg) {
+      column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+      column-count: 5;
+    }
+  }
+@media (max-width:640px) {
+    .bigfont{
+        font-size: 700%;
+    }
+    .search{
+        display : grid;
+        grid-template-columns: 0px 100% 0px;
+        grid-template-rows: 100px 600px 30px 30px 20px ;
+    }
+      /* 5*5 그리드 */
+    #grid{
+    display: grid;
+    text-align: center;
+    grid-template-columns:160px 160px 160px;
+}
+    
+    .wrapper {
+    display: grid;
+    grid-template-columns: 5% 90% 5% ;
+    grid-template-rows: 100px 60px 30% 30px 70px 100px 100px 100px 10px;
+    }
+    .search-grid {
+   
+        display : grid;
+        text-align: center;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 50px  50px  50px 50px  50px  50px;
+    }
+    
+    
+    .mypage{
+	display: grid;
+	  grid-template-columns: 100%;
+     grid-template-rows: 0px  0px   170px  0px   500px;
+}
+.mypage-columns{
+	display:grid;
+	 grid-template-columns: 100%;
+		  grid-template-rows: 400px 50%;
+ 
+}
+.mypage-rows{
+	display:grid;
+	
+		  grid-template-template: 100%;
+		   grid-template-rows: 60% 40%;
+}
+.mypage-menu{
+	display:grid;
+	
+		  grid-template-rows: 25% 25% 25% 25%;
+}
+
+
+    /*챗 모달 사용설명서*/
+    .img-chatmodal{
+        width:640px;
+        height: 950px;
+        background-image:url('../image/chatbot_modal_mobile.png');
+      
+    }
+    /* modal fullsize*/
+    .modal-dialog.modal-fullsize { 
+    width: 100%; height: 100%; margin: 0; padding: 0; 
+    }
+    .modal-content.modal-fullsize {
+    height: auto;
+    min-height: 100%;
+    border-radius: 0; 
+  }
+    /* 가운데화면 분할*/
+    .modal-form-grid{
+    display : grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30px 30px 440px;
+
+    }
+    .modal-inner-grid{
+        display : grid;
+        grid-template-columns: 100%;
+       
+    }
+    /* 4 login form*/
+    .login{
+    display : grid;
+    grid-template-columns: 0px 640px 0px;
+    grid-template-rows: 50px 640px ;
+}
+.result-form{
+    display: grid;
+     grid-template-columns: 0% 100% 0%;
+    grid-template-rows: 100px 600px 0px ;
+}
+/* footer*/
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	padding: 20px;
+	text-align: center;
+	color: white;
+	background:  black;
+}
+
+
+}
+
