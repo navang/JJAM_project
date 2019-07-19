@@ -9,7 +9,11 @@
 <body>
 
  <div>
+<<<<<<< HEAD
             <h2 style="color:black;">찜목록</h2>
+=======
+            <h2>찜목록</h2>
+>>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
           <div class="row">
           <div class="col-lg-4 col-md-12">
             <div class="card h-100">

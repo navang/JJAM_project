@@ -40,13 +40,14 @@
     $('body').css({ "background":'#033f3b', "transition":'all 0.65s ease-in-out'});
   }
 });
+
   })
 
     </script>
 </head>
 <body>
 
-<body>
+
     <!-- ---------------------------------상단 고정 메뉴바--------------------------------------------->
     <h1 class="seperator"></h1>
     <nav id="top_navcolor" class="navbar fixed-top navbar navbar-expand-xl navbar-dark">
@@ -57,7 +58,7 @@
                 <img id="logo" class="" style="width: 60px; height: 60px;" src="./resources/image/character.png" alt=""><img src="./resources/image/JJCR_white1.png">
             </a>
             <!-- 햄버거 버튼-->
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#myNav">
+            <button class="navbar-toggler ham" data-toggle="collapse" data-target="#myNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- 네비게이션 버튼 -->

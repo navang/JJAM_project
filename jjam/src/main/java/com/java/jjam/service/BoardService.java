@@ -39,4 +39,8 @@ public class BoardService {
 	public List<BoardAndCateVO> changeBoard(BoardAndCateVO vo){
 		return boardDAO.changeBoard(vo);
 	}
+	public int cntBoard(int cnt) {
+		return boardDAO.cntBoard(cnt);
+	}
+
 }

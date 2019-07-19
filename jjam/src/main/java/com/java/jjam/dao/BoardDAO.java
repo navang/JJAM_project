@@ -56,5 +56,10 @@ public class BoardDAO {
 	
 		return listByCate;
 	}
+	public int cntBoard(int cnt) {
+		System.out.println("mybatis cntBoard 실행");
+		int result=mybatis.selectOne("Board.cntBoard", cnt);
+		return result;
+	}
 	
 }

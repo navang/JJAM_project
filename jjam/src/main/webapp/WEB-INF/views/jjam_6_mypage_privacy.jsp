@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<<<<<<< HEAD
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -41,12 +42,22 @@ $(document).ready(function(){
 
 </script>
 
+=======
+</head>
+<body>
+
+
+>>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
 
 <form action="" class="tab" id="tab1">
   <div class="container">
       <div class="row">
           <div class="col-md-8  justify-content-center">
+<<<<<<< HEAD
              <h2 style="color:black;">개인정보 변경</h2>
+=======
+             <h3>개인정보 변경</h3>
+>>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
               <div class="form-group">
            <!-- 입력 요소(input,label)를 묶는 그룹-->
               <label for="user" class="margin_top">아이디</label>

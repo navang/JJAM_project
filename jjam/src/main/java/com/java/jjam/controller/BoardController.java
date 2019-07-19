@@ -32,7 +32,6 @@ public class BoardController {
 	private BoardService boardService;
 	@Autowired
 	private BoardByCateService boardByCateService;
-	
 	@Autowired
 	private CustomerService customerService;
 	
@@ -48,18 +47,20 @@ public class BoardController {
 			public void insertBoard(BoardVO vo) throws IOException {
 				boardService.insertBoard(vo);
 			}
-
-			@RequestMapping("jjam_2_search.do")
-			public void jjam_2() {
-				
-			}
 			
+			// 글 갯수 
+			@RequestMapping("/jjam_intro.do")
+			public ModelAndView cntBoard(int cnt) {
+				System.out.println("컨트롤러");
+				int result =boardService.cntBoard(cnt);
+				ModelAndView mv = new ModelAndView();
+				mv.addObject("cnt", result);
+				mv.setViewName("/jjam_intro");
+				return mv;
+			}
 
 			//아이디체크
-
 			//아이디 중복확인
-
-
 			@RequestMapping(value="idCheck.do", produces="applicateion/text; charset=UTF-8")
 			@ResponseBody
 			public String idCheck(CustomerVO vo) {
@@ -125,7 +126,7 @@ public class BoardController {
 				mv.addObject("data", vo);
 				return mv;
 			}
-
+			
 			//게시판리스트
 			@RequestMapping(value="/jjam_3_boardlist.do", method=RequestMethod.POST)
 			@ResponseBody
@@ -164,25 +165,11 @@ public class BoardController {
 				boardService.insertJjim(vo);
 			}
 
-			// viewBoardByCate 모델 
-//		@RequestMapping(value="boardByCate.do",method=RequestMethod.POST)
-//		@ResponseBody
-//			public void viewBoardByCate(BoardByCateVO vo, Model model) {
-//			List<BoardByCateVO> listByCate = boardByCateService.viewBoardByCate(vo);
-////			String	 result ="";
-//				for(int i=0; i<listByCate.size(); i++) {
-//					System.out.println(listByCate.get(i).getB_content());
-//			}
-//				JSONArray jsonArrayCate = new JSONArray();
-//				model.addAttribute("jsonListCate", jsonArrayCate.fromObject(listByCate));
-//				model.addAttribute("data",listByCate);
-//			}
 			// viewBoardByCate 모델 엔뷰 
 		@RequestMapping(value="boardByCate.do",method=RequestMethod.POST)
 		@ResponseBody
 			public ModelAndView viewBoardByCate(BoardByCateVO vo) {
 			List<BoardByCateVO> listByCate = boardByCateService.viewBoardByCate(vo);
-//			String	 result ="";
 				for(int i=0; i<listByCate.size(); i++) {
 					System.out.println(listByCate.get(i).getB_content());
 			}

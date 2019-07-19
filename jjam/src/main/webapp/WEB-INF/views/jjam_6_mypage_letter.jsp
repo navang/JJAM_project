@@ -9,7 +9,11 @@
 <body>
 
 <div>
+<<<<<<< HEAD
   <h2 style="color:black;">댓글 및 쪽지</h2>
+=======
+  <h1>댓글 및 쪽지</h1>
+>>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
   
 <div class="tab-content">
     <div class="tab-pane active" id="inbox">
