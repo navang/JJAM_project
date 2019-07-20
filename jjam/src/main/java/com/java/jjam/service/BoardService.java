@@ -39,8 +39,14 @@ public class BoardService {
 	public List<BoardAndCateVO> changeBoard(BoardAndCateVO vo){
 		return boardDAO.changeBoard(vo);
 	}
-	public int cntBoard(int cnt) {
-		return boardDAO.cntBoard(cnt);
+	// 게시물수
+	public int cntBoard() {
+		return boardDAO.cntBoard();
 	}
+	//회원수
+	public int cntMember() {
+		return boardDAO.cntMember();
+	}
+
 
 }

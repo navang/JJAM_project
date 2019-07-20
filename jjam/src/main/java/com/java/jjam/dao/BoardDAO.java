@@ -56,9 +56,16 @@ public class BoardDAO {
 	
 		return listByCate;
 	}
-	public int cntBoard(int cnt) {
+	// 게시물 수 
+	public int cntBoard() {
 		System.out.println("mybatis cntBoard 실행");
-		int result=mybatis.selectOne("Board.cntBoard", cnt);
+		int result=mybatis.selectOne("BoardCount.cntBoard", null);
+		return result;
+	}
+	//회원수
+	public int cntMember() {
+		System.out.println("mybatis cntMember 실행");
+		int result=mybatis.selectOne("BoardCount.cntMember", null);
 		return result;
 	}
 	

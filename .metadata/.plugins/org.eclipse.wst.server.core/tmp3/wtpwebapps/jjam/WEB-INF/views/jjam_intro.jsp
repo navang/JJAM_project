@@ -30,6 +30,8 @@
     <script src="https://kit.fontawesome.com/825d367943.js"></script>
 
 </head>
+<% String cntB =(String)request.getAttribute("cntB"); %>
+<% String cntC =(String)request.getAttribute("cntC"); %>
 
 <body>
 <!--  상단 햄버거  -->
@@ -71,7 +73,7 @@
                             <div class="carousel-item active" >
                                   <img class=""  src="./resources/image/hidden.png" alt="">                              
                                 <div  class="carousel-caption">                                        
-                               			    <h2 class="bigfont">1000</h2>
+                               			    <h2 class="bigfont">${cntB } </h2>
                                             <h2>나눔되는 게시물 수</h2>
                                 </div>
                             </div>
@@ -79,15 +81,15 @@
                             <div class="carousel-item">
                                     <img class=""src="./resources/image/hidden.png" alt="">
                                     <div class="carousel-caption">                                                                      
-                                            <h2 class="bigfont">1000</h2>
-                                            <h2>설명</h2>
+                                            <h2 class="bigfont">${cntC }</h2>
+                                            <h2>나눔에 참여한 회원 수</h2>
                                     </div>
                                 </div>
                                  <div class="carousel-item w">     
                                         <img class=""  src="./resources/image/hidden.png" alt="">
                                 <div class="carousel-caption">
                                            <h2 class="bigfont">1000</h2>
-                                           <h2>설명</h2>
+                                           <h2>옴슑슑</h2>
                                 </div>
                             </div>        
                         </div>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<mapper namespace="BoardCount">
+
+
+
+<resultMap id="boardCount" type="int">
+	<id property="b_no" column="b_no"/>
+	<result property="cnt" column="cnt"/>
+</resultMap>
+
+	<select id="cntBoard"   resultMap="boardCount">
+		SELECT count(b_no)  cnt FROM board
+	</select>
+
+</mapper>

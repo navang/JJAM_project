@@ -286,3 +286,10 @@
 7월 18, 2019 16:55:44.13 [14412:2192:0718/165544.138:ERROR:browser_process_sub_thread.cc(221)] Waited 23 ms for network service
 7월 18, 2019 18:50:16.80 [15824:4528:0718/185016.800:ERROR:textfield.cc(1758)] NOT IMPLEMENTED
 >>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
+
+7월 19, 2019 10:12:01.59 NEW SESSION
+7월 19, 2019 10:12:01.59 [10764:4156:0719/101201.595:ERROR:backend_impl.cc(1060)] Critical error found -8
+7월 19, 2019 10:15:05.27 [10764:4156:0719/101505.276:ERROR:backend_impl.cc(1060)] Critical error found -8
+7월 19, 2019 10:15:05.28 [10764:4156:0719/101505.277:ERROR:entry_impl.cc(995)] Failed to save user data
+7월 19, 2019 11:52:33.44 [10764:5904:0719/115233.448:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 19, 2019 11:52:33.52 [10764:7396:0719/115233.525:ERROR:browser_process_sub_thread.cc(221)] Waited 21 ms for network service

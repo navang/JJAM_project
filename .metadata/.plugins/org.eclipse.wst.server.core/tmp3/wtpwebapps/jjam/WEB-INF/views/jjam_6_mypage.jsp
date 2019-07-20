@@ -90,11 +90,9 @@
 
 <script>
   $(function(){
-<<<<<<< HEAD
 // 	  $(".mypage-menu a").eq(1).trigger("click");
 
-=======
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
+
       $('.mypage-menu a').each(function(){
           $(this).click(function() { 
         	  $('.mypage-menu a').css("background-color", "white");
@@ -105,11 +103,10 @@
         	 $("#ddd").empty();
           $.ajax({
         	  type:'POST',
-<<<<<<< HEAD
+
         	  url:activeTab+'.do',
-=======
+
         	  url:'./'+activeTab+'.jsp',
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
         	  success:function(data){
         		  $('#ddd').html(data);
         	  },
@@ -124,11 +121,6 @@
 
 
 
-
-
-<<<<<<< HEAD
-
-=======
 <!--이메일-->
 <script>
 /**
@@ -150,7 +142,6 @@ $(document).ready(function(){
 });
 
 </script>
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
 <body>
 
 
@@ -167,28 +158,7 @@ $(document).ready(function(){
 				src="./resources/image/JJCR_white1.png">
 			</a>
 			<!-- 햄버거 버튼-->
-<<<<<<< HEAD
-			<button class="navbar-toggler" data-toggle="collapse"
-=======
-			<button class="navbar-toggler ham" data-toggle="collapse"
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
-				data-target="#myNav">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<!-- 네비게이션 버튼 -->
-			<div id="myNav" class="collapse navbar-collapse justify-content-end">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a href="" class="nav-link">HOME</a></li>
-					<li class="nav-item"><a href="" class="nav-link">나눔찾기(메인지도)</a></li>
-					<li class="nav-item"><a href="" class="nav-link">검색하기</a></li>
-					<li class="nav-item"><a href="" class="nav-link">챗봇</a></li>
-					<li class="nav-item"><a href="" class="nav-link">로그인/로그아웃</a>
 
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
 
 
 	<!--------------------------------------본문 ------------------------------------------------------>
@@ -213,14 +183,13 @@ $(document).ready(function(){
 					<div style="padding:20px;">
 						<img src="./resources/image/3.jpg"
 							style="width: 200px; height: 200px; border-radius: 100px;"
-<<<<<<< HEAD
 							alt="My Image"></br></br>
 						<h5 style="color:black;">${userName}님 안녕하세요</h5></br></br></br>
 						<h2 class="my-4" style="color:black;">마이페이지</h2>
-=======
-							alt="My Image">
+
+						
 						<h1 class="my-4">마이페이지</h1>
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
+
 					</div>
 
 			
