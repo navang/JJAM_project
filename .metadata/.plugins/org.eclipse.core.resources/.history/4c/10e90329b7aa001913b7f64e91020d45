@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	$("#button").click(function(){
+		$.ajax({
+			type:"post",
+			url : "sendAjax.jsp",
+			data: 
+			{
+				"안녕" : "hi"
+			},
+			success: function(data){
+				alert("성공" + data);
+			},
+			error: function(){
+				alert("실패")
+			}
+		
+		});
+	});
+</script>
+ajax로 데이터 보내기
+
+<input type="button" id="button">
+
+</body>
+</html>

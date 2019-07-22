@@ -286,3 +286,67 @@
 7월 18, 2019 16:55:44.13 [14412:2192:0718/165544.138:ERROR:browser_process_sub_thread.cc(221)] Waited 23 ms for network service
 7월 18, 2019 18:50:16.80 [15824:4528:0718/185016.800:ERROR:textfield.cc(1758)] NOT IMPLEMENTED
 >>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
+
+7월 19, 2019 09:56:03.14 NEW SESSION
+7월 19, 2019 09:56:03.14 [17668:32588:0719/095603.142:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 19, 2019 09:56:03.22 [17668:8120:0719/095603.220:ERROR:browser_process_sub_thread.cc(221)] Waited 25 ms for network service
+7월 19, 2019 10:46:32.58 [20912:15852:0719/104632.587:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 19, 2019 10:46:32.68 [20912:6164:0719/104632.682:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service
+7월 19, 2019 12:44:13.13 [17344:32556:0719/124413.136:ERROR:socket_stream.cc(219)] Closing stream with result -2
+7월 19, 2019 14:35:51.43 [17344:5712:0719/143551.431:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 19, 2019 14:35:51.51 [17344:32556:0719/143551.517:ERROR:browser_process_sub_thread.cc(221)] Waited 44 ms for network service
+
+7월 19, 2019 20:00:13.06 NEW SESSION
+7월 19, 2019 20:00:13.06 [28420:25704:0719/200013.062:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 19, 2019 20:00:13.18 [28420:19816:0719/200013.188:ERROR:browser_process_sub_thread.cc(221)] Waited 57 ms for network service
+7월 19, 2019 20:10:14.79 [10088:14352:0719/201014.798:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 19, 2019 20:10:14.87 [10088:30292:0719/201014.871:ERROR:browser_process_sub_thread.cc(221)] Waited 15 ms for network service
+
+7월 20, 2019 15:02:07.68 NEW SESSION
+7월 20, 2019 15:02:07.68 [19960:17020:0720/150207.681:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 20, 2019 15:02:07.76 [19960:32008:0720/150207.761:ERROR:browser_process_sub_thread.cc(221)] Waited 22 ms for network service
+
+7월 20, 2019 20:18:11.40 NEW SESSION
+7월 20, 2019 20:18:11.40 [33860:20104:0720/201811.386:ERROR:socket_stream.cc(219)] Closing stream with result -2
+7월 21, 2019 11:16:49.67 [33860:15944:0721/111649.677:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 21, 2019 11:16:49.76 [33860:20104:0721/111649.767:ERROR:browser_process_sub_thread.cc(221)] Waited 46 ms for network service
+7월 21, 2019 13:45:14.61 [32236:2648:0721/134514.611:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 21, 2019 13:45:14.72 [32236:7580:0721/134514.724:ERROR:browser_process_sub_thread.cc(221)] Waited 25 ms for network service
+7월 21, 2019 13:57:25.20 [5544:21428:0721/135725.207:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 21, 2019 13:57:25.34 [5544:9176:0721/135725.346:ERROR:browser_process_sub_thread.cc(221)] Waited 78 ms for network service
+7월 21, 2019 14:25:01.35 [6496:16696:0721/142501.354:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 21, 2019 14:25:01.45 [6496:20300:0721/142501.449:ERROR:browser_process_sub_thread.cc(221)] Waited 32 ms for network service
+7월 21, 2019 15:30:46.48 [26060:7004:0721/153046.489:ERROR:socket_stream.cc(219)] Closing stream with result -2
+7월 21, 2019 15:30:46.58 [26060:7004:0721/153046.580:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -105
+7월 21, 2019 15:30:49.12 [26060:7004:0721/153049.123:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 21, 2019 15:31:43.57 [26060:7004:0721/153143.571:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 21, 2019 15:33:07.13 [26060:7004:0721/153307.128:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 21, 2019 15:36:09.69 [26060:7004:0721/153609.692:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+
+7월 21, 2019 17:26:39.99 NEW SESSION
+7월 21, 2019 17:26:39.99 [11676:12872:0721/172639.991:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 21, 2019 17:26:40.08 [11676:4720:0721/172640.081:ERROR:browser_process_sub_thread.cc(221)] Waited 42 ms for network service
+7월 21, 2019 17:49:57.32 [10228:31456:0721/174957.321:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 21, 2019 17:49:57.40 [10228:11268:0721/174957.406:ERROR:browser_process_sub_thread.cc(221)] Waited 25 ms for network service
+7월 21, 2019 17:59:59.56 [30004:976:0721/175959.566:ERROR:socket_stream.cc(219)] Closing stream with result -2
+7월 21, 2019 17:59:59.66 [30004:976:0721/175959.668:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 21, 2019 18:00:02.17 [30004:976:0721/180002.173:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 21, 2019 18:00:52.10 [30004:976:0721/180052.099:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 21, 2019 18:02:26.25 [30004:976:0721/180226.250:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 21, 2019 18:05:25.53 [30004:976:0721/180525.537:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 21, 2019 18:09:42.43 [30004:2484:0721/180942.432:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+7월 21, 2019 18:10:08.76 [30004:2484:0721/181008.768:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+7월 21, 2019 18:11:03.53 [30004:2484:0721/181103.535:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+7월 21, 2019 18:12:30.20 [30004:976:0721/181230.208:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 21, 2019 18:12:55.59 [30004:2484:0721/181255.593:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+7월 21, 2019 18:20:54.16 [30004:2484:0721/182054.168:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 21, 2019 18:20:54.25 [30004:976:0721/182054.258:ERROR:browser_process_sub_thread.cc(221)] Waited 35 ms for network service
+7월 21, 2019 18:57:15.93 [4396:8848:0721/185715.935:ERROR:socket_stream.cc(219)] Closing stream with result -2
+7월 21, 2019 20:36:35.69 [4396:2796:0721/203635.697:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 21, 2019 20:36:35.78 [4396:8848:0721/203635.782:ERROR:browser_process_sub_thread.cc(221)] Waited 48 ms for network service
+7월 21, 2019 21:33:45.94 [32320:21896:0721/213345.946:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 21, 2019 21:33:46.08 [32320:26112:0721/213346.081:ERROR:browser_process_sub_thread.cc(221)] Waited 46 ms for network service
+
+7월 22, 2019 10:15:13.31 NEW SESSION
+7월 22, 2019 10:15:13.31 [13612:7512:0722/101513.317:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 22, 2019 10:15:13.42 [13612:11148:0722/101513.427:ERROR:browser_process_sub_thread.cc(221)] Waited 25 ms for network service

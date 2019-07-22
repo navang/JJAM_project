@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Chat">
+	
+
+<resultMap id="ChatList"  type="chatVO">
+	<id property="chat_no" column="chat_no"/>
+	<result property="chat_content" column="chat_content"/>
+	<result property="chat_date" column="chat_date"/>
+	<result property="customerA" column="customerA"/>
+	<result property="bc_id" column="bc_id"/>
+	<result property="chat_title" column="chat_title"/>
+<!-- 	<result property="bc_id" column="customerB"/> -->
+	</resultMap>
+
+	<select id="selectChat" resultMap="ChatList" parameterType="chatVO">
+	select chat_no, chat_content, chat_date, customerA, chat_title from chat where bc_id = #{bc_id} 
+	</select>
+	
+
+
+</mapper>
+<!--  여기에 AND ( VIEW 에서 가져온 CATE_ID 와 같을때 #{cate_id} ) -->

@@ -40,6 +40,7 @@
 </style>
 
     <link rel="stylesheet" href="./resources/style/main.css" >
+ 
     
     <script src="https://kit.fontawesome.com/825d367943.js"></script>
     <script>
@@ -78,33 +79,7 @@
 	}); 	
 	
 	
-	//결제모달창
 
-	$(".pay_button").click(function(){
-		if($(".pay_checkbox").prop("checked")){
-			$.ajax({
-				type:"POST",
-				url:"jjam_3_payment.do",
-				data:
-				{
-				"c_id" : $("#bc_id1").text(),
-				"b_no" : $("#b_no1").text()
-				},
-				success: function(){
-					$("#join").modal("hide");
-					$("#pay").modal("hide");
-					alert("결제성공")
-				},
-				error:function(){
-					alert("결제보내기 실패")
-				}
-				
-			});
-		}else{
-// 			$("#pay_cancel_Modal").modal("show");
-			$("#pay_cancel_Modal").modal("show");
-		}
-	});
 
 });
 	
@@ -116,34 +91,8 @@
 <body>
 
 <!-- ---------------------------------상단 고정 메뉴바--------------------------------------------->
-     <h1 class="seperator"></h1>
-     <nav id="top_navcolor" class="navbar fixed-top navbar navbar-expand-xl navbar-dark">
-         <!-- fixed-top 상단고정-->
-         <div class="container">
-             <!-- 브랜드 로고 삽입-->
-             <a href="jjam_3_form.jsp" class="navbar-brand">
-                 <img id="logo" class="" style="width: 60px; height: 60px;" src="./resources/image/character.png" alt=""><img src="./resources/image/JJCR_white1.png">
-             </a>
-             <!-- 햄버거 버튼-->
-             <button class="navbar-toggler ham" data-toggle="collapse" data-target="#myNav">
-                 <span class="navbar-toggler-icon"></span>
-             </button>
-             <!-- 네비게이션 버튼 -->
-             <div id="myNav" class="collapse navbar-collapse justify-content-end">
-                 <ul class="navbar-nav">
-                     <li class="nav-item"><a href="" class="nav-link">HOME</a></li>
-                     <li class="nav-item"><a href="" class="nav-link">나눔찾기(메인지도)</a></li>
-                     <li class="nav-item"><a href="" class="nav-link">검색하기</a></li>
-                     <li class="nav-item"><a href="jjam_6_mypage.do" class="nav-link">마이페이지</a></li>
-                     <li class="nav-item"><a href="" class="nav-link">로그인/로그아웃</a>
-                    
-                     </li>
-                 </ul>
-             </div>
-         </div>
-     </nav>
- 
-   
+  <%@ include file ="header.jsp" %>
+
     <!--------------------------------------본문 ------------------------------------------------------>
 
     <div class="modal-form">
@@ -349,77 +298,11 @@
             <!------------------------------------------------------------------------->
 
             
-            <!----------------------------------결제 MODAL창----------------------------------------->
-
-            <div id="pay" class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content modal-size">
-                            <div class="modal-header">
-                                <h4>결제 </h4>
-                             
-                            </div>
-                            <div class="modal-body">
-                                <div >
-                                    <div>
-                                        <div>
-                                            <li>판매자: <span id="c_id1" class="parti"></span> 님의 나눔</li>
-                                            <li>글번호: <span id="b_no1" class="parti"></span></li>
-                              
-                                            <li>구매자id : <span id="bc_id1" class="parti">${userName}</span></li>
-                                            <li>제목 : <span id="b_title1" class="parti"></span></li>
-                                            <li>품목 : <span id="cate_name1" class="parti"></span></li>                                          
-                                            <li>위치 : <span id="b_location1" class="parti"></span></li>
-                                            <li>가격 : <span id="b_price1" class="parti"></span></li>
-                                            <li>날짜 : <span id="b_date1" class="parti"></span></li>
-                                            <li>내용 : <span id="b_content1" class="parti"></span></li>
-											<span id="cate_image1" style="display:none;" class="parti"></span>
-                                            <li><input type="checkbox" class="pay_checkbox"> 위의 내용을 확인 하셨습니까?</li>
-                                        </div>
-                                        
-                                        <div class="col-lg-12"
-                                            style="display: grid;  grid-template-rows:50% 50%;">
-                                            <input type="button" class="col-sm-12 pay_button" style="border-radius: 10px; color:white; background-color: #d4b113" value="카카오페이">
-                                            <input  data-dismiss="modal" type="button" class="col-sm-12" style="border-radius: 10px; color:white; background-color: #525252" value="돌아가기">
-                                         
-                                        </div>
-                                    </div>
-                                 
-                                </div>
-    
-                            </div>
-                            <div class="modal-footer">
-    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-<!--                 aria-hidden="true" -->
-                <!-- --------------------결제 실패시 뜨는 모달창 ---------------->
-                
-                <div class="modal fade" id="pay_cancel_Modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" >
- 				 <div class="modal-dialog">
-    				<div class="modal-content">
-      					<div class="modal-header">
-        	<h4 class="modal-title" id="myModalLabel">결제실패</h4>
-       		 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-       			 </button>
-      			</div>
-      			<div class="modal-body">
-        <h5 style="text-align:center; color:black">체크버튼을 눌러주세요</h5>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+          
 
 
     
-                 <!----------------------------------챗봇 modal info----------------------------------------->
+                 <!-------------첫페이지 이미지 출력 modal----------------------------------------->
 
                  <div id="info" class="modal fade" role="dialog">
                         <div class="modal-dialog modal-fullsize" >
@@ -635,7 +518,7 @@ $("#jjoin").empty();
 //참여 모달창 연결
 	$.ajax({
 	type:"POST",
-	url : "jjam_3_form.do",
+	url : "jjam_3_participate.do",
 	data : 
 		{"b_title" : $("#BTITLE").text(),
 		 "c_id" : $("#CID").text(),
@@ -715,17 +598,6 @@ function displayCenterInfo(result, status) {
 
 
 <!--------------------------------  챗봇 api------------------- -->
- <div id="frogue-container" class="position-right-bottom" data-chatbot="00b6f39a-b84c-48d4-9037-e20bfac8625a" data-user="사용자ID" data-init-key="value"></div>
-
-        <script>
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "https:\/\/danbee.ai/js/plugins/frogue-embed/frogue-embed.min.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'frogue-embed'));
-        </script> 
-
+<%@ include file ="chatbot.jsp" %>
 
 </html>

@@ -90,11 +90,7 @@
 
 <script>
   $(function(){
-<<<<<<< HEAD
 // 	  $(".mypage-menu a").eq(1).trigger("click");
-
-=======
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
       $('.mypage-menu a').each(function(){
           $(this).click(function() { 
         	  $('.mypage-menu a').css("background-color", "white");
@@ -105,11 +101,9 @@
         	 $("#ddd").empty();
           $.ajax({
         	  type:'POST',
-<<<<<<< HEAD
         	  url:activeTab+'.do',
-=======
-        	  url:'./'+activeTab+'.jsp',
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
+        	  data:
+        		  {"bc_id" : $("#userName").text()},
         	  success:function(data){
         		  $('#ddd').html(data);
         	  },
@@ -126,69 +120,15 @@
 
 
 
-<<<<<<< HEAD
-
-=======
-<!--이메일-->
-<script>
-/**
- * FloatLabels
- * Version: 1.0
- * URL: http://clubdesign.github.io/floatlabels.js/
- * Description: 
- * Author: Marcus Pohorely ( http://www.clubdesign.at )
- * Copyright: Copyright 2013 / 2014 http://www.clubdesign.at
- */
- !function(a,b){function g(b,c){this.$element=a(b),this.settings=a.extend({},f,c),this.init()}var e="floatlabel",f={slideInput:!0,labelStartTop:"20px",labelEndTop:"10px",paddingOffset:"10px",transitionDuration:.3,transitionEasing:"ease-in-out",labelClass:"",typeMatches:/text|password|email|number|search|url/};g.prototype={init:function(){var a=this,c=this.settings,d=c.transitionDuration,e=c.transitionEasing,f=this.$element,g={"-webkit-transition":"all "+d+"s "+e,"-moz-transition":"all "+d+"s "+e,"-o-transition":"all "+d+"s "+e,"-ms-transition":"all "+d+"s "+e,transition:"all "+d+"s "+e};if("INPUT"===f.prop("tagName").toUpperCase()&&c.typeMatches.test(f.attr("type"))){var h=f.attr("id");h||(h=Math.floor(100*Math.random())+1,f.attr("id",h));var i=f.attr("placeholder"),j=f.data("label"),k=f.data("class");k||(k=""),i&&""!==i||(i="You forgot to add placeholder attribute!"),j&&""!==j||(j=i),this.inputPaddingTop=parseFloat(f.css("padding-top"))+parseFloat(c.paddingOffset),f.wrap('<div class="floatlabel-wrapper" style="position:relative"></div>'),f.before('<label for="'+h+'" class="label-floatlabel '+c.labelClass+" "+k+'">'+j+"</label>"),this.$label=f.prev("label"),this.$label.css({position:"absolute",top:c.labelStartTop,left:f.css("padding-left"),display:"none","-moz-opacity":"0","-khtml-opacity":"0","-webkit-opacity":"0",opacity:"0"}),c.slideInput||f.css({"padding-top":this.inputPaddingTop}),f.on("keyup blur change",function(b){a.checkValue(b)}),b.setTimeout(function(){a.$label.css(g),a.$element.css(g)},100),this.checkValue()}},checkValue:function(a){if(a){var b=a.keyCode||a.which;if(9===b)return}var c=this.$element,d=c.data("flout");""!==c.val()&&c.data("flout","1"),""===c.val()&&c.data("flout","0"),"1"===c.data("flout")&&"1"!==d&&this.showLabel(),"0"===c.data("flout")&&"0"!==d&&this.hideLabel()},showLabel:function(){var a=this;a.$label.css({display:"block"}),b.setTimeout(function(){a.$label.css({top:a.settings.labelEndTop,"-moz-opacity":"1","-khtml-opacity":"1","-webkit-opacity":"1",opacity:"1"}),a.settings.slideInput&&a.$element.css({"padding-top":a.inputPaddingTop}),a.$element.addClass("active-floatlabel")},50)},hideLabel:function(){var a=this;a.$label.css({top:a.settings.labelStartTop,"-moz-opacity":"0","-khtml-opacity":"0","-webkit-opacity":"0",opacity:"0"}),a.settings.slideInput&&a.$element.css({"padding-top":parseFloat(a.inputPaddingTop)-parseFloat(this.settings.paddingOffset)}),a.$element.removeClass("active-floatlabel"),b.setTimeout(function(){a.$label.css({display:"none"})},1e3*a.settings.transitionDuration)}},a.fn[e]=function(b){return this.each(function(){a.data(this,"plugin_"+e)||a.data(this,"plugin_"+e,new g(this,b))})}}(jQuery,window,document);
 
 
-$(document).ready(function(){
-    $('.form-control').floatlabel({
-        labelClass: 'float-label',
-        labelEndTop: 5
-    });
-});
 
-</script>
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
+
 <body>
 
 
 	<!-- ---------------------------------상단 고정 메뉴바--------------------------------------------->
-	<h1 class="seperator"></h1>
-	<nav id="top_navcolor"
-		class="navbar fixed-top navbar navbar-expand-xl navbar-dark">
-		<!-- fixed-top 상단고정-->
-		<div class="container">
-			<!-- 브랜드 로고 삽입-->
-			<a href="jjam_3_form.jsp" class="navbar-brand"> <img id="logo"
-				class="" style="width: 60px; height: 60px;"
-				src="./resources/image/character.png" alt=""><img
-				src="./resources/image/JJCR_white1.png">
-			</a>
-			<!-- 햄버거 버튼-->
-<<<<<<< HEAD
-			<button class="navbar-toggler" data-toggle="collapse"
-=======
-			<button class="navbar-toggler ham" data-toggle="collapse"
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
-				data-target="#myNav">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<!-- 네비게이션 버튼 -->
-			<div id="myNav" class="collapse navbar-collapse justify-content-end">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a href="" class="nav-link">HOME</a></li>
-					<li class="nav-item"><a href="" class="nav-link">나눔찾기(메인지도)</a></li>
-					<li class="nav-item"><a href="" class="nav-link">검색하기</a></li>
-					<li class="nav-item"><a href="" class="nav-link">챗봇</a></li>
-					<li class="nav-item"><a href="" class="nav-link">로그인/로그아웃</a>
-
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<%@ include file ="header.jsp" %>
 
 
 	<!--------------------------------------본문 ------------------------------------------------------>
@@ -213,14 +153,11 @@ $(document).ready(function(){
 					<div style="padding:20px;">
 						<img src="./resources/image/3.jpg"
 							style="width: 200px; height: 200px; border-radius: 100px;"
-<<<<<<< HEAD
 							alt="My Image"></br></br>
-						<h5 style="color:black;">${userName}님 안녕하세요</h5></br></br></br>
+						<h5 style="color:black;"><span id="userName">${userName}</span>님 안녕하세요</h5></br></br></br>
 						<h2 class="my-4" style="color:black;">마이페이지</h2>
-=======
-							alt="My Image">
+							
 						<h1 class="my-4">마이페이지</h1>
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
 					</div>
 
 			
@@ -287,11 +224,12 @@ $(document).ready(function(){
 	</div>
 
 
-
+<!--------------------------------  챗봇 api------------------- -->
+<%@ include file ="chatbot.jsp" %>
 
 	<!-- /.container -->
 
-
+<div id="jjoin"></div>
 
 	<!-- <div class="footer fixed-bottom">copylight</div> -->
 

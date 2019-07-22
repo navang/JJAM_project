@@ -42,5 +42,8 @@ public class BoardService {
 	public int cntBoard(int cnt) {
 		return boardDAO.cntBoard(cnt);
 	}
+	public List<BoardByCateVO> viewSearch(BoardByCateVO vo){
+		return boardDAO.viewSearch(vo);
+	}
 
 }

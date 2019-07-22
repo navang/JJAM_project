@@ -1,0 +1,28 @@
+package com.java.jjam.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.java.jjam.dao.MyPageDAO;
+import com.java.jjam.domain.ChatVO;
+import com.java.jjam.domain.PaymentListVO;
+
+@Service
+public class MyPageService {
+
+	@Autowired
+	private MyPageDAO myPageDAO;
+	
+	public List<PaymentListVO> selectPayment(PaymentListVO vo) {
+		return myPageDAO.selectPayment(vo);
+	}
+	public List<PaymentListVO> selectJjim(PaymentListVO vo){
+		return myPageDAO.selectJjim(vo);
+	}
+	//쪽지 select
+	public List<ChatVO> selectChat(ChatVO chat){
+		return myPageDAO.selectChat(chat);
+	}
+}

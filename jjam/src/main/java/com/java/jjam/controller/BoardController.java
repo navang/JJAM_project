@@ -1,7 +1,6 @@
 package com.java.jjam.controller;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -18,12 +17,14 @@ import org.springframework.web.servlet.ModelAndView;
 import com.java.jjam.domain.BoardAndCateVO;
 import com.java.jjam.domain.BoardByCateVO;
 import com.java.jjam.domain.BoardVO;
+import com.java.jjam.domain.ChatVO;
 import com.java.jjam.domain.CustomerVO;
+import com.java.jjam.domain.PaymentListVO;
 import com.java.jjam.service.BoardByCateService;
 import com.java.jjam.service.BoardService;
 import com.java.jjam.service.CustomerService;
+import com.java.jjam.service.MyPageService;
 
-import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 
 @Controller
@@ -34,6 +35,9 @@ public class BoardController {
 	private BoardByCateService boardByCateService;
 	@Autowired
 	private CustomerService customerService;
+	@Autowired
+	private MyPageService mypageService;
+
 	
 	
 	//이렇게 함으로서 db를 가지않고 바로 view로 연결해주는 메소드를 처리할 수 있음
@@ -86,6 +90,17 @@ public class BoardController {
 				}
 				return "redirect:jjam_3_form.do";
 			}
+			//로그아웃
+			@RequestMapping("jjam_login&out.do")
+			public String loginOut(HttpSession session) {
+		
+				if(session.getAttribute("userName")==null) {
+					return "redirect:customerLogin.do";
+				}else {
+					session.invalidate();
+					return "redirect:customerLogin.do";
+				}
+			}
 
 			// 회원가입
 			@RequestMapping("/insertCustomer.do")
@@ -117,10 +132,10 @@ public class BoardController {
 
 			
 			//참여모달
-			@RequestMapping(value= "/jjam_3_form.do", method = RequestMethod.POST)
+			@RequestMapping(value= "/jjam_3_participate.do", method = RequestMethod.POST)
 			@ResponseBody
 			public ModelAndView test11(BoardAndCateVO vo){
-				System.out.println("모달 컨트롤러 실행");
+				System.out.println("참여모달 컨트롤러 실행");
 				ModelAndView mv = new ModelAndView();
 				mv.setViewName("/jjam_3_modal_join");
 				mv.addObject("data", vo);
@@ -164,20 +179,66 @@ public class BoardController {
 			public void insertJjim(BoardVO vo) {
 				boardService.insertJjim(vo);
 			}
+			
+			//마이페이지에서 결제내역 페이지 출력
+			@RequestMapping(value="/jjam_6_mypage_payment.do", method=RequestMethod.POST)
+			@ResponseBody
+			public ModelAndView selectPayment(PaymentListVO vo) {
+				System.out.println("마이페이지 결제내역 컨트롤러 실행");
+				System.out.println(vo.getBc_id());
+				List<PaymentListVO> plist= mypageService.selectPayment(vo);
+				ModelAndView mv = new ModelAndView();
+				mv.addObject("data", plist);
+				mv.setViewName("jjam_6_mypage_payment");
+				return mv;
+			}
+			//마이페이지에서 찜목록 페이지 출력
+			@RequestMapping(value="/jjam_6_mypage_jjim.do", method=RequestMethod.POST)
+			@ResponseBody
+			public ModelAndView selectJjim(PaymentListVO vo) {
+				System.out.println("마이페이지 찜목록 컨트롤러 실행");
+				System.out.println(vo.getBc_id());
+				List<PaymentListVO> plist= mypageService.selectJjim(vo);
+				ModelAndView mv = new ModelAndView();
+				mv.addObject("data", plist);
+				mv.setViewName("jjam_6_mypage_jjim");
+				return mv;
+			}
+			
+			//마이페이지에서 쪽지내역 출력
+			@RequestMapping(value="/jjam_6_mypage_letter.do", method=RequestMethod.POST)
+			public ModelAndView selectChat(ChatVO chat) {
+				List<ChatVO> clist = mypageService.selectChat(chat);
+				ModelAndView mv = new ModelAndView();
+				mv.addObject("data", clist);
+				mv.setViewName("jjam_6_mypage_letter");
+				return mv;
+			}
+			
 
-			// viewBoardByCate 모델 엔뷰 
+			// viewBoardByCate 모델 엔뷰(이미지클릭시 검색)
 		@RequestMapping(value="boardByCate.do",method=RequestMethod.POST)
 		@ResponseBody
 			public ModelAndView viewBoardByCate(BoardByCateVO vo) {
 			List<BoardByCateVO> listByCate = boardByCateService.viewBoardByCate(vo);
-				for(int i=0; i<listByCate.size(); i++) {
-					System.out.println(listByCate.get(i).getB_content());
-			}
 				ModelAndView mv= new ModelAndView();
 				mv.addObject("data", listByCate);
 				mv.setViewName("jjam_2_search_result");
 				return mv;
 			}
+		
+		
+		//게시글 검색기능
+		@RequestMapping(value="viewSearch.do", method=RequestMethod.POST)
+		public ModelAndView viewSearch(BoardByCateVO vo) {
+			System.out.println(vo.getB_title());
+			List<BoardByCateVO> list = boardService.viewSearch(vo);
+			ModelAndView mv = new ModelAndView();
+			mv.addObject("data", list);
+			mv.setViewName("jjam_2_search_result");
+			return mv;
+		}
+		
 
 			
 		

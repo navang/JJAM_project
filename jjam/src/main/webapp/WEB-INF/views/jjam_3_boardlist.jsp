@@ -17,7 +17,7 @@
 			$("#insert_modal").empty();
 			$.ajax({
 				type:"POST",
-				url: "jjam_3_form.do",
+				url: "jjam_3_participate.do",
 				data :
 				{  
 					"b_no" : $(this).find("#b_no").text(),

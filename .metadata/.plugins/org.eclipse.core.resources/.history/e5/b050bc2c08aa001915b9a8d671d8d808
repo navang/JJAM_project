@@ -1,0 +1,27 @@
+package com.java.jjam.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.java.jjam.dao.ChatDAO;
+import com.java.jjam.domain.ChatVO;
+
+@Service
+public class ChatService {
+
+	@Autowired
+	private ChatDAO chatDAO;
+	
+	
+	//쪽지 insert
+	
+	
+	
+	//쪽지 select
+	public List<ChatVO> selectChat(ChatVO vo){
+		return chatDAO.selectChat(vo);
+	}
+
+}

@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./resources/style/index.css">
+</head>
+<script>
+	$(function(){
+ 		$("#m").toggle(function(){
+ 			$("#menu55").text('<li><a href="#">Home</a> </li><li><a href="#">About</a> </li><li> <a href="#">Work</a> </li> <li><a href="customerLogin.do">Login</a></li>');
+ 		}, function(){
+ 			$("#menu").empty();
+ 		});
+ 	});
+</script>
+<body>
+<!--  상단 햄버거  -->
+<label>
+    <img id="logo" style="width: 60px; height: 60px; position:fixed;" src="./resources/image/character.png" alt=""><img style="margin-left: 60px; position:fixed;" src="./resources/image/JJCR_white1.png">
+</label>
+
+    <label>
+        <input id="m" type="checkbox"></input>
+        <span class="menu">
+          <span class="hamburger"></span>
+        </span>
+        <ul id="menu55">
+        
+        </ul>
+      </label>
+
+</body>
+</html>

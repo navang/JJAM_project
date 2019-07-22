@@ -1,0 +1,30 @@
+package com.java.jjam.dao;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.java.jjam.domain.ChatVO;
+
+
+
+@Repository
+public class ChatDAO {
+
+	@Autowired
+	private SqlSessionTemplate mybatis;
+	
+	//쪽지 insert
+	
+	
+	//쪽지 select
+	public List<ChatVO> selectChat(ChatVO vo){
+		System.out.println("mybatis selectChat 실행");
+		List<ChatVO> list = mybatis.selectList("MyPage_chat.selectChat", vo);
+		return list;
+	}
+	
+	
+}

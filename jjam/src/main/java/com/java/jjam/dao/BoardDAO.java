@@ -61,5 +61,11 @@ public class BoardDAO {
 		int result=mybatis.selectOne("Board.cntBoard", cnt);
 		return result;
 	}
+	//검색한 결과 출력
+	public List<BoardByCateVO> viewSearch(BoardByCateVO vo){
+		System.out.println("mybatis viewSearch실행");
+	List<BoardByCateVO> listSearch = mybatis.selectList("BoardByCate.viewSearch", vo);
+	return listSearch;
+	}
 	
 }

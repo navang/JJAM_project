@@ -1,7 +1,0 @@
-package com.java.jjam.domain;
-
-public class CshopVO {   //회원상점
- 	private String c_id;  //회원id
-	private int cs_heart;  // 회원하트
-	private int cs_view;   //회원 조회수
-}

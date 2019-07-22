@@ -33,6 +33,14 @@
 <title>Insert title here</title>
 <script>
 	$(function() {
+		var sessionUId = "<%=session.getAttribute("userName")%>";
+		if(sessionUId =! "null"){
+  			window.location = "jjam_3_form.do";
+		}
+		
+
+
+
 
 		$('label[for="signin"]').click(function() {
 			$('div form').attr('action', 'Login.do');
@@ -74,38 +82,7 @@
 <body>
 <body>
 	<!-- ---------------------------------상단 고정 메뉴바--------------------------------------------->
-	<h1 class="seperator"></h1>
-	<nav id="top_navcolor"
-		class="navbar fixed-top navbar navbar-expand-xl navbar-dark">
-		<!-- fixed-top 상단고정-->
-		<div class="container">
-			<!-- 브랜드 로고 삽입-->
-			<a href="jjam_3_form.jsp" class="navbar-brand"> <img id="logo"
-				class="" style="width: 60px; height: 60px;"
-				src="./resources/image/character.png" alt=""><img
-				src="./resources/image/JJCR_white1.png">
-			</a>
-			<!-- 햄버거 버튼-->
-			<button class="navbar-toggler" data-toggle="collapse"
-				data-target="#myNav">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<!-- 네비게이션 버튼 -->
-			<div id="myNav" class="collapse navbar-collapse justify-content-end">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a href="" class="nav-link">HOME</a></li>
-					<li class="nav-item"><a href="" class="nav-link">나눔찾기(메인지도)</a></li>
-					<li class="nav-item"><a href="" class="nav-link">검색하기</a></li>
-					<li class="nav-item"><a href="" class="nav-link">챗봇</a></li>
-					<li class="nav-item"><a href="" class="nav-link">로그인/로그아웃</a>
-
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-
+<%@ include file ="header.jsp" %>
 
 
 	<!--------------------------------------본문 ------------------------------------------------------>

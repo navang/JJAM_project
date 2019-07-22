@@ -1,6 +1,6 @@
 package com.java.jjam.domain;
 
-public class PaymentVO {  //결제리스트
+public class PaymentVO {  //결제
 
 	private String c_id;   //회원아이디
 	private int b_no;   //게시판번호

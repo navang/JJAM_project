@@ -1,0 +1,25 @@
+package com.java.jjam.domain;
+
+public class PaymentListVO { //결제완료리스트
+
+	private int b_no;   //게시판번호
+	private String b_date; //게시판 등록일
+	private String b_content; //게시판 내용
+	private String b_location; // 게시판 회원위치
+	private int b_price; //게시판 제품 가격
+	private String b_name; // 게시판 제품 이름
+	private String b_title;  //게시판 게시물제목
+	private String b_image; //게시판 게시물 이미지
+	private int b_view; // 게시판 조회수
+	private int b_heart; //게시판 하트갯수
+	private int b_ea; //게시판 제품 갯수
+	private String cate_id; //카테고리id fk
+	private String c_id; //판매자 회원id fk
+	private String b_latitude; //게시판 위도값
+	private String b_longitude; //게시판 경도값
+	private String cate_name; //카테고리 이름
+	private String cate_image; //카테고리 이미지
+	private String cate_icon; //카테고리 아이콘이미지
+	private String cate_ename; // 카테고리 검색용 이름 
+	
+}
