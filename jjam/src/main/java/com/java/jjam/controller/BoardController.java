@@ -54,14 +54,19 @@ public class BoardController {
 			
 			// 글 갯수 
 			@RequestMapping("/jjam_intro.do")
-			public ModelAndView cntBoard(int cnt) {
-				System.out.println("컨트롤러");
-				int result =boardService.cntBoard(cnt);
+			public ModelAndView cntBoard() {
+				int result1 =boardService.cntBoard();
+				int result2 =boardService.cntMember();
+				String count1 = String.valueOf(result1);
+				String count2 = String.valueOf(result2);
 				ModelAndView mv = new ModelAndView();
-				mv.addObject("cnt", result);
+				mv.addObject("cntB", count1);
+				mv.addObject("cntC", count2);
 				mv.setViewName("/jjam_intro");
 				return mv;
 			}
+			
+			
 
 			//아이디체크
 			//아이디 중복확인

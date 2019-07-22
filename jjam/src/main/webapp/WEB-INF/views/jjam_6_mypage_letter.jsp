@@ -136,6 +136,7 @@ background:#eee;
 <% List<ChatVO> list = (List<ChatVO>)request.getAttribute("data");%>
 </head>
 <body>
+<<<<<<< HEAD
 <div class="container" style="background-color:white;">
 <div class="row message-wrapper rounded shadow mb-20">
 <!--     <div class="col-md-4 message"> -->
@@ -193,6 +194,88 @@ background:#eee;
 <!--         </div> /.panel -->
 <!--     </div> /.message-sideleft -->
     <div class="col-md-12 message">
+=======
+
+<div>
+<<<<<<< HEAD
+  <h2 style="color:black;">댓글 및 쪽지</h2>
+
+  <h1>댓글 및 쪽지</h1>
+
+  
+<div class="tab-content">
+    <div class="tab-pane active" id="inbox">
+        <div class="container">
+             <div class="content-container clearfix">
+                 <div class="col-md-12">     
+                     <ul class="mail-list">
+                         <li>
+                             <a href="" data-toggle="modal" data-target="#comment">
+                                 <span class="mail-sender">You Tube</span>
+                                 <span class="mail-subject">New subscribers!</span>
+                                 <span class="mail-message-preview">You have ten more subscriptions click her...</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="">
+                                 <span class="mail-sender">You Tube</span>
+                                 <span class="mail-subject">New subscribers!</span>
+                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="">
+                                 <span class="mail-sender">You Tube</span>
+                                 <span class="mail-subject">New subscribers!</span>
+                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="">
+                                 <span class="mail-sender">You Tube</span>
+                                 <span class="mail-subject">New subscribers!</span>
+                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="">
+                                 <span class="mail-sender">You Tube</span>
+                                 <span class="mail-subject">New subscribers!</span>
+                                 <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+                             </a>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+        
+    </div>
+    <div class="tab-pane" id="compose">
+        
+        <div class="container">
+      <div class="content-container clearfix">
+          <h1 class="content-title">Compose</h1>
+          <div class="col-md-12">
+              <div class="form-group">
+                  <input id="tokenfield" type="text" class="form-control" placeholder="To" />
+              </div>
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Cc" />
+              </div>
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Bcc" />
+              </div>
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Subject" />
+              </div>
+              <textarea class="form-control" placeholder="message"></textarea>
+              <div class="btn-send">
+              <button class="btn btn-success btn-lg"><span class="glyphicon glyphicon-send"></span> Send</button>
+              </div>
+          </div>
+      </div>
+  </div>
+>>>>>>> 6e33cf90ee0db050711ae0cc38fe432e36897e02
         
         <%for(int i=0; i<list.size(); i++){ %>
         <div class="panel"> 

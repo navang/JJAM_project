@@ -5,5 +5,11 @@
 <fullyQualifiedTypeName name="net.sf.json.JSONArray"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="java.util.List"/>
+=======
+<fullyQualifiedTypeName name="org.apache.commons.beanutils.converters.IntegerConverter"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+>>>>>>> 6e33cf90ee0db050711ae0cc38fe432e36897e02
 </qualifiedTypeNameHistroy>
