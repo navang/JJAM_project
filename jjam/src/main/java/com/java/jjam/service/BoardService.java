@@ -43,16 +43,15 @@ public class BoardService {
 	public int cntBoard() {
 		return boardDAO.cntBoard();
 	}
-<<<<<<< HEAD
+
 	public List<BoardByCateVO> viewSearch(BoardByCateVO vo){
 		return boardDAO.viewSearch(vo);
 	}
-=======
-	//회원수
+//회원수
 	public int cntMember() {
 		return boardDAO.cntMember();
 	}
 
->>>>>>> 6e33cf90ee0db050711ae0cc38fe432e36897e02
+
 
 }

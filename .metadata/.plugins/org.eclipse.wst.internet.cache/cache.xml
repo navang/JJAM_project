@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><cache><entry expirationTime="1556722799000" lastModified="1556722180000" location="787489714.cache" uri="http://mybatis.org/dtd/mybatis-3-config.dtd"/><entry expirationTime="1556722791000" lastModified="1556722180000" location="406222238.cache" uri="http://mybatis.org/dtd/mybatis-3-mapper.dtd"/></cache>
-=======
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><cache><entry expirationTime="1556722795000" lastModified="1556722180000" location="787489714.cache" uri="http://mybatis.org/dtd/mybatis-3-config.dtd"/><entry expirationTime="1556722792000" lastModified="1556722180000" location="406222238.cache" uri="http://mybatis.org/dtd/mybatis-3-mapper.dtd"/></cache>
->>>>>>> 6e33cf90ee0db050711ae0cc38fe432e36897e02
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><cache/>

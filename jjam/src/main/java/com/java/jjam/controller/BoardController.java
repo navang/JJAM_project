@@ -244,6 +244,15 @@ public class BoardController {
 			return mv;
 		}
 		
+		//마이페이지 회원정보수정
+		@RequestMapping("updatePrivacy.do")
+		public String updatePrivacy(CustomerVO vo, Model model){
+			customerService.updatePrivacy(vo);
+			model.addAttribute("msg", "개인정보수정이 완료 되었습니다");
+			model.addAttribute("url", "jjam_6_mypage.do");
+			return "jjam_6_mypage_privacy_alert";
+		}
+		
 
 			
 		

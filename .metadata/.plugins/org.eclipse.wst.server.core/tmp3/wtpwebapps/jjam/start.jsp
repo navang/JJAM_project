@@ -4,11 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<<<<<<< HEAD
 
-=======
->>>>>>> 6e33cf90ee0db050711ae0cc38fe432e36897e02
-<title>start</title>
+<title>dd</title>
 </head>
 <body>
 
@@ -18,7 +15,4 @@
 </body>
 </html>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 6e33cf90ee0db050711ae0cc38fe432e36897e02

@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<div id="header">
    <h1 class="seperator"></h1>
      <nav id="top_navcolor" class="navbar fixed-top navbar navbar-expand-xl navbar-dark">
          <!-- fixed-top 상단고정-->
@@ -34,5 +35,6 @@
              </div>
          </div>
      </nav>
+ </div>
 </body>
 </html>

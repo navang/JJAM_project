@@ -1,0 +1,218 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<meta charset="UTF-8">
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
+<style>
+.form-width {
+	border: none;
+	background-color: white;
+	width: 200%;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+.form-width:focus, .form-width:hover {
+	border: none;
+	outline: none;
+	background-color: white;
+}
+
+@media ( max-width :640px) {
+	.form-width {
+		border: none;
+		background-color: white;
+		width: 100%;
+		font-size: 18px;
+		border-radius: 5px;
+	}
+	.form-width:focus, .form-width:hover {
+		border: none;
+		outline: none;
+		background-color: white;
+	}
+}
+</style>
+</head>
+<body>
+
+
+
+	<script>
+//주소 스크립트
+
+	 function sample4_execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+	                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var roadAddr = data.roadAddress; // 도로명 주소 변수
+	                var extraRoadAddr = ''; // 참고 항목 변수
+
+	                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                    extraRoadAddr += data.bname;
+	                }
+	                // 건물명이 있고, 공동주택일 경우 추가한다.
+	                if(data.buildingName !== '' && data.apartment === 'Y'){
+	                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                }
+	                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                if(extraRoadAddr !== ''){
+	                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+	                }
+
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('sample4_postcode').value = data.zonecode;
+	                document.getElementById("sample4_roadAddress").value = roadAddr;
+	                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+	                
+	                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+	                if(roadAddr !== ''){
+	                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+	                } else {
+	                    document.getElementById("sample4_extraAddress").value = '';
+	                }
+
+	                var guideTextBox = document.getElementById("guide");
+	                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+	                if(data.autoRoadAddress) {
+	                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+	                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+	                    guideTextBox.style.display = 'block';
+
+	                } else if(data.autoJibunAddress) {
+	                    var expJibunAddr = data.autoJibunAddress;
+	                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+	                    guideTextBox.style.display = 'block';
+	                } else {
+	                    guideTextBox.innerHTML = '';
+	                    guideTextBox.style.display = 'none';
+	                }
+	            }
+	        }).open();
+	    }
+
+</script>
+</head>
+<body>
+
+	<div class="container w-100">
+		<form class="well form-horizontal" action=" " method="post"
+			id="contact_form">
+			<fieldset>
+				<!-- Form Name -->
+				<legend>Contact Us Today!</legend>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label">ID</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-user"></i></span> <input name="c_id"
+								class="form-width" type="text"
+								value="<%=session.getAttribute("userName")%>" readonly>
+						</div>
+					</div>
+				</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label">기존 Password</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-user"></i></span> <input name=""
+								placeholder="기존 패스워드 입력" class="form-width" type="password">
+						</div>
+					</div>
+				</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label">새로운 Password</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-user"></i></span> <input name="password"
+								placeholder="변경할 패스워드 입력" class="form-width" type="password">
+						</div>
+					</div>
+				</div>
+								<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label">새로운 Password</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-user"></i></span> <input name=""
+								placeholder="변경할 패스워드 다시 입력" class="form-width" type="password">
+						</div>
+					</div>
+				</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label">이름</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-envelope"></i></span> <input name="c_name"
+								placeholder="이름 입력" class="form-width" type="text">
+						</div>
+					</div>
+				</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label">전화번호</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-earphone"></i></span> <input name="c_tel"
+								placeholder="(845)555-1212" class="form-width" type="text">
+						</div>
+					</div>
+				</div>
+
+
+				<!-- 주소-->
+				<div class="form-group">
+					<label class="col-md-4 control-label">주소</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span> 
+					<input type="text" id="sample4_postcode" placeholder="우편번호">
+					<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+					<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+					<input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+					<span id="guide" style="color:#999;display:none"></span>
+					<input type="text" id="sample4_detailAddress" placeholder="상세주소">
+					<input type="text" id="sample4_extraAddress" placeholder="참고항목">
+					</div>
+				</div>
+				</div>
+				
+				
+				<!-- Success message -->
+				<div class="alert alert-success" role="alert" id="success_message">
+					Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for
+					contacting us, we will get back to you shortly.
+				</div>
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label"></label>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-warning">
+							Send <span class="glyphicon glyphicon-send"></span>
+						</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<!-- /.container -->
+
+
+
+</body>
+</html>

@@ -24,5 +24,9 @@ public class CustomerDAO {
 		System.out.println("mybatis idCheck 호출");
 		return (CustomerVO) mybatis.selectOne("Customer.idCheck", vo);
 	}
+	public void updatePrivacy(CustomerVO vo) {
+		System.out.println("mybatis updatePrivacy 실행");
+		mybatis.update("Customer.updatePrivacy",vo);
+	}
 	
 }

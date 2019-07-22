@@ -1,0 +1,208 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Shop Homepage - Start Bootstrap Template</title>
+
+</head>
+<!-- Bootstrap core CSS -->
+<style>
+	.header{
+	margin-top : -100px;
+	}
+</style>
+<link rel="stylesheet" href="./resources/style/mypage1.css">
+<link rel="stylesheet" href="./resources/style/main.css">
+
+	<link rel="stylesheet prepatch"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+
+<link rel='stylesheet prefetch'
+	href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch'
+	href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
+<!-- <link rel='stylesheet prefetch' -->
+<!-- 	href='//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'> -->
+
+<script>
+//마이페이지 입장하자마자 바로 개인정보변경 뜨게하기
+  $(function(){
+	  $(".mypage-menu a").eq(0).css("background-color", "#147b6b");
+	  $(".mypage-menu a").eq(0).css("color", "white");
+	  $.ajax({
+		  type:"POST",
+		  url: "jjam_6_mypage_privacy.do",
+		  success:function(data){
+			  $("#ddd").html(data);
+		  }, error: function(){
+			  alert("에러발생");
+		  }
+	  });
+	  
+	  
+	  
+	//마이페이지안에 탭 누를때 발생되는 ajax
+// 	  $(".mypage-menu a").eq(1).trigger("click");
+      $('.mypage-menu a').each(function(){
+          $(this).click(function() { 
+        	  $('.mypage-menu a').css("background-color", "white");
+        	  $('.mypage-menu a').css("color", "black");
+        	  $(this).css("background-color", "#147b6b");
+        	  $(this).css("color", "white");
+        	 activeTab = $(this).attr("rel");
+        	 $("#ddd").empty();
+          $.ajax({
+        	  type:'POST',
+        	  url:activeTab+'.do',
+        	  data:
+        		  {"bc_id" : $("#userName").text()},
+        	  success:function(data){
+        		  $('#ddd').html(data);
+        	  },
+        	  error:function(){
+        		  alert("통신실패");
+        	  }
+          });
+          });
+      });
+  });
+</script>
+
+<body>
+
+
+	<!-- ---------------------------------상단 고정 메뉴바--------------------------------------------->
+<%@ include file ="header.jsp" %>
+
+
+	<!--------------------------------------본문 ------------------------------------------------------>
+	<!-- Page Content -->
+	<div class="mypage">
+		<div></div>
+		<!-- 공백 -->
+		<div class="">
+			<img width="100%" src="./resources/image/mypage_test1.png" />
+		</div>
+		<div></div>
+		<!-- 공백 -->
+		<div></div>
+		<!-- 공백 -->
+		<!-- ------------------------------------------------------------------------- -->
+		<div class=" mypage-columns ">
+			<!-- ----------------------------------------------------------------------------------------------- -->
+			<!-- ------------------------------------------------------------------------- -->
+
+			
+				<div class="mypage-rows ">
+					<div style="padding:20px;">
+						<img src="./resources/image/3.jpg"
+							style="width: 200px; height: 200px; border-radius: 100px;"
+							alt="My Image"></br></br>
+						<h5 style="color:black;"><span id="userName">${userName}</span>님 안녕하세요</h5></br></br></br>
+						<h2 class="my-4" style="color:black;">마이페이지</h2>
+							
+						<h1 class="my-4">마이페이지</h1>
+					</div>
+
+			
+				<!-- ------------------------------------------------------------------------- -->
+				<div class="mypage-menu">
+					<div><a class="list-group-item" rel="jjam_6_mypage_privacy">개인정보변경</a>
+					</div>
+					<div><a class="list-group-item" rel="jjam_6_mypage_letter">댓글 및 쪽지</a>
+					</div>
+					<div><a class="list-group-item" rel="jjam_6_mypage_jjim">찜목록</a>
+					</div>
+					<div><a class="list-group-item" rel="jjam_6_mypage_payment">결제내역</a>
+					</div>
+
+				</div>
+			</div>
+				<!-- ------------------------------------------------------------------------- -->
+	
+			<!-- ------------------------------------------------------------------------- -->
+			<div class="">
+			<div id="ddd"></div>
+			</div>
+			
+		</div>
+
+	</div>
+	<!-- Footer -->
+	
+	<footer class="py-5 bg-dark footer">
+		<div class="container">
+			<p class="m-0 text-center text-white">Copyright &copy; Your
+				Website 2019</p>
+		</div>
+
+	</footer>
+
+
+	<!----------------------------------쪽지 modal 창----------------------------------------->
+
+	<div class="modal" tabindex="-1" id="comment">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"
+					style="display: grid; grid-template-columns: 30% 40% 30%;">
+					<div></div>
+					<div class="modal-title" style="text-align: center">
+						<img src="./resources/image/letter.png" width="100px">
+					</div>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>양파좀 네고해주세요</p>
+					<p class="text-secondary">
+						<small>님 양파 네고좀</small>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">닫기</button>
+					<button type="button" class="btn btn-primary">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--------------------------------  챗봇 api------------------- -->
+<%@ include file ="chatbot.jsp" %>
+
+	<!-- /.container -->
+
+<div id="jjoin"></div>
+
+	<!-- <div class="footer fixed-bottom">copylight</div> -->
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="./resources/image/vendor/jquery/jquery.min.js"></script>
+	<script
+		src="./resources/image/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

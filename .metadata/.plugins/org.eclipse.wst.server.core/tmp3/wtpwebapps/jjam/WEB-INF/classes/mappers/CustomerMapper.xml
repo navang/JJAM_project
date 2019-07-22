@@ -14,5 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	AND c_pw=#{c_pw}
 	</if>  
 	</select>
-
+	<update id="updatePrivacy" parameterType="customerVO">
+		UPDATE CUSTOMER SET C_TEL = #{c_tel}, C_NAME = #{c_name}, C_PW= #{c_pw} WHERE C_ID = #{c_id}
+	</update>
 </mapper>

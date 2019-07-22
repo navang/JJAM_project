@@ -30,7 +30,7 @@ $(function(){
 
 
 	//참여하기 클릭했을때 결제페이지에 정보 넘기기 
-	$('.participation').click(function(){
+	$('.p_button').click(function(){
 		$(".parti").empty();
  		var c_id = $("#c_id2").text();
  		var cate_name = $("#cate_name2").text();
@@ -53,6 +53,7 @@ $(function(){
  		$("#b_content1").text(b_content);
  		$("#b_no1").text(b_no);
  		$("#bc_id1").text(bc_id);  //구매자 id값 추후 삭제 안보이게 처리
+ 		$("#pay").modal("show");
 	});	
 	
 	
@@ -123,11 +124,10 @@ $(function(){
                                             <div id="a" style="padding-bottom: 7px;">   <div  class="hide"id="ablock1"></div>    <div class="box" id="id2"><span id="c_id2">${data.c_id}</span>님의 나눔</div><div class="hide" id="ablock2" ></div> <div class="box" id="no2">No. <span id="b_no2">${data.b_no}</span></div></div>
                                             <div id="b" style="padding-bottom: 7px;">   <div  class="hide" id="bblock1"></div>    <div class="box" id="title2">제목 : <span id="b_title2">${data.b_title}</span></div><div class="hide" id="bblock2" ></div> <div  class="box"id="name2">품목 : <span id="cate_name2">${data.cate_name}</span></div></div>
                                             <div id="c" style="padding-bottom: 7px;">   <div  class="hide" id="cblock1"></div>    <div class="box" id="location2">위치 : <span id="b_location2">${data.b_location}</span></div><div class="hide" id="cblock2" ></div> </div>
-                                            <div id="c" style="padding-bottom: 7px;">   <div  class="hide" id="dblock1"></div>    <div  class="box"id="price2"> 가격 : <span id="b_price2">${data.b_price}</span>원</div><div class="hide" id="cblock2" ></div> <div class="box" id="date2">날짜 : <span id="b_date2">${data.b_date}</span> </div><div class="hide" id="dblock2" ></div></div>                                              
-                                            <div id="c" style="padding-bottom: 7px;">  <div  class="box"id="content2">내용 : <span id="b_content2">${data.b_content}</span></div></div>
+                                            <div id="c" style="padding-bottom: 15px;">   <div  class="hide" id="dblock1"></div>    <div  class="box"id="price2"> 가격 : <span id="b_price2">${data.b_price}</span>원</div><div class="hide" id="cblock2" ></div> <div class="box" id="date2">날짜 : <span id="b_date2">${data.b_date}</span> </div></div>                                              
+                                            <div id="c" ><div  class="box"id="content2" style="height:80px">내용 : <span id="b_content2">${data.b_content}</span></div></div>
                                             <div class="modal-inner-grid2">
-                                            <!--3--><div id="btn3" class="button"><img class="h-50"   style="margin-top:30px;"src="./resources/image/form/paid-before.png"> <input type="button" class="col-sm-12 participation" style="opacity:1; filter: alpha(opacity=100);"
-                                             data-toggle="modal" data-target="#pay"></div>
+                                            <!--3--><div id="btn3" class="button p_button"><img class="h-50"   style="margin-top:30px;"src="./resources/image/form/paid-before.png"> </div>
                                         <!--4--><div style="text-align: right; padding-top:30px;">  
                                                 
                                                 <div id="btn1" class="button jjim"><img class="h-50" style="margin-top:17px;" src="./resources/image/form/heart-before.png"></div> 
