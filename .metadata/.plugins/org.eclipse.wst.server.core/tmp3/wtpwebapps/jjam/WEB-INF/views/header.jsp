@@ -8,13 +8,14 @@
 </head>
 
 <body>
+<div id="header">
    <h1 class="seperator"></h1>
      <nav id="top_navcolor" class="navbar fixed-top navbar navbar-expand-xl navbar-dark">
          <!-- fixed-top 상단고정-->
          <div class="container">
              <!-- 브랜드 로고 삽입-->
              <a href="jjam_3_form.jsp" class="navbar-brand">
-                 <img id="logo" class="" style="width: 60px; height: 60px;" src="./resources/image/character.png" alt=""><img src="./resources/image/JJCR_white1.png">
+                 <img id="logo" class="" style="width: 60px; height: 60px;" src="./resources/image/BI-jjam-white.png" alt=""><img src="./resources/image/JJCR_white1.png">
              </a>
              <!-- 햄버거 버튼-->
              <button class="navbar-toggler ham" data-toggle="collapse" data-target="#myNav">
@@ -34,5 +35,6 @@
              </div>
          </div>
      </nav>
+ </div>
 </body>
 </html>

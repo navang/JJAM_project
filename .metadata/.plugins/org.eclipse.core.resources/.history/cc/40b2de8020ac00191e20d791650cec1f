@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: NanumSquareL;
+    src: url(../font/NanumSquareL.woff) format('woff');
+}
+@font-face { font-family: 'BMJUA'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+/* 모달 위치 값 지정 dialog 덮어씀*/
+.modal-position{
+    position: absolute;
+    top:25%;
+    left: 30%;
+}
+/* 모달 스타일 지정  content 덮어씀*/
+.modal-style{
+  background: #76afa7;
+  border: white solid 30px;
+  width: 720px;
+  height: 480px;
+  border-radius: 50px;
+}
+/* 모달 내부 그리드 1 */
+.modal-inner-grid1{
+    display : grid;
+    width: 650px;
+    height: 440px;
+    grid-template-rows: 66% 34%;
+    margin: 1%;
+   
+}
+/* 모달 내부 그리드 2 */
+.modal-inner-grid2{
+    display : grid;
+    grid-template-columns: 25% 75%;
+
+   
+}
+
+/* 좌측상단 카테고리 이미지 */
+.cate-img{
+  position: absolute; top:23%; left: 27%;z-index: 100;
+}
+  /* button 클래스 스타일*/
+  div.button {
+    background-color: #147b6b;
+    display: inline-block;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    left: -435px;
+    transition: .7s ease;
+    text-align: center;
+    box-shadow: 3px 3px 0px #073d35;
+
+  }
+    /* button 참여 버튼 스타일*/
+  div.button#btn3 {
+    background-color: #147b6b;
+    display: inline-block;
+    border-radius: 80px;
+    width: 140px;
+    height: 110px;
+    left: -435px;
+    transition: .7s ease;
+    text-align: center;
+    box-shadow:3px 3px 0px #073d35;
+
+  }
+/* 변화되는 버튼 스타일 셋*/
+  div.button:hover {
+    background-color: #ffffff;
+    left: -50px;
+    width: 200px;
+    border-radius: 50px;
+    box-shadow: 3px 7px 0px #147b6b;
+  }
+  /* 변화되는 참여버튼 스타일 셋*/
+  div.button#btn3:hover {
+    background-color: #ffffff;
+    left: -50px;
+    width: 280px;
+    border-radius: 80px;
+    box-shadow: 3px 7px 0px #147b6b;
+  }
+  /* 버튼 클릭시 변화 */
+  div.button:active {
+    background-color: #f0bbab;
+    transition: 0s;
+    color: #ecf0f1;
+  }
+  /* 모달 내부 글자 칸*/ 
+  div.box {
+    background-color: #644c4c;
+    height: 60px;
+    border-radius: 50px;
+    display: inline-block;
+    font-family: BMJUA;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    box-shadow: 5px 10px 0px #147b6b;
+  }
+  /*글자 사이 간격 */
+div.hide{
+  visibility: hidden;
+    display: inline-block;
+    height: 50px;
+    border-radius: 50px;
+    background: #147b6b;
+}
+
+/*모달 안쪽 글자 박스 레이아웃 반응형*/
+#ablock1{width: 100px;}  #id2{width:340px;}       #ablock2{width: 50px;}      #no2{width: 100px;} 
+#bblock1{width: 0px;}    #title2{width: 340px;}   #bblock2{width: 30px;} #name2{width: 250px;} 
+#cblock1{width: 0px;}   #location2{width: 600px;}#cblock2{width: 30px;}   #price2{width: 200px;} 
+#dblock1{width: 0px;}   #date2{width: 400px;}    #dblock2{width: 30px;} #content2{width: 630px;} 
+ss
+
+
+@media(max-width:640px){
+
+/* 모달 위치 값 지정 dialog 덮어씀 -- 반응형 640px --*/
+  .modal-position{
+    position: absolute;
+    top:0%;
+    left: 0%;
+}
+/* 모달 스타일 지정  content 덮어씀-- 반응형 640px --*/
+.modal-style{
+  background: #76afa7;
+  border: white solid 6px;
+  width: 640px;
+  height: 440px;
+  border-radius: 50px;
+}
+/* 모달 내부 그리드 1 -- 반응형 640px --*/
+.modal-inner-grid1{
+    display : grid;
+    width: 97%;
+    height: 100%;
+    grid-template-rows: 66% 34%;
+    margin: 1%;
+}
+/* 모달 내부 그리드 2-- 반응형 640px --*/
+.modal-inner-grid2{
+    display : grid;
+    grid-template-columns: 25% 75%;
+
+   
+}
+/*좌측상단 카테고리 이미지 -- 반응형 640px --*/
+.cate-img{
+  position: absolute; top:5%; left: 3%;z-index: 100; width: 80px;
+}
+  /* button 클래스 스타일-- 반응형 640px --*/
+  div.button {
+    background-color: #147b6b;
+    display: inline-block;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    left: -435px;
+    transition: .7s ease;
+    text-align: center;
+    box-shadow: 3px 3px 0px #073d35;
+
+  }
+    /* button 참여 버튼 스타일-- 반응형 640px --*/
+  div.button#btn3 {
+    background-color: #147b6b;
+    display: inline-block;
+    border-radius: 80px;
+    width: 140px;
+    height: 110px;
+    left: -435px;
+    transition: .7s ease;
+    text-align: center;
+    box-shadow:3px 3px 0px #073d35;
+
+  }
+  /* button 변화 스타일-- 반응형 640px --*/
+  div.button:hover {
+    background-color: #ffffff;
+    left: -50px;
+    width: 200px;
+    border-radius: 50px;
+    box-shadow: 3px 7px 0px #147b6b;
+  }
+  /* button 참여 버튼 변화스타일-- 반응형 640px --*/
+  div.button#btn3:hover {
+    background-color: #ffffff;
+    left: -50px;
+    width: 280px;
+    border-radius: 80px;
+    box-shadow: 3px 7px 0px #147b6b;
+  }
+  /* button 클릭시 스타일-- 반응형 640px --*/
+  div.button:active {
+    background-color: #f0bbab;
+    transition: 0s;
+    color: #ecf0f1;
+  }
+/*글자 칸-- 반응형 640px --*/
+div.box {
+  background-color: #ffffff;
+  height: 50px;
+  border-radius: 50px;
+  display: inline-block;
+  font-family: BMJUA;
+  text-align: center;
+  font-size: 25px;
+  padding: 10px;
+  box-shadow: 5px 10px 0px #147b6b;
+}
+/* 글자사이 간격-- 반응형 640px --*/
+div.hide{
+
+  display: inline-block;
+  height: 50px;
+  border-radius: 50px;
+  background: #147b6b;
+}
+
+/*모달 안쪽 글자 박스 레이아웃 반응형-- 반응형 640px --*/
+#ablock1{width: 100px;}  #id2{width:300px;}       #ablock2{width: 50px;}      #no2{width: 100px;} 
+#bblock1{width: 0px;}    #title2{width: 340px;}   #bblock2{width: 30px;} #name2{width: 200px;} 
+#cblock1{width: 20px;}   #location2{width: 400px;}#cblock2{width: 30px;}   #price2{width: 150px;} 
+#dblock1{width: 10px;}   #date2{width: 100px;}    #dblock2{width: 30px;} #content2{width: 430px;} 
+
+
+}

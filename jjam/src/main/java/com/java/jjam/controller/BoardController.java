@@ -48,8 +48,11 @@ public class BoardController {
 	
 			// 글 등록
 			@RequestMapping(value = "/insertBoard.do")
-			public void insertBoard(BoardVO vo) throws IOException {
+			public String insertBoard(BoardVO vo, Model model) throws IOException {
 				boardService.insertBoard(vo);
+				model.addAttribute("msg","게시글 등록이 완료되었습니다람쥐");
+				model.addAttribute("url","jjam_3_form.do");
+				return "insertBoard";
 			}
 			
 			// 글 갯수 
@@ -82,12 +85,13 @@ public class BoardController {
 
 			//로그인
 			@RequestMapping("Login.do")
-			public String login(CustomerVO vo, HttpSession session) {
+			public String login(CustomerVO vo, HttpSession session, Model model) {
 				System.out.println("로그인 컨트롤러 실행");
 				CustomerVO result= customerService.idCheck_Login(vo);
 				if(result ==null || result.getC_id() ==null) {
-					System.out.println("로그인 실패");
-					return "/customerLogin";
+					model.addAttribute("ErrorMessage", "아이디 혹은 비밀번호가 틀렸습니다");
+					model.addAttribute("URL", "customerLogin.do");
+					return "customerLoginError";
 				}else {
 					System.out.println("로그인성공");
 //					session.setAttribute("sessionTime", new Date().toLocaleString());
@@ -139,8 +143,10 @@ public class BoardController {
 			//참여모달
 			@RequestMapping(value= "/jjam_3_participate.do", method = RequestMethod.POST)
 			@ResponseBody
-			public ModelAndView test11(BoardAndCateVO vo){
+			public ModelAndView test11(BoardAndCateVO vo, HttpSession session){
 				System.out.println("참여모달 컨트롤러 실행");
+				
+//				session.setAttribute(name, value);
 				ModelAndView mv = new ModelAndView();
 				mv.setViewName("/jjam_3_modal_join");
 				mv.addObject("data", vo);
@@ -242,6 +248,15 @@ public class BoardController {
 			mv.addObject("data", list);
 			mv.setViewName("jjam_2_search_result");
 			return mv;
+		}
+		
+		//마이페이지 회원정보수정
+		@RequestMapping("updatePrivacy.do")
+		public String updatePrivacy(CustomerVO vo, Model model){
+			customerService.updatePrivacy(vo);
+			model.addAttribute("msg", "개인정보수정이 완료 되었습니다");
+			model.addAttribute("url", "jjam_6_mypage.do");
+			return "jjam_6_mypage_privacy_alert";
 		}
 		
 

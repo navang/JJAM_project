@@ -40,10 +40,15 @@ h1, h2, h3 {
 }
 
 body{    
-  
+  	font-family:BMJUA;
     background: #033f3b;
 }
-
+#logo{
+	width: 60px; height: 60px;
+}
+#jcr{
+	margin-left: 60px; position:fixed;
+}
 #top_navbar {
     background: rgba(0,0,0,0.7);
 }
@@ -85,9 +90,17 @@ body{
     background: #aee;
     border: #8dd solid 4px;
 }
+<<<<<<< HEAD
 
 
 /* .blue { */
+=======
+/* .blue { */
+/*     background: #bcf; */
+/*     border: #9ae solid 4px; */
+/* } */
+
+>>>>>>> 7f7c7283d27dcf0b9cae4bf84bee2c912e11a8f9
 .blue {
     background: #bcf;
     border: #9ae solid 4px;
@@ -96,24 +109,32 @@ body{
 .intro_form{
     display: grid;
      grid-template-columns: 100%;
+<<<<<<< HEAD
     grid-template-rows: 30px 850px 850px ;
+=======
+    grid-template-rows: 30px 850px 300px ;
+>>>>>>> 7f7c7283d27dcf0b9cae4bf84bee2c912e11a8f9
 }
 .intro-main{
   position: absolute;
   top: 15%;
   left: 20%;
-  transform: translate(-50%, -50%);
+  transform: translate(-20%, -20%);
   width: 80%;
 	
+}
+.intro-desc{
+	display:grid;
+	 grid-template-columns: 15% 70% 15%;
+    grid-template-rows:  250px 80px ;
 }
 
 /*  풀어주기   */
 .map-custom{
-	width:700px;
+	width:100%;
 	height:700px;
 	position:relative;
 	overflow:hidden; 
-	margin-left: 80px; 
 	border-radius:30px;
 }
 
@@ -208,7 +229,21 @@ body{
     min-height: 100%;
     border-radius: 0; 
   }
-
+.btn-create{
+	text-decoration:none;
+	width:100%;
+	height:40px;
+	font-size:20px;
+	border-radius:30px;
+	background:#147b6b;
+	color:white;
+	box-shadow: 0px 3px 0px black;
+	border: 2px solid white;
+}
+.btn-create:hover .btn-create:focus, btn-create:active {
+	background:#073d35;
+	
+}
 
 /* info modal img*/
 .img-chatmodal{
@@ -312,10 +347,13 @@ body{
       column-count: 5;
     }
   }
-@media (max-width:640px) {
-    .bigfont{
-        font-size: 700%;
-    }
+@media(max-width:375px){
+#logo{
+	width: 30px; height: 30px; position:fixed;
+}
+#jcr{
+	margin-left: 35px; position:fixed; height: 30px;
+}
     .search{
         display : grid;
         grid-template-columns: 0px 100% 0px;
@@ -383,12 +421,20 @@ body{
     border-radius: 0; 
   }
     /* 가운데화면 분할*/
-    .modal-form-grid{
+.modal-form{
     display : grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 30px 30px 440px;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 60px 780px  50px;
 
-    }
+}
+/* 가운데화면 분할*/
+.modal-form-grid{
+    display : grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 60px  700px 70px;
+
+}
+    
     .modal-inner-grid{
         display : grid;
         grid-template-columns: 100%;
@@ -417,6 +463,49 @@ body{
 	text-align: center;
 	color: white;
 	background:  black;
+}
+
+/*1_ intro*/
+.intro_form{
+    display: grid;
+     grid-template-columns: 100%;
+    grid-template-rows: 30px 360px 550px ;
+}
+.intro-main{
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  left: 20%;
+  transform: translate(-20%, -20%);
+  width: 80%;
+	
+}
+.intro-desc{
+	display:grid;
+	 grid-template-columns: 10% 80% 10%;
+    grid-template-rows:  550px 150px ;
+}
+
+/*  풀어주기   */
+.map-custom{
+	width:700px;
+	height:700px;
+	position:relative;
+	overflow:hidden; 
+	margin-left: 80px; 
+	border-radius:30px;
+}
+
+
+.bigfont{
+	left:50%;
+	transform:rotate(30deg);
+	font-size: 300px;
+    text-align: left;
+
+    font-family: NanumSquareL;
+    src: url(../font/NanumSquareL.woff) format('woff');
+
 }
 
 

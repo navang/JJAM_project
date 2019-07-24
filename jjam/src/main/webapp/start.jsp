@@ -4,8 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>start</title>
 </head>
+=======
+
+<title>dd</title>
+</head>   
+>>>>>>> 7f7c7283d27dcf0b9cae4bf84bee2c912e11a8f9
 <body>
 
   <a href="jjam_intro.do"> 소개 창 가기</a>

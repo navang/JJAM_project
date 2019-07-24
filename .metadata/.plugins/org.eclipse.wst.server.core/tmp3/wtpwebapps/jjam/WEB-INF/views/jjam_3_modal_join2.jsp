@@ -5,14 +5,32 @@
     <%@ page import="com.java.jjam.domain.BoardAndCateVO"%>
 
 
-    <link rel="stylesheet" href="./css/modalStyle.css" type="text/css">
+      <!-- 모달 css -->
+      <link rel="stylesheet" href="./resources/style/modalStyle.css" type="text/css">
 <script>
 $(function(){
-	
-	
-	
+    $('div #btn1').hover(function(){
+        $('div #btn1 img').attr('src','./resources/image/form/heart1.png'); 
+    },function(){ $('div #btn1 img').attr('src','./resources/image/form/heart-before.png')});
+    $('div #btn2').hover(function(){
+        $('div #btn2 img').attr('src','./resources/image/form/arrow1.png');
+    },function(){ $('div #btn2 img').attr('src','./resources/image/form/arrow-before.png')});
+    $('div #btn3').hover(function(){
+        $('div #btn3 img').attr('src','./resources/image/form/paid1.png'); 
+    },function(){ $('div #btn3 img').attr('src','./resources/image/form/paid-before.png')});
+    $('div #btn4').hover(function(){
+        $('div #btn4 img').attr('src','./resources/image/form/chat1.png');
+    },function(){ $('div #btn4 img').attr('src','./resources/image/form/chat-before.png')});
+    $('div #btn5').hover(function(){
+        $('div #btn5 img').attr('src','./resources/image/form/cancle1.png');
+    },function(){ $('div #btn5 img').attr('src','./resources/image/form/cancle-before.png')});
+    $('div #btn6').hover(function(){
+        $('div #btn6 img').attr('src','./resources/image/form/progress1.png');
+    },function(){ $('div #btn6 img').attr('src','./resources/image/form/progress-berfore.png')});
+
+
 	//참여하기 클릭했을때 결제페이지에 정보 넘기기 
-	$('.participation').click(function(){
+	$('.p_button').click(function(){
 		$(".parti").empty();
  		var c_id = $("#c_id2").text();
  		var cate_name = $("#cate_name2").text();
@@ -22,7 +40,7 @@ $(function(){
  		var b_content = $("#b_content2").text();
  		var b_price = $("#b_price2").text();
  		var b_no = $("#b_no2").text();
- 		var bc_id = $("#bc_id2").text();  //입력한 구매자id값 
+ 		var bc_id = "<%=session.getAttribute("userName")%>";
  	
 //  		var cate_image = $("#cate_image").attr("src");
 		
@@ -35,6 +53,7 @@ $(function(){
  		$("#b_content1").text(b_content);
  		$("#b_no1").text(b_no);
  		$("#bc_id1").text(bc_id);  //구매자 id값 추후 삭제 안보이게 처리
+ 		$("#pay").modal("show");
 	});	
 	
 	
@@ -90,54 +109,43 @@ $(function(){
 </script>
 <% BoardAndCateVO data = (BoardAndCateVO)request.getAttribute("data"); %>
 
-<div id="join" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content modal-size">
-                        <div class="modal-header">
-                            <h4>나눔에 참여하기 </h4>
-                         
-                        </div>
-                        <div class="modal-body ">
-                            <div class="modal-inner-grid">
-                                <div>
-                                    <div>
-                                            <li><span id="c_id2">${data.c_id}</span> 님의 나눔</li>
-                                            <li>글번호&nbsp; : <span id="b_no2">${data.b_no}</span></li>
-                                            <!-- 추후에 안보이게 처리 -->
-                                            <li>구매자id&nbsp; : <span id="bc_id2" >${userName}</span></li>
-                                            <li>제목 &nbsp; : <span id="b_title2">${data.b_title}</span></li>
-                                            <li>품목 &nbsp; : <span id="cate_name2">${data.cate_name}</span></li>
-                                            <li>위치 &nbsp; : <span id="b_location2">${data.b_location}</span></li>
-                                            <li>가격 &nbsp; : <span id="b_price2">${data.b_price}</span></li>
-                                            <li>날짜 &nbsp; : <span id="b_date2">${data.b_date}</span></li>
-                                             <li>내용 &nbsp; : <span id="b_content2">${data.b_content}</span></li>
-                                             <span id="b_no2" style="display:none;">${data.b_no}</span>
-                                             
-                                    </div>
-                                    <div class="col-lg-12"
-                                        style="display: grid; grid-template-columns:50% 50%; grid-template-rows:50% 50%;">
-                                        <input type="button" class="col-sm-12 participation"
-                                            style="color:white; background-color: #147b6b" value="참여하기" data-toggle="modal" data-target="#pay">
-                                        <input type="button" class="col-sm-12 jjim"
-                                            style="color:white; background-color: #f37f7f" value="찜 하기">
-                                        <input type="button" class="col-sm-12 cancel"  data-dismiss="modal"
-                                            style="color:white; background-color: #999999" value="취소">
-                                        <input type="button" class="col-sm-12"
-                                            style="color:white; background-color: #558ccf" value="길찾기"
-                                            data-toggle="modal" data-target="#road">
+<div id="join" class="modal fade "> 
+                     <div class="cate-img">
+                    <img class="w-100" src="<%=data.getCate_icon()%>.png"><!-- 품목카테고리 이미지 동적으로 넣어주세요-->
+                </div>         
+
+<div class=" modal-dialog modal-position"><!-- dialog 지우면 닫기 기능이 안됨-->
+                            <div class="modal-content modal-style"><!-- content 지우면 클릭이안됨-->
+                                <div class="modal-header" style="display:none;"></div>
+                                <div class="modal-body" style="border-radius: 50px; padding: 0px;"><!--padding-->
+                                            <div class=" modal-inner-grid1">
+                       <!--1--><div>
+                                            <!-- 모달 내용칸 -->
+                                            <div id="a" style="padding-bottom: 7px;">   <div  class="hide"id="ablock1"></div>    <div class="box" id="id2"><span id="c_id2">${data.c_id}</span>님의 나눔</div><div class="hide" id="ablock2" ></div> <div class="box" id="no2">No. <span id="b_no2">${data.b_no}</span></div></div>
+                                            <div id="b" style="padding-bottom: 7px;">   <div  class="hide" id="bblock1"></div>    <div class="box" id="title2">제목 : <span id="b_title2">${data.b_title}</span></div><div class="hide" id="bblock2" ></div> <div  class="box"id="name2">품목 : <span id="cate_name2">${data.cate_name}</span></div></div>
+                                            <div id="c" style="padding-bottom: 7px;">   <div  class="hide" id="cblock1"></div>    <div class="box" id="location2">위치 : <span id="b_location2">${data.b_location}</span></div><div class="hide" id="cblock2" ></div> </div>
+                                            <div id="c" style="padding-bottom: 15px;">   <div  class="hide" id="dblock1"></div>    <div  class="box"id="price2"> 가격 : <span id="b_price2">${data.b_price}</span>원</div><div class="hide" id="cblock2" ></div> <div class="box" id="date2">날짜 : <span id="b_date2">${data.b_date}</span> </div></div>                                              
+                                            <div id="c" ><div  class="box"id="content2" style="height:80px">내용 : <span id="b_content2">${data.b_content}</span></div></div>
+                                            <div class="modal-inner-grid2">
+                                            <!--3--><div id="btn3" class="button p_button"><img class="h-50"   style="margin-top:30px;"src="./resources/image/form/paid-before.png"> </div>
+                                        <!--4--><div style="text-align: right; padding-top:30px;">  
+                                                
+                                                <div id="btn1" class="button jjim"><img class="h-50" style="margin-top:17px;" src="./resources/image/form/heart-before.png"></div> 
+                                                <div id="btn2" class="button"><img class="h-50" style="margin-top:17px;" src="./resources/image/form/arrow-before.png"></div>
+                                                <div id="btn4" class="button"><img class="h-50" style="margin-top:17px;" src="./resources/image/form/chat-before.png"></div>
+                                                <div id="btn5" class="button"><img class="h-50" data-dismiss="modal" style="margin-top:17px;" src="./resources/image/form/cancle-before.png"></div>
+                                               
+                                                </div>
+                                            </div>
+                                            </div>
+                                         </div>
                                     </div>
                                 </div>
-                                <div><img src="<%=data.getCate_icon()%>.png" class="w-100 h-100 cate_image" alt=""></div>
                             </div>
-
                         </div>
-                        <div class="modal-footer">
+                    </div>                        
+                                          
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             
             
               <!----------------------------------결제 MODAL창----------------------------------------->

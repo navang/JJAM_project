@@ -47,10 +47,19 @@ public class BoardService {
 	public List<BoardByCateVO> viewSearch(BoardByCateVO vo){
 		return boardDAO.viewSearch(vo);
 	}
+<<<<<<< HEAD
 
 	//회원수
+=======
+//회원수
+>>>>>>> 7f7c7283d27dcf0b9cae4bf84bee2c912e11a8f9
 	public int cntMember() {
 		return boardDAO.cntMember();
 	}
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7f7c7283d27dcf0b9cae4bf84bee2c912e11a8f9
 }

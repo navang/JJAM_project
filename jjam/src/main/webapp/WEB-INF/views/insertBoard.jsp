@@ -6,10 +6,15 @@
 <meta charset="UTF-8">
 <title>짬처리</title>
 </head>
+<script>
+	var message = '${msg}';
+	var url = '${url}';
+	
+	alert(message);
+	window.location.href=url;
+
+</script>
 <body>
 
-게시글 등록이 완료되었습니다
-
-<a href="jjam_3_form.do">이전화면으로</a>
 </body>
 </html>

@@ -19,6 +19,9 @@ public class CustomerService {
 		return customerDAO.insertCustomer(vo);
 		
 	}
+	public void updatePrivacy(CustomerVO vo) {
+		customerDAO.updatePrivacy(vo);
+	}
 
 	
 }

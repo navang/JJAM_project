@@ -6,9 +6,11 @@
 
 
       <!-- 모달 css -->
-      <link rel="stylesheet" href="./resources/style/modalStyle.css" type="text/css">
+   <link rel="stylesheet" href="./resources/style/modalStyle.css" type="text/css">
+       
 <script>
 $(function(){
+    // 버튼 호버 시 이미지 각 아이디값 잘 볼것 
     $('div #btn1').hover(function(){
         $('div #btn1 img').attr('src','./resources/image/form/heart1.png'); 
     },function(){ $('div #btn1 img').attr('src','./resources/image/form/heart-before.png')});
@@ -27,19 +29,20 @@ $(function(){
     $('div #btn6').hover(function(){
         $('div #btn6 img').attr('src','./resources/image/form/progress1.png');
     },function(){ $('div #btn6 img').attr('src','./resources/image/form/progress-berfore.png')});
+   
 
-
+	
 	//참여하기 클릭했을때 결제페이지에 정보 넘기기 
-	$('.participation').click(function(){
+	$('#btn3').click(function(){
 		$(".parti").empty();
- 		var c_id = $("#c_id2").text();
- 		var cate_name = $("#cate_name2").text();
- 		var b_title = $("#b_title2").text();
- 		var b_location = $("#b_location2").text();
- 		var b_date = $("#b_date2").text();
- 		var b_content = $("#b_content2").text();
- 		var b_price = $("#b_price2").text();
- 		var b_no = $("#b_no2").text();
+ 		var c_id = $("#c_id2").val();
+ 		var cate_name = $("#cate_name2").val();
+ 		var b_title = $("#b_title2").val();
+ 		var b_location = $("#b_location2").val();
+ 		var b_date = $("#b_date2").val();
+ 		var b_content = $("#b_content2").val();
+ 		var b_price = $("#b_price2").val();
+ 		var b_no = $("#b_no2").val();
  		var bc_id = "<%=session.getAttribute("userName")%>";
  	
 //  		var cate_image = $("#cate_image").attr("src");
@@ -53,6 +56,7 @@ $(function(){
  		$("#b_content1").text(b_content);
  		$("#b_no1").text(b_no);
  		$("#bc_id1").text(bc_id);  //구매자 id값 추후 삭제 안보이게 처리
+ 		$("#pay").modal("show");
 	});	
 	
 	
@@ -64,7 +68,7 @@ $(function(){
 			type:"POST",
 			url:"jjam_3_jjim.do",
 			data:
-			{"b_no":$("#b_no2").text(),
+			{"b_no":$("#b_no2").val(),
 			 "c_id" : $("#bc_id1").text()        			
 			},
 			success: function(){
@@ -107,12 +111,24 @@ $(function(){
 
 </script>
 <% BoardAndCateVO data = (BoardAndCateVO)request.getAttribute("data"); %>
+<<<<<<< HEAD
   
 <!----------------------------------참여 MODAL창----------------------------------------->
     
                 <div id="join" class="modal fade "> 
                      <div class="cate-img">
                     <img class="w-100" src="<%=data.getCate_icon()%>.png" ><!-- 품목카테고리 이미지 동적으로 넣어주세요-->
+=======
+
+
+
+
+     <!----------------------------------참여 MODAL창----------------------------------------->
+    
+                <div id="join" class="modal fade "> 
+                     <div class="cate-img">
+                    <img class="w-100" src="${data.cate_icon}.png"  ><!-- 품목카테고리 이미지 동적으로 넣어주세요-->
+>>>>>>> 7f7c7283d27dcf0b9cae4bf84bee2c912e11a8f9
                 </div>             
                         
                     <div class=" modal-dialog modal-position"><!-- dialog 지우면 닫기 기능이 안됨-->
@@ -120,6 +136,7 @@ $(function(){
                                 <div class="modal-header" style="display:none;"></div>
 
                                 <div class="modal-body"><!--padding-->
+<<<<<<< HEAD
                                   
                                             <!-- 모달 내용칸 -->
                                             <input class="input-form" id="c_id2"       readonly value="${data.c_id}" > <input class="input-form" readonly value="님의 나눔"/>    <input  class="input-form" readonly id="b_no2"        value="${data.b_no}" placeholder="글번호">
@@ -135,6 +152,32 @@ $(function(){
                                                 <div id="btn2" class="button"><img class="h-50" style="margin-top:17px;" src="./img/form/arrow-before.png"></div>
                                                 <div id="btn4" class="button"><img class="h-50" style="margin-top:17px;" src="./img/form/chat-before.png"></div>
                                                 <div id="btn5" class="button"><img class="h-50" data-dismiss="modal" style="margin-top:17px;" src="./img/form/cancle-before.png"></div>
+=======
+                                    <input class="input-form" id="input-title" readonly value="나눔참여"/>
+                                            <!-- 모달 내용칸 -->
+                                             <input readonly class="input-form" id="c_id2"  readonly value="${data.c_id}" >                      
+                                             <input class="input-form" readonly value="님의 나눔"/> 
+                                             <input class="input-form" readonly value="제목 : "/>
+                                             <input class="input-form" id="b_title2"    readonly value="${data.b_title}" placeholder="제목">                                            
+                                             <input readonly  class="input-form" readonly id="b_no2"        value="${data.b_no}" placeholder="글번호"> 
+                                             <input class="input-form" readonly value="품목 : "/>      
+                                             <input  class="input-form" readonly id="cate_name2"   value="${data.cate_name}" placeholder="품목">
+                                             <input class="input-form" readonly value="가격 : "/>                                  
+                                             <input  class="input-form" readonly id="b_price2"     value="${data.b_price}" placeholder="가격">
+                                             <input class="input-form" readonly value="위치 : "/>     
+                                             <input readonly class="input-form" id="b_location2" readonly value="${data.b_location}" placeholder="위치"> 
+                                        
+                                             <input readonly  class="input-form" readonly id="b_content2"   value="${data.b_content}" placeholder="내용">                           
+                                            
+                                            <div class="modal-inner-grid2">
+                                            <!--3--><div id="btn3" class="button"><img class="h-50 img_cart_margin" src="./resources/image/form/paid-before.png"></div>
+                                        <!--4--><div class="button_div" >  
+                                                
+                                                <div id="btn1" class="button"><img class="h-50 img_margin" src="./resources/image/form/heart-before.png"></div> 
+                                                <div id="btn2" class="button"><img class="h-50 img_margin" src="./resources/image/form/arrow-before.png"></div>
+                                                <div id="btn4" class="button"><img class="h-50 img_margin" src="./resources/image/form/chat-before.png"></div>
+                                                <div id="btn5" class="button"><img class="h-50 img_margin" data-dismiss="modal" src="./resources/image/form/cancle-before.png"></div>
+>>>>>>> 7f7c7283d27dcf0b9cae4bf84bee2c912e11a8f9
                                                
                                                 </div>
                                          </div>
@@ -145,6 +188,23 @@ $(function(){
                     </div>
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          
+>>>>>>> 7f7c7283d27dcf0b9cae4bf84bee2c912e11a8f9
 
             
             
