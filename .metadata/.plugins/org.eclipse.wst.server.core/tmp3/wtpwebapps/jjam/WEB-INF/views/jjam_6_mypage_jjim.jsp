@@ -26,7 +26,7 @@ $(function(){
 				 },
 				 success: function(data){
 						$("#jjoin").html(data);
-						$("#join").modal('show');
+						$("#join").modal();
 				 }, error:function(){
 					 alert("에러");
 				 }

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<style>
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <
+
+
+
+    <link rel="stylesheet" href="./css/modalStyle.css" type="text/css">
+    <script src="https://kit.fontawesome.com/825d367943.js"></script>
+    <head>
+
+    </head>
+    <script>
+    $(function(){
+         $(".image-radio img").click(function(){
+            // 카테고리 이미지 클릭시 
+            $(".image-radio input").removeAttr('checked');  //초기화
+            $(this).prev().attr('checked',true);            //이미지 radio부모에 checked
+            
+            //cate_val= c0000~8
+            var cate_val = $(this).prev().val();
+           
+           //#icon ->> 한글 카테고리명으로 변환해서 표시 
+            $('#icon').attr('value',cate_val);
+            var i=0;
+            var catename=['육류', '채소류', '가공식품류', '어패류','과일류','빵류','소스류','냉동식품류','기타등등'];
+            var cateval=['c0000','c0001','c0002','c0003','c0004','c0005','c0006','c0007','c0008'];
+            for( var i; i<9; i++){
+                if(cateval[i]==cate_val){
+                   $('#icon_show').attr('value',catename[i]);
+            }//if
+         }//for
+        });//end of click(function(){})
+
+
+        // 버튼 호버 시 이미지 각 아이디값 잘 볼것 
+        $('div #btn1').hover(function(){
+            $('div #btn1 img').attr('src','./img/form/heart1.png'); 
+        },function(){ $('div #btn1 img').attr('src','./img/form/heart-before.png')});
+        $('div #btn2').hover(function(){
+            $('div #btn2 img').attr('src','./img/form/arrow1.png');
+        },function(){ $('div #btn2 img').attr('src','./img/form/arrow-before.png')});
+        $('div #btn3').hover(function(){
+            $('div #btn3 img').attr('src','./img/form/paid1.png'); 
+        },function(){ $('div #btn3 img').attr('src','./img/form/paid-before.png')});
+        $('div #btn4').hover(function(){
+            $('div #btn4 img').attr('src','./img/form/chat1.png');
+        },function(){ $('div #btn4 img').attr('src','./img/form/chat-before.png')});
+        $('div #btn5').hover(function(){
+            $('div #btn5 img').attr('src','./img/form/cancle1.png');
+        },function(){ $('div #btn5 img').attr('src','./img/form/cancle-before.png')});
+        $('div #btn6').hover(function(){
+            $('div #btn6 img').attr('src','./img/form/progress1.png');
+        },function(){ $('div #btn6 img').attr('src','./img/form/progress-berfore.png')});
+       
+   
+    });//end of window
+    </script>
+    
+
+        
+                <!----------------------------------참여 MODAL창----------------------------------------->
+    
+                <div id="join" class="modal fade "> 
+                     <div class="cate-img">
+                    <img class="w-100" src="./img/icons/banana_icons.png"  ><!-- 품목카테고리 이미지 동적으로 넣어주세요-->
+                </div>             
+                        
+                    <div class=" modal-dialog modal-position"><!-- dialog 지우면 닫기 기능이 안됨-->
+                            <div class="modal-content modal-style"><!-- content 지우면 클릭이안됨-->
+                                <div class="modal-header" style="display:none;"></div>
+
+                                <div class="modal-body"><!--padding-->
+                                    <input class="input-form" id="input-title" readonly value="나눔참여"/>
+                                            <!-- 모달 내용칸 -->
+                                            <input readonly class="input-form" id="c_id2"       readonly value=${data.c_id} >                            <input class="input-form" readonly value="님의 나눔"/>   <input class="input-form" id="b_title2"    readonly value=${data.b_title} placeholder="제목">  
+                                            <input readonly  class="input-form" readonly id="b_no2"        value="${data.b_no}" placeholder="글번호">                                         <input  class="input-form" readonly id="cate_name2"   value="${data.cate_name}" placeholder="품목">
+                                            <input readonly class="input-form" id="b_location2" readonly value=${data.b_location} placeholder="위치">                                   <input  class="input-form" readonly id="b_price2"     value="${data.b_price}" placeholder="가격">
+                                            <input readonly  class="input-form" readonly id="b_content2"   value="${data.b_content}" placeholder="내용">                           
+                                            
+                                            <div class="modal-inner-grid2">
+                                            <!--3--><div id="btn3" class="button"><img class="h-50 img_cart_margin" src="./img/form/paid-before.png"></div>
+                                        <!--4--><div class="button_div" >  
+                                                
+                                                <div id="btn1" class="button"><img class="h-50 img_margin" src="./img/form/heart-before.png"></div> 
+                                                <div id="btn2" class="button"><img class="h-50 img_margin" src="./img/form/arrow-before.png"></div>
+                                                <div id="btn4" class="button"><img class="h-50 img_margin" src="./img/form/chat-before.png"></div>
+                                                <div id="btn5" class="button"><img class="h-50 img_margin" data-dismiss="modal" src="./img/form/cancle-before.png"></div>
+                                               
+                                                </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+<div id="join" class="modal fade "> 
+                     <div class="cate-img">
+                    <img class="w-100" src="<%=data.getCate_icon()%>.png"><!-- 품목카테고리 이미지 동적으로 넣어주세요-->
+                </div>         
+
+<div class=" modal-dialog modal-position"><!-- dialog 지우면 닫기 기능이 안됨-->
+                            <div class="modal-content modal-style"><!-- content 지우면 클릭이안됨-->
+                                <div class="modal-header" style="display:none;"></div>
+                                <div class="modal-body" style="border-radius: 50px; padding: 0px;"><!--padding-->
+                                            <div class=" modal-inner-grid1">
+                       <!--1--><div>
+                                            <!-- 모달 내용칸 -->
+                                            <div id="a" style="padding-bottom: 7px;">   <div  class="hide"id="ablock1"></div>    <div class="box" id="id2"><span id="c_id2">${data.c_id}</span>님의 나눔</div><div class="hide" id="ablock2" ></div> <div class="box" id="no2">No. <span id="b_no2">${data.b_no}</span></div></div>
+                                            <div id="b" style="padding-bottom: 7px;">   <div  class="hide" id="bblock1"></div>    <div class="box" id="title2">제목 : <span id="b_title2">${data.b_title}</span></div><div class="hide" id="bblock2" ></div> <div  class="box"id="name2">품목 : <span id="cate_name2">${data.cate_name}</span></div></div>
+                                            <div id="c" style="padding-bottom: 7px;">   <div  class="hide" id="cblock1"></div>    <div class="box" id="location2">위치 : <span id="b_location2">${data.b_location}</span></div><div class="hide" id="cblock2" ></div> </div>
+                                            <div id="c" style="padding-bottom: 15px;">   <div  class="hide" id="dblock1"></div>    <div  class="box"id="price2"> 가격 : <span id="b_price2">${data.b_price}</span>원</div><div class="hide" id="cblock2" ></div> <div class="box" id="date2">날짜 : <span id="b_date2">${data.b_date}</span> </div></div>                                              
+                                            <div id="c" ><div  class="box"id="content2" style="height:80px">내용 : <span id="b_content2">${data.b_content}</span></div></div>
+                                            <div class="modal-inner-grid2">
+                                            <!--3--><div id="btn3" class="button p_button"><img class="h-50"   style="margin-top:30px;"src="./resources/image/form/paid-before.png"> </div>
+                                        <!--4--><div style="text-align: right; padding-top:30px;">  
+                                                
+                                                <div id="btn1" class="button jjim"><img class="h-50" style="margin-top:17px;" src="./resources/image/form/heart-before.png"></div> 
+                                                <div id="btn2" class="button"><img class="h-50" style="margin-top:17px;" src="./resources/image/form/arrow-before.png"></div>
+                                                <div id="btn4" class="button"><img class="h-50" style="margin-top:17px;" src="./resources/image/form/chat-before.png"></div>
+                                                <div id="btn5" class="button"><img class="h-50" data-dismiss="modal" style="margin-top:17px;" src="./resources/image/form/cancle-before.png"></div>
+                                               
+                                                </div>
+                                            </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                        
+
+
+
+
+
+                    
+     <!----------------------------------------------------생성모달------------------------------------------------->
+     <a href="" data-toggle="modal" data-target="#create">생성하기</a></div>
+
+     <form action="insertBoard.do" method="get">
+           
+        <div id="create" class="modal fade">
+                <div class="modal-dialog create-position">
+                    <div class="modal-content create-style">
+                    
+                        <input class="input-form" style="font-size: 30px;"readonly value="나눔 생성하기"/>
+                       
+                        <div style= "display: inline-block;">
+                               <!-- 수량 선택 --> 
+                                <input  class="input-form"  value="나눔할 수량을 선택하세요" readonly></input>
+                                <select class="input-form" name="b_ea" >
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                                        <!--아이디 보임-->
+                                        <input  class="input-form" type="text"  name="c_id"
+                                        placeholder="내 아이디" value="${userName}" readonly>
+                                        <!-- value값 넘어가는 창-->
+                                        <input  id="icon" name="cate_id" readonly style="display: none;" class="input-form"/>
+                                        <!--보이는 창-->
+                                        <input id="icon_show" readonly class="input-form" value="아래 카테고리를 선택하세요"/>
+                                         <!-- 물품입력-->
+                                         <input  class="input-form" type="text" id="product" name="b_name"
+                                         placeholder="물품을 입력해주세요">
+
+                                <!-- 이미지 라디오 value는 위 input에 저장-->        
+                               <div id="radio-button-wrapper" style="text-align: center;">
+                                   
+                                        <span class="image-radio"><input value="c0000" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="img/icons/sel/meat_icon.png"></span>
+                                        <span class="image-radio"><input value="c0001" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="img/icons/sel/vege_icon.png"></span>
+                                        <span class="image-radio"><input value="c0002" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="img/icons/sel/spam_icon.png"></span>
+                                        <span class="image-radio"><input value="c0003" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="img/icons/sel/seafood_icon.png"></span>
+                                        <span class="image-radio"><input value="c0004" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="img/icons/sel/fruit_icon.png"></span>
+                                        <span class="image-radio"><input value="c0005" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="img/icons/sel/bread_icon.png"></span>
+                                        <span class="image-radio"><input value="c0006" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="img/icons/sel/spice_icon.png"></span>
+                                        <span class="image-radio"><input value="c0007" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="img/icons/sel/nangdong_icon.png"> </span>
+                                        <span class="image-radio"><input value="c0008" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="img/icons/sel/ingredients_icon.png"></span>
+                                </div>  
+                                  
+                                <!-- 위도경도값 히든처리 -->
+                                <input type="hidden" id="latitude" name="b_latitude" value=""/>
+                                <input type="hidden" id="longitude" name="b_longitude" value=""/>
+                                   
+                                <!-- 나눔위치 및 위치표시-->
+                                 <input class="input-form" value="    나눔 위치를 확인해주세요" readonly ></input>
+                                 <input class="input-form" type="location" id="location"  name="b_location" value="">
+                                
+                                <!-- 제목-->
+                                <input class="input-form"  type="text" id="title"  name="b_title" value="" placeholder="게시글 제목을 입력해주세요">
+                                
+                                <!--나눔가격-->
+                                <input class="input-form"   type="price" id="price" name="b_price" placeholder="나눔 가격을 입력해주세요">
+                           
+                            
+                            </div>
+                                <!-- 버튼과 내용입력창을 정리하는 그리드-->
+                                <div class="content-grid">
+                                <div class=""> 
+                                <div><textarea class="input-form" id="b_content" name="b_content" placeholder="   내용을 입력해주세요"></textarea></div>
+                                </div > 
+                                <!-- 생성 취소 버튼-->
+                                <div class="create_button">
+                                        <div id="btn8" class="button"><img class="h-50" style="margin-top:17px;" src="./img/form/progress-berfore.png"></div>
+                                        <div id="btn7" class="button"><img class="h-50" data-dismiss="modal" style="margin-top:17px;" src="./img/form/cancle-before.png"></div>
+                                 
+                                </div> 
+                            </div>
+ 
+        
+            </div>
+        </form>
+    </body>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+              <!----------------------------------생성 MODAL창----------------------------------------->
+	<form action="insertBoard.do" method="get">
+            <div id="create" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-size">
+                        <div class="modal-header">
+                            <h4>나눔 생성하기 </h4>
+                     
+                        </div>
+                        <div class="modal-body ">
+                            <div class="modal-inner-grid">
+                            <div class="form-group"> <label for="">회원 아이디 입력</label></div>
+                                <div class=""><input class="form-control" type="text"  name="c_id"
+                                        placeholder="아이디를 입력해주세요" value="${userName}" readonly></div>
+                                <div class="form-group"> <label for="email">무엇을 나누실 건가요?</label></div>
+                                <div class=""><input class="form-control" type="text" id="product" name="b_name"
+                                        placeholder="물품을 입력해주세요"> </div>
+                                        
+                                   <div class="form-group"> <label for="email">카테고리를 선택해주세요</label></div>
+                                <div class="" style="text-align: right">
+                                <select id="icon" name="cate_id">
+<!--                                         <option value="./resources/image/category_icons_pin/meat_pin.png">육류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/vege_pin.png">채소류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/spam_pin.png">가공식품류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/seafood_pin.png">어패류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/fruit_pin.png">과일류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/bread_pin.png">빵류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/spice_pin.png">소스류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/nangdong_pin.png">냉동식품류</option> -->
+<!--                                         <option value="./resources/image/category_icons_pin/ingredients_pin.png">기타등등</option> -->
+                                        
+                                        <option value="c0000">육류</option>
+                                        <option value="c0001">채소류</option>
+                                        <option value="c0002">가공식품류</option>
+                                        <option value="c0003">어패류</option>
+                                        <option value="c0004">과일류</option>
+                                        <option value="c0005">빵류</option>
+                                        <option value="c0006">소스류</option>
+                                        <option value="c0007">냉동식품류</option>
+                                        <option value="c0008">기타등등</option>
+                                    </select></div>
+                                    
+                                <div class="form-group"> <label for="email">몇개를 나누실 건가요?</label></div>
+                                <div class="" style="text-align: right"><select name="b_ea">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select></div>
+                                    
+                                    <!-- 위도경도값 히든처리 -->
+                                <input type="hidden" id="latitude" name="b_latitude" value=""/>
+                                <input type="hidden" id="longitude" name="b_longitude" value=""/>
+                                   
+                                 <div class="form-group"> <label for="" >나눔 위치를 확인해주세요</label></div>
+                                <div class=""><input class="form-control" type="location" id="location"  name="b_location" value="aaa"> </div>
+                                        
+                                   <div class="form-group"> <label for="" >게시글 제목을 입력해주세요</label></div>
+                                <div class=""><input class="form-control" type="text" id=""  name="b_title" value="aaa"> </div> 
+                                       
+                                <div class="form-group"> <label for="email">나눔 가격을 확인해주세요</label></div>
+                                <div class=""><input class="form-control" type="price" id="price" name="b_price" placeholder="0">
+                                </div>
+                                <div class="form-group"> <label for="email">언제까지 나눔할까요?</label></div>
+                                <div class="">
+                                    <div><input type="date" class="col-sm-6"></div>
+                                </div>
+                                <div class="form-group"> </div>
+                                <div class="">
+                                    <div><select>
+                                            <option>for문 써서 24까지</option>
+                                        </select><label>시</label></div>
+                                </div>
+                                 <div class="form-group"> <label for="">게시글 내용을 적어주세요</label></div>
+                                 <div class=""><input class="form-control" type="textarea"  id="" name="b_content" placeholder="내용을 입력해주세요">
+                                </div>
+                                <div class="form-group"> <label for="email">나눔 물품의 사진을 올려주세요</label></div>
+                                <div class="">
+                                    <div><input type="button" class="btn-dark col-sm-12" value="이미지올리기"></div>
+                                </div>
+                                <div class="form-group"> </div>
+                                <div class="">
+                                    <div><input type="submit" class="col-sm-12 nanum_create"
+                                            style="color:white; background-color: #147b6b" value="만들기"></div>
+                                </div>
+                                <div class="form-group"> </div>
+                                <div class="">
+                                    <div><input type="button" class="col-sm-12"  data-dismiss="modal"
+                                            style="color:white; background-color: #f37f7f" value="취소하기"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+            <!------------------------------------------------------------------------->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

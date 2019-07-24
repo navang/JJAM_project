@@ -40,7 +40,7 @@
 </style>
 
     <link rel="stylesheet" href="./resources/style/main.css" >
- 
+ 	 <link rel="stylesheet" href="./resources/style/modalStyle.css" type="text/css">
     
     <script src="https://kit.fontawesome.com/825d367943.js"></script>
     <script>
@@ -78,9 +78,41 @@
 		
 	}); 	
 	
+	//생성하기 - 버튼클릭 이벤트 설정
 	
-
-
+	$(".image-radio img").click(function(){
+	
+		
+        // 카테고리 이미지 클릭시 
+        $(".image-radio input").removeAttr('checked');  //초기화
+        $(this).prev().attr('checked',true);            //이미지 radio부모에 checked
+       
+        //cate_val= c0000~8
+        var cate_val = $(this).prev().val();
+       
+       //#icon ->> 한글 카테고리명으로 변환해서 표시 
+        $('#icon').attr('value',cate_val);
+        var i=0;
+        var catename=['육류', '채소류', '가공식품류', '어패류','과일류','빵류','소스류','냉동식품류','기타등등'];
+        var cateval=['c0000','c0001','c0002','c0003','c0004','c0005','c0006','c0007','c0008'];
+        for( var i; i<9; i++){
+            if(cateval[i]==cate_val){
+               $('#icon_show').attr('value',catename[i]);
+        }//if
+     }//for
+ 
+       
+    });//end of click(function(){})
+	
+	
+    
+    
+	//참여하기 전송
+	$("img[src='./resources/image/form/progress-berfore.png']").click(function(){
+		alert("클릭");
+		$("#create_form").submit();
+		
+	});
 });
 	
 
@@ -93,6 +125,10 @@
 <!-- ---------------------------------상단 고정 메뉴바--------------------------------------------->
   <%@ include file ="header.jsp" %>
 
+
+            <!----------------------------------참여 MODAL창----------------------------------------->
+	<div id="jjoin"></div>
+           
     <!--------------------------------------본문 ------------------------------------------------------>
 
     <div class="modal-form">
@@ -110,23 +146,25 @@
            
       <!---------------------------------- 지도 api 자리-->
 <!--             <div class=""> -->
-            
-             <div class="map_wrap" >
+
+<div class="map_wrap"  >
     <div id="map" class="map-custom" ></div>
     <div class="hAddr"  >
      </div><!--  end.hAddr -->
-	</div><!--  end div.map_wrap -->
-     
+</div><!--  end div.map_wrap -->
+	
+
 <!--      <div id="map" style="width:100px;height:350px;"></div>       -->
-         
-         
-<!--             </div>  그리드 맞춰줌-->
-            
+
             
         <!------------------------ 게시물  --------------------------->            
             <div class="boardlist"></div> 
        <!-- ------------------------------------------------------- -->
-        <div style="text-align:center;"><br><button class="btn btn-info create col-md-6"  type="button" data-toggle="modal" data-target="#create" >생성하기 ${userName}님 안녕하세요</button></div>
+       <!-- lass="btn btn-info create col-md-6"  -->
+        <div style="text-align:center;">
+        <br>
+        <button class="btn-create" 
+         type="button" data-toggle="modal" data-target="#create" >생성하기 ${userName}님 안녕하세요</button></div>
        
        
            
@@ -141,164 +179,89 @@
         
         <div></div><div></div>
 
-            <!----------------------------------참여 MODAL창----------------------------------------->
-	<div id="jjoin"></div>
-           
 
-            <!----------------------------------생성 MODAL창----------------------------------------->
-	<form action="insertBoard.do" method="get">
-            <div id="create" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content modal-size">
-                        <div class="modal-header">
-                            <h4>나눔 생성하기 </h4>
-                     
-                        </div>
-                        <div class="modal-body ">
-                            <div class="modal-inner-grid">
-                            <div class="form-group"> <label for="">회원 아이디 입력</label></div>
-                                <div class=""><input class="form-control" type="text"  name="c_id"
-                                        placeholder="아이디를 입력해주세요" value="${userName}" readonly></div>
-                                <div class="form-group"> <label for="email">무엇을 나누실 건가요?</label></div>
-                                <div class=""><input class="form-control" type="text" id="product" name="b_name"
-                                        placeholder="물품을 입력해주세요"> </div>
-                                        
-                                   <div class="form-group"> <label for="email">카테고리를 선택해주세요</label></div>
-                                <div class="" style="text-align: right">
-                                <select id="icon" name="cate_id">
-<!--                                         <option value="./resources/image/category_icons_pin/meat_pin.png">육류</option> -->
-<!--                                         <option value="./resources/image/category_icons_pin/vege_pin.png">채소류</option> -->
-<!--                                         <option value="./resources/image/category_icons_pin/spam_pin.png">가공식품류</option> -->
-<!--                                         <option value="./resources/image/category_icons_pin/seafood_pin.png">어패류</option> -->
-<!--                                         <option value="./resources/image/category_icons_pin/fruit_pin.png">과일류</option> -->
-<!--                                         <option value="./resources/image/category_icons_pin/bread_pin.png">빵류</option> -->
-<!--                                         <option value="./resources/image/category_icons_pin/spice_pin.png">소스류</option> -->
-<!--                                         <option value="./resources/image/category_icons_pin/nangdong_pin.png">냉동식품류</option> -->
-<!--                                         <option value="./resources/image/category_icons_pin/ingredients_pin.png">기타등등</option> -->
-                                        
-                                        <option value="c0000">육류</option>
-                                        <option value="c0001">채소류</option>
-                                        <option value="c0002">가공식품류</option>
-                                        <option value="c0003">어패류</option>
-                                        <option value="c0004">과일류</option>
-                                        <option value="c0005">빵류</option>
-                                        <option value="c0006">소스류</option>
-                                        <option value="c0007">냉동식품류</option>
-                                        <option value="c0008">기타등등</option>
-                                    </select></div>
-                                    
-                                <div class="form-group"> <label for="email">몇개를 나누실 건가요?</label></div>
-                                <div class="" style="text-align: right"><select name="b_ea">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                    </select></div>
-                                    
-                                    <!-- 위도경도값 히든처리 -->
+
+   <!----------------------------------------------------생성모달------------------------------------------------->
+     <form action="insertBoard.do" method="get" id="create_form">
+           
+        <div id="create" class="modal fade">
+                <div class="modal-dialog create-position">
+                    <div class="modal-content create-style">
+                    
+                        <input class="input-form" style="font-size: 30px;"readonly value="나눔 생성하기"/>
+                       
+                        <div style= "display: inline-block;">
+                               <!-- 수량 선택 --> 
+                                <input  class="input-form"  value="나눔할 수량을 선택하세요" readonly></input>
+                                <select class="input-form" name="b_ea" >
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                                        <!--아이디 보임-->
+                                        <input  class="input-form" type="text"  name="c_id"
+                                        placeholder="내 아이디" value="${userName}" readonly>
+                                        <!-- value값 넘어가는 창-->
+                                        <input  id="icon" name="cate_id" readonly style="display: none;" class="input-form"/>
+                                        <!--보이는 창-->
+                                        <input id="icon_show" readonly class="input-form" value="아래 카테고리를 선택하세요"/>
+                                         <!-- 물품입력-->
+                                         <input  class="input-form" type="text" id="product" name="b_name"
+                                         placeholder="물품을 입력해주세요">
+
+                                <!-- 이미지 라디오 value는 위 input에 저장-->        
+                               <div id="radio-button-wrapper" style="text-align: center;">
+                                   
+                                        <span class="image-radio"><input value="c0000" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="./resources/image/category_icon/meat_icon.png"></span>
+                                        <span class="image-radio"><input value="c0001" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="./resources/image/category_icon/vege_icon.png"></span>
+                                        <span class="image-radio"><input value="c0002" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="./resources/image/category_icon/spam_icon.png"></span>
+                                        <span class="image-radio"><input value="c0003" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="./resources/image/category_icon/seafood_icon.png"></span>
+                                        <span class="image-radio"><input value="c0004" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="./resources/image/category_icon/fruit_icon.png"></span>
+                                        <span class="image-radio"><input value="c0005" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="./resources/image/category_icon/bread_icon.png"></span>
+                                        <span class="image-radio"><input value="c0006" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="./resources/image/category_icon/spice_icon.png"></span>
+                                        <span class="image-radio"><input value="c0007" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="./resources/image/category_icon/nangdong_icon.png"> </span>
+                                        <span class="image-radio"><input value="c0008" name="icon" style="display:none" type="radio"/><img style="width: 60px;" src="./resources/image/category_icon/ingredients_icon.png"></span>
+                                </div>  
+                                  
+                                <!-- 위도경도값 히든처리 -->
                                 <input type="hidden" id="latitude" name="b_latitude" value=""/>
                                 <input type="hidden" id="longitude" name="b_longitude" value=""/>
                                    
-                                 <div class="form-group"> <label for="" >나눔 위치를 확인해주세요</label></div>
-                                <div class=""><input class="form-control" type="location" id="location"  name="b_location" value="aaa"> </div>
-                                        
-                                   <div class="form-group"> <label for="" >게시글 제목을 입력해주세요</label></div>
-                                <div class=""><input class="form-control" type="text" id=""  name="b_title" value="aaa"> </div> 
-                                       
-                                <div class="form-group"> <label for="email">나눔 가격을 확인해주세요</label></div>
-                                <div class=""><input class="form-control" type="price" id="price" name="b_price" placeholder="0">
-                                </div>
-                                <div class="form-group"> <label for="email">언제까지 나눔할까요?</label></div>
-                                <div class="">
-                                    <div><input type="date" class="col-sm-6"></div>
-                                </div>
-                                <div class="form-group"> </div>
-                                <div class="">
-                                    <div><select>
-                                            <option>for문 써서 24까지</option>
-                                        </select><label>시</label></div>
-                                </div>
-                                 <div class="form-group"> <label for="">게시글 내용을 적어주세요</label></div>
-                                 <div class=""><input class="form-control" type="textarea"  id="" name="b_content" placeholder="내용을 입력해주세요">
-                                </div>
-                                <div class="form-group"> <label for="email">나눔 물품의 사진을 올려주세요</label></div>
-                                <div class="">
-                                    <div><input type="button" class="btn-dark col-sm-12" value="이미지올리기"></div>
-                                </div>
-                                <div class="form-group"> </div>
-                                <div class="">
-                                    <div><input type="submit" class="col-sm-12 nanum_create"
-                                            style="color:white; background-color: #147b6b" value="만들기"></div>
-                                </div>
-                                <div class="form-group"> </div>
-                                <div class="">
-                                    <div><input type="button" class="col-sm-12"  data-dismiss="modal"
-                                            style="color:white; background-color: #f37f7f" value="취소하기"></div>
-                                </div>
-
+                                <!-- 나눔위치 및 위치표시-->
+                                 <input class="input-form" value="    나눔 위치를 확인해주세요" readonly ></input>
+                                 <input class="input-form" type="location" id="location"  name="b_location" value="" readonly>
+                                
+                                <!-- 제목-->
+                                <input class="input-form"  type="text" id="title"  name="b_title" value="" placeholder="게시글 제목을 입력해주세요">
+                                
+                                <!--나눔가격-->
+                                <input class="input-form"   type="price" id="price" name="b_price" placeholder="나눔 가격을 입력해주세요">
+                           
+                            
                             </div>
-
-                        </div>
-                        <div class="modal-footer">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </form>
-            <!------------------------------------------------------------------------->
-            <!----------------------------------길찾기MODAL 창----------------------------------------->
-
-            <div id="road" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content modal-size">
-                        <div class="modal-header">
-                            <h4>나눔까지 길찾기 </h4>
-                      
-                        </div>
-                        <div class="modal-body ">
-                            <div class="modal-inner-grid">
-                                <div>
-                                    <div>
-                                        <div>
-                                                <li>(uesrId) 님의 나눔</li>
-                                                <li>품목 &nbsp; : 디비에서 가져온 값</li>
-                                                <li>위치 &nbsp; : 디비에서 가져온 값</li>
-                                                <li>가격 &nbsp; : 디비에서 가져온 값</li>
-                                                <li>날짜 &nbsp; : 디비에서 가져온 값</li>
-                                        </div>
-                                        <div>
-                                            여기에 가는길 출력
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div>
-                                <!-- 맵위치 -->
-                                </div>
+                                <!-- 버튼과 내용입력창을 정리하는 그리드-->
+                                <div class="content-grid">
+                                <div class=""> 
+                                <div><textarea class="input-form" id="b_content" name="b_content" placeholder="   내용을 입력해주세요"></textarea></div>
+                                </div > 
+                                <!-- 생성 취소 버튼-->
+                                <div class="create_button">
+                                        <div id="btn8" class="ccbutton"><img class="h-50" style="margin-top:17px;" src="./resources/image/form/progress-berfore.png"></div>
+                                        <div id="btn7" class="ccbutton"><img class="h-50" data-dismiss="modal" style="margin-top:17px;" src="./resources/image/form/cancle-before.png"></div>
+                                 
+                                </div> 
                             </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="col-sm-4" style="color:white; background-color: #147b6b"
-                                value="참여하기">
-                            <input type="button" class="col-sm-4" style="color:white; background-color: #f37f7f"
-                                value="찜 하기">
-                            <input  data-dismiss="modal" type="button" class="col-sm-4" style="color:white; background-color: #704242"
-                                value="더 둘러보기">
-
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!------------------------------------------------------------------------->
-
+            </div>
+            </div>
             
-          
+        </form>
 
 
     
@@ -329,18 +292,6 @@
 
 </body>
 
-<!-- --------------------map api script------------------------------------------ -->
-<!-- <script> -->
-<!-- controller에서 가져온 값을 json으로 변환 -->
-<!-- $(function(){ -->
-
-<!-- 	console.log(json); -->
-<!-- 	alert(json[0].b_date); -->
-<!--  }); -->
-
-
-
-<!-- </script> -->
 <script>
 
 

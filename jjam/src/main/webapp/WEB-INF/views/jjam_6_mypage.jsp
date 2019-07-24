@@ -39,10 +39,10 @@
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 
-<link rel='stylesheet prefetch'
-	href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-<link rel='stylesheet prefetch'
-	href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
+<!-- <link rel='stylesheet prefetch' -->
+<!-- 	href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'> -->
+<!-- <link rel='stylesheet prefetch' -->
+<!-- 	href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'> -->
 <!-- <link rel='stylesheet prefetch' -->
 <!-- 	href='//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'> -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -155,14 +155,18 @@
 
 
 	<!--------------------------------------본문 ------------------------------------------------------>
+	<span style="position:fixed; absolute; left:88%; top:260px;"><%@ include file="recentList.jsp" %></span>
 	<!-- Page Content -->
 	<div class="mypage">
+	
 		<div></div>
 		<!-- 공백 -->
 		<div class="">
 			<img width="100%" src="./resources/image/mypage_test1.png" />
 		</div>
-		<div></div>
+		<div>
+			
+		</div>
 		<!-- 공백 -->
 		<div></div>
 		<!-- 공백 -->
@@ -252,14 +256,19 @@
 
 	<!-- /.container -->
 
-<div id="jjoin"></div>
+<div id="jjoin">
+	
+
+
+
+</div>
 
 	<!-- <div class="footer fixed-bottom">copylight</div> -->
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="./resources/image/vendor/jquery/jquery.min.js"></script>
-	<script
-		src="./resources/image/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- 	<script src="./resources/image/vendor/jquery/jquery.min.js"></script> -->
+<!-- 	<script -->
+<!-- 		src="./resources/image/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
 </body>
 </html>

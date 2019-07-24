@@ -34,30 +34,33 @@
 <% String cntC =(String)request.getAttribute("cntC"); %>
 
 <body>
+
+<div style="margin-left:10px;">
 <!--  상단 햄버거  -->
 <label>
-    <img id="logo" style="width: 60px; height: 60px; position:fixed;" src="./resources/image/character.png" alt=""><img style="margin-left: 60px; position:fixed;" src="./resources/image/JJCR_white1.png">
+    <img id="logo"  src="./resources/image/BI-jjam-white.png" alt=""><img id="jcr"  src="./resources/image/JJCR_white1.png">
 </label>
+</div>
 
     <label>
         <input type="checkbox"></input>
         <span class="menu">
           <span class="hamburger"></span>
         </span>
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Work</a>
-          </li>
-          <li>
-            <a href="customerLogin.do">Login</a>
-          </li>
-        </ul>
+      
+        <!-- <ul>
+        <li> <a href="#">처음으로</a> </li>
+        <li> <a href="#">메인화면</a></li>
+        <li> <a href="#">마이페이지</a></li>
+        <li> <a href="customerLogin.do">로그인</a></li>
+     	</ul> -->
+     
+     	<ul>
+     	<div class="menubar"> <a href="#">처음으로</a></div>
+     	<div class="menubar"><a href="#">메인화면</a></div>
+     	<div class="menubar"><a href="#">마이페이지</a></div>
+     	<div class="menubar"><a href="customerLogin.do">로그인</a></div>
+     	</ul>
       </label>
    
       
@@ -88,8 +91,8 @@
                                  <div class="carousel-item w">     
                                         <img class=""  src="./resources/image/hidden.png" alt="">
                                 <div class="carousel-caption">
-                                           <h2 class="bigfont">1000</h2>
-                                           <h2>옴슑슑</h2>
+                                           <h2 class="bigfont">${cntC }</h2>
+                                           <h2>매일 절약되는 음식물처리비용</h2>
                                 </div>
                             </div>        
                         </div>
@@ -104,27 +107,37 @@
     </div>
   
 
- <div class=""></div>
+</br>
+         
+ <div class="intro-desc">
+ <div></div>
+         <div class="">
+         <h3>남은 식재료를 이웃에게 나눠주세요</h3></br>
+         
+         <p>안녕하세요~ 짬처리 서비스입니다. </br>
+         냉장고에 남은 식재료를 다 쓸수없어서, 같은메뉴는 지겨워서, 혼자 먹기에는 너무 많아서 음식물처리에 항상 머리아픈 당신을 위한 서비스가 나왔습니다. 
+         우리는 여러분이 자유롭게 식재료를 나누거나 공동구매하며 식비를 아끼고, 나아가 음식물처리에 드는 비용까지 절약할 수 있도록 도와주는 쉽고 간편한 웹서비스 입니다. 사회적가치를 만들어가는 아름다운 식재료 공유 문화, 같이 만들어갑시다  </p>
+         </div>
+         
+<div></div>
+
+<div></div>
+<div>   <button class="btn btn-primary" type="button">지금 바로 시작하세요 </button><!--다음페이지 링크 버튼-->
+</div>
+
+         얖
+</div>
 <div >
+
         <div class="intro-main" > 
              <h1>짬처리는식재료 공유 플랫폼입니다</h1>
-             
-            
-           
-            </div>
-          
-          
-            
+         </div>
+        
    </div>
-
-   <!------------------------------------------------------------------------------>
+   
   
-  </div>
+    </div>
   
-   <h3>남은 식재료를 이웃에게 나눠주세요</h3>
-             <p>짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기짬처리소개하기</p>
-  
-       <button class="btn btn-primary" type="button">지금 바로 시작하세요 </button><!--다음페이지 링크 버튼-->
    <div class="footer">copylight</div>
 
 </body>

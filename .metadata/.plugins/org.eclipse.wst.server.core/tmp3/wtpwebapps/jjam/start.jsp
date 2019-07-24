@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 
 <title>dd</title>
-</head>
+</head>   
 <body>
 
   <a href="jjam_intro.do"> 소개 창 가기</a>
