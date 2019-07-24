@@ -86,12 +86,8 @@ body{
     border: #8dd solid 4px;
 }
 
-<<<<<<< HEAD
+
 /* .blue { */
-/*     background: #bcf; */
-/*     border: #9ae solid 4px; */
-/* } */
-=======
 .blue {
     background: #bcf;
     border: #9ae solid 4px;
@@ -100,7 +96,7 @@ body{
 .intro_form{
     display: grid;
      grid-template-columns: 100%;
-    grid-template-rows: 30px 850px 100px ;
+    grid-template-rows: 30px 850px 850px ;
 }
 .intro-main{
   position: absolute;
@@ -108,8 +104,6 @@ body{
   left: 20%;
   transform: translate(-50%, -50%);
   width: 80%;
->>>>>>> 1c5f3472840e59320a38f4dfd6b748b9afea52be
-
 	
 }
 

@@ -1,0 +1,389 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: NanumSquareL;
+    src: url(../font/NanumSquareL.woff) format('woff');
+}
+@font-face { font-family: 'BMJUA'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff'); font-weight: normal; font-style: normal; }
+/***************************************************************************************************************/
+/*########## 참여모달###########*/
+
+/* 모달 위치 값 지정 dialog 덮어씀*/
+.modal-position{
+    position: absolute;
+    top:25%;
+    left: 30%;
+}
+/* 모달 스타일 지정  content 덮어씀*/
+.modal-style{
+  background: #76afa7;
+  border: white solid 30px;
+  width: 720px;
+  height: 480px;
+  border-radius: 50px;
+}
+
+/* 모달 내부 그리드 2 */
+.modal-inner-grid2{
+    display : grid;
+    grid-template-columns: 25% 75%;
+ 
+}
+
+/* 좌측상단 카테고리 이미지 */
+.cate-img{
+  position: absolute; top:23%; left: 27%;z-index: 100;
+}
+  /* button 클래스 스타일*/
+  div.button {
+    background-color: #147b6b;
+    display: inline-block;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    left: -435px;
+    transition: .7s ease;
+    text-align: center;
+    box-shadow: 3px 3px 0px #073d35;
+
+  }
+    /* button 참여 버튼 스타일*/
+  div.button#btn3 {
+    background-color: #147b6b;
+    display: inline-block;
+    border-radius: 80px;
+    width: 140px;
+    height: 110px;
+    left: -435px;
+    transition: .7s ease;
+    text-align: center;
+    box-shadow:3px 3px 0px #073d35;
+
+  }
+/* 변화되는 버튼 스타일 셋*/
+  div.button:hover {
+    background-color: #ffffff;
+    left: -50px;
+    width: 200px;
+    border-radius: 50px;
+    box-shadow: 3px 7px 0px #147b6b;
+  }
+  /* 변화되는 참여버튼 스타일 셋*/
+  div.button#btn3:hover {
+    background-color: #ffffff;
+    left: -50px;
+    width: 280px;
+    border-radius: 80px;
+    box-shadow: 3px 7px 0px #147b6b;
+  }
+  /* 버튼 클릭시 변화 */
+  div.button:active {
+    background-color: #f0bbab;
+    transition: 0s;
+    color: #ecf0f1;
+  }
+  /* 모달 내부 글자 칸*/ 
+  div.box {
+    background-color: white;
+    height: 60px;
+    border-radius: 50px;
+    display: inline-block;
+    font-family: BMJUA;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    box-shadow: 5px 10px 0px #147b6b;
+  }
+  /*글자 사이 간격 */
+div.hide{
+  visibility: hidden;
+    display: inline-block;
+    height: 50px;
+    border-radius: 50px;
+    background: #147b6b;
+}
+
+/***************************************************************************************************************/
+/* ################생성모달#############*/
+
+
+/* 모달 위치 값 지정 dialog 덮어씀*/
+.create-position{
+  position: absolute;
+  top:25%;
+  left: 30%;
+}
+/* 모달 스타일 지정  content 덮어씀*/
+.create-style{
+background: #76afa7;
+border: white solid 30px;
+width: 720px;
+height: 520px;
+border-radius: 50px;
+}
+
+/* 이미지 버튼 클릭시 css이벤트 */
+span.image-radio input[type="radio"]:checked + img{
+  border:5px solid#073d35;
+  border-radius: 30px;
+
+}
+/* input 의 기본설정 */
+.input-form{
+  font-family: BMJUA;
+  font-size: 20px;
+  background: white;
+  border-radius: 15px;
+  margin:10px;
+  text-align: center;
+  border:none;
+  box-shadow: 3px 5px 0px #073d35;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+/*input 가로크기 조절*/
+#product{
+ 
+}
+input[value="    나눔 위치를 확인해주세요"]{
+  width: 40%;
+}
+#location{
+  width: 50%;
+}
+#title{
+  width: 50%;
+}
+#price{
+  width: 40%;
+}
+
+/*div - 플로팅*/
+.div-inline{
+  display: inline-block;
+}
+/*셀렉박스 이벤트 설정*/
+select:hover ,select:focus {
+  background-color:white;
+  outline:none;
+  border:none;
+  box-shadow:none;
+  
+  box-shadow: 3px 5px 0px #073d35;
+}
+/*인풋 이벤트 설정*/
+input:focus, input:after{
+  background-color:white;
+  outline:none;
+  border:none;
+  box-shadow:none;
+  box-shadow: 3px 5px 0px #073d35;
+}
+/*하단 ta 와 버튼 */
+.content-grid{
+  display: grid; grid-template-columns: 50% 47%; height: 100px;
+}
+div.content-grid+div{
+  display: inline-block; width:280px; height:100px;
+}
+textarea.input-form{
+  padding-left: 15px; 
+  border-radius: 30px; 
+  border:none; 
+  width:280px; 
+  height:100px;
+  resize:none;
+}
+/*생성/취소 버튼*/
+.create_button{
+  text-align: right; padding-top: 20px;
+}
+
+
+/*#####반응형####*/
+@media(max-width:375px){
+  /***************************************************************************************************************/
+/*########## 참여모달###########*/
+
+/* 모달 위치 값 지정 dialog 덮어씀 -- 반응형 375px --*/
+  .modal-position{
+    position: absolute;
+    top:0%;
+    left: 0%;
+}
+/* 모달 스타일 지정  content 덮어씀-- 반응형 375px --*/
+.modal-style{
+  background: #76afa7;
+  border: white solid 6px;
+  width: 375px;
+  height: 440px;
+  border-radius: 50px;
+}
+/* 모달 내부 그리드 1 -- 반응형 375px --*/
+.modal-inner-grid1{
+    display : grid;
+    width: 97%;
+    height: 100%;
+    grid-template-rows: 66% 34%;
+    margin: 1%;
+}
+/* 모달 내부 그리드 2-- 반응형 375px --*/
+.modal-inner-grid2{
+    display : grid;
+    grid-template-columns: 25% 75%;
+
+   
+}
+/*좌측상단 카테고리 이미지 -- 반응형 375px --*/
+.cate-img{
+  position: absolute; top:5%; left: 3%;z-index: 100; width: 80px;
+}
+  /* button 클래스 스타일-- 반응형 375px --*/
+  div.button {
+    background-color: #147b6b;
+    display: inline-block;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    left: -435px;
+    transition: .7s ease;
+    text-align: center;
+    box-shadow: 3px 3px 0px #073d35;
+
+  }
+    /* button 참여 버튼 스타일-- 반응형 375px --*/
+  div.button#btn3 {
+    background-color: #147b6b;
+    display: inline-block;
+    border-radius: 80px;
+    width: 140px;
+    height: 110px;
+    left: -435px;
+    transition: .7s ease;
+    text-align: center;
+    box-shadow:3px 3px 0px hsl(171, 79%, 13%);
+
+  }
+  /* button 변화 스타일-- 반응형 375px --*/
+  div.button:hover {
+    background-color: #ffffff;
+    left: -50px;
+    width: 200px;
+    border-radius: 50px;
+    box-shadow: 3px 7px 0px #147b6b;
+  }
+  /* button 참여 버튼 변화스타일-- 반응형 375px --*/
+  div.button#btn3:hover {
+    background-color: #ffffff;
+    left: -50px;
+    width: 280px;
+    border-radius: 80px;
+    box-shadow: 3px 7px 0px #147b6b;
+  }
+  /* button 클릭시 스타일-- 반응형 375px --*/
+  div.button:active {
+    background-color: #f0bbab;
+    transition: 0s;
+    color: #ecf0f1;
+  }
+/*글자 칸-- 반응형 375px --*/
+div.box {
+  background-color: #ffffff;
+  height: 50px;
+  border-radius: 50px;
+  display: inline-block;
+  font-family: BMJUA;
+  text-align: center;
+  font-size: 25px;
+  padding: 10px;
+  box-shadow: 5px 10px 0px #147b6b;
+}
+/* 글자사이 간격-- 반응형 375px --*/
+div.hide{
+
+  display: inline-block;
+  height: 50px;
+  border-radius: 50px;
+  background: #147b6b;
+}
+
+
+
+/***************************************************************************************************************/
+/* ################생성모달 반응형#############*/
+
+/* 모달 위치 값 지정 dialog 덮어씀*/
+.create-position{
+  position: absolute;
+  top:5%;
+  left: -1%;
+}
+/* 모달 스타일 지정  content 덮어씀*/
+.create-style{
+background: #76afa7;
+border: white solid 15px;
+width: 370px;
+height: 800px;
+border-radius: 50px;
+}
+/* input 의 기본설정 */
+.input-form{
+  font-family: BMJUA;
+  font-size: 20px;
+  background: white;
+  border-radius: 15px;
+  margin:10px;
+  text-align: center;
+  border:none;
+  box-shadow: 3px 5px 0px #073d35;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+
+
+}
+/*input 가로크기 조절*/
+#product{  width: 90%;}
+input[placeholder="내 아이디"], #icon_show{  width: 40%;}
+input[value="    나눔 위치를 확인해주세요"]{  width: 90%;}
+#location{  width: 90%;}
+#title{  width: 90%;}
+#price{  width: 90%;}
+#b_content{  width: 90%;}
+
+/*하단 ta 와 버튼 */
+.content-grid{
+  display: grid; grid-template-columns: 100%;  height: 100px;
+}
+div.content-grid+div{
+  display: inline-block; width:280px; height:100px;
+}
+textarea.input-form{
+  padding-left: 15px; 
+  border-radius: 50px; 
+  border:none; 
+  width:280px; 
+  height:100px;
+  resize:none;
+}
+/*생성/취소 버튼*/
+#btn7,#btn8{
+  background-color: #147b6b;
+  display: inline-block;
+  border-radius: 50px;
+  width: 120px;
+  height: 80px;
+  left: -435px;
+  transition: .7s ease;
+  text-align: center;
+  box-shadow: 3px 3px 0px #073d35;
+}
+
+
+
+
+
+
+}
